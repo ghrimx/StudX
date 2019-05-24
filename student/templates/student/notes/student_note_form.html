@@ -1,0 +1,51 @@
+{# /StudX_dir/StudX/student/templates/student/notes/student_note_form.html #}
+
+{% extends 'dashboard_base.html' %}
+{% load static i18n student_tags widget_tweaks %}
+
+{% block content %}
+
+{{ form.media }}
+
+<div class="container">
+	<div class="card"> 
+		<div class="card-body"> 
+			<form method="post">{% csrf_token %}
+			
+				{{ form.non_field_errors }}
+				
+				{% for hidden_field in form.hidden_fields %}
+					{{ hidden_field.errors }}
+					{{ hidden_field }}
+				{% endfor %}
+				
+			<div class="form-row">
+				<div class="form-group col">
+					{{ form.title.label_tag }}
+					{% render_field form.title class="form-control" %}
+				</div>
+			</div> <!-- form-row - END -->		
+			<div class="row">
+				<div class="col">
+					{% render_field form.content class="form-control " %}
+				</div>
+			</div> <!-- form-row - END -->		
+			<div class="form-row mt-2">
+				<div class="form-group col-4">
+					{{ form.note_category.label_tag }}
+					{% render_field form.note_category class="form-control form-control-sm" %}
+				</div>
+			</div> <!-- form-row - END -->	
+			
+			<div class="form-row">
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+			</div> <!-- row - END -->
+
+			</form>
+		</div>
+	</div>
+</div>				
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{# /StudX_dir/StudX/student/templates/student/student_details/student_details_profile_details.html #}
+
+{% load i18n %}
+
+<div class="row mb-3">
+	<div class="col-sm-3">
+		{% include 'student/student_details/student_details_profile_card.html' %}
+	</div><!-- col-sm-3 end -->
+	<div class="col-sm-9">
+		<table class="table table-hover table-condensed table-responsive-md mytable">
+		  <thead></thead>
+		  <tbody>
+			 <tr>
+				<td>{% trans "Date of Birth" %}</td>
+				<td>{{ student_record.bday }} ({{student_record.country_of_birth}})</td>
+			 </tr>
+			 <tr>
+				<td>
+				   {% trans "Address" %}
+				</td>
+				<td>{% if  student_record.address.street %}
+				   {{ student_record.address.street }}, {{ student_record.address.zip }} {{ student_record.address.city }}
+				   {% else %}
+				   {% trans "Not Specified" %}
+				   {% endif %}
+				</td>
+			 </tr>
+			 {% for c in student_contacts %}
+			 <tr>
+				<td>
+				   {{ c.get_type_display }}
+				</td>
+				<td>
+				   {{ c.contact }}
+				</td>
+			 </tr>
+			 {% endfor %}
+		  </tbody>
+		</table>
+
+		<div class="card border-danger mt-3">
+			<div class="card-header text-white bg-danger ">{% trans "Important information" %}</div>
+			<div class="card-body">
+				{% if  student_record.ICE_details %}
+				{{ student_record.ICE_details | safe }}
+				{% else %}
+				{% trans "n/a" %}
+				{% endif %}
+			</div>
+		</div>
+	</div><!-- col-sm-9 end -->
+</div><!-- row mb-3 end -->
+

@@ -1,0 +1,65 @@
+{# /StudX_dir/StudX/student/templates/student/attendances/attendance_list.html #}
+
+{% extends 'dashboard_base.html' %}
+{% load static i18n student_tags %}
+
+{% block content %}
+
+	<div class="card"> 
+
+		<div class="card-body"> 
+		{% if attendance_list|length == 0 %}
+			{% trans "No results" %}
+		{% else %}
+			<div class="table-responsive">
+				<table class="table table-bordered" id="attendanceTable" width="100%" cellspacing="0">
+					<thead>
+						<tr>
+							<th>{% trans "Type" %}
+							<th>{% trans "Date" %}</th>
+							<th>{% trans "Student" %}</th>
+							<th>{% trans "Classe" %}</th>
+							<th>{% trans "Created by" %}</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for record in attendance_list %}
+							<tr>
+								<td>
+									{% if record.is_excused %}
+										<i class="fas fa-circle fa-lg" style="color:green" data-toggle="tooltip" title="{% trans 'Excused' %}"></i>
+									{% else %}
+										<i class="fas fa-circle fa-lg" style="color:red" data-toggle="tooltip" title="{% trans 'Not excused' %}"></i>
+									{% endif %}
+									
+								</td>
+								<td>{{ record.start_date|date:"D d M Y" }}</td>
+								<td>{{ record.student.fname}} {{ record.student.lname }}</td>
+								<td>{{ record.student.classe.classe_name}}</td>
+								<td>{{ record.creator.get_full_name }}</td>
+								<td class="actions">
+									<div class="btn-group btn-group-sm" role="group">
+										<a class="btn btn-outline-info btn-sm" href=""><i class="fas fa-eye"></i> </a>
+										{% if record.creator == user %}
+											<a class="btn btn-outline-info btn-sm" href="#"><i class="fas fa-pencil-alt"></i> </a>
+											<a class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#AttendanceDeleteModal" href="#""><i class="fas fa-trash-alt"></i> </a>
+									</div>
+											{% include 'student/attendances/attendance_delete_modal.html' %}
+										{% endif %}
+								</td>
+							</tr>
+
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		{% endif %}
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/datatables/datatables.js' %}"></script>
+{% endblock extra_js %}

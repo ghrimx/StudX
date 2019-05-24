@@ -1,0 +1,31 @@
+<!-- /StudX_dir/StudX/student/templates/student/student_details/student_details_guardian.html -->
+
+{% load i18n %}
+
+
+{% for r in relationship %}
+	<ul class="list-group mb-3" style="max-width:400px;">
+		<li class="list-group-item d-flex justify-content-between">
+			<div>
+				<i class="fa fa-align-justify"></i> {{ r.parent.fname }} {{ r.parent.lname }} 
+			</div>
+			<div id="parent-legal-status">
+				<span class="badge badge-success">{{r.get_relation_display}}</span>
+				{% if r.is_InCharge %}
+					<span class="badge badge-primary">{% trans "Responsible" %}</span>
+				{% endif %}
+				{% if r.is_ICE %}
+					<span class="badge badge-danger">{% trans "Urgency" %}</span>
+				{% endif %}
+			</div>
+		</li>
+		<li class="list-group-item d-flex justify-content-between align-items-center">
+			{% trans "Address" %} <span>{{ r.parent.address }}</span>
+		</li>
+		{% for c in r.parent.parent_hascontact.all %}
+			<li class="list-group-item d-flex justify-content-between align-items-center">
+				{{ c.get_type_display }} <span>{{ c.contact }}</span>
+			</li>
+		{% endfor %}
+	</ul>
+{% endfor %}

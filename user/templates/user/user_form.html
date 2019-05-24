@@ -1,0 +1,106 @@
+{# /StudX_dir/StudX/user/templates/user/user_form.html #}
+
+{% extends 'dashboard_base.html' %}
+{% load static i18n widget_tweaks %}
+
+{% block content %}
+
+<div class="container"> 
+	<div class="card w-75 mb-2"> 
+		<div class="card-header">
+			{% if user.id %}{% trans 'Edit user details' %}{% else %}{% trans 'Create new user' %}{% endif %}
+		</div>
+		<div class="card-body"> 
+			<form method="post">
+			{% csrf_token %}
+				{{ form.non_field_errors }}
+			{% for hidden_field in form.hidden_fields %}
+				{{ hidden_field.errors }}
+				{{ hidden_field }}
+			{% endfor %}
+				
+				<div class="form-group row">
+					<label for="{{ form.is_active.id_for_label }}" class="col-sm-2 col-form-label">{% trans 'Status' %}</label>
+					<div class="col-sm-10">
+					
+						<label class="switch ">
+							{%  render_field form.is_active class="success" %}
+						  <span class="slider round"></span>
+						</label>
+						
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="{{ form.groups.id_for_label }}" class="col-sm-2 col-form-label">{% trans 'Role' %}</label>
+					<div class="col-sm-10">
+					{%  render_field form.groups|attr:"multiple" class="selectpicker"  data-max-options="1" %}
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="{{ form.username.id_for_label }}" class="col-sm-2 col-form-label">{% trans 'Username' %}</label>
+					<div class="col-sm-10">
+					{%  render_field form.username class="form-control" %}
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="{{ form.first_name.id_for_label }}" class="col-sm-2 col-form-label">{% trans 'First name' %}</label>
+					<div class="col-sm-10">
+					{%  render_field form.first_name class="form-control" %}
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="{{ form.last_name.id_for_label }}" class="col-sm-2 col-form-label">{% trans 'Last name' %}</label>
+					<div class="col-sm-10">
+					{%  render_field form.last_name class="form-control" %}
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="{{ form.email.id_for_label }}" class="col-sm-2 col-form-label">{% trans 'Email address' %}</label>
+					<div class="col-sm-10">
+					{%  render_field form.email class="form-control" type="email" %}
+					</div>
+				</div>
+				{% if not user.id %}
+				<div class="form-group row">
+					<label for="{{ form.password1.id_for_label }}" class="col-sm-2 col-form-label">{% trans 'Password' %}</label>
+					<div class="col-sm-10">
+						{%  render_field form.password1 class="form-control" type="password" %}
+						<small id="{{ form.password1.id_for_label }}" class="form-text text-muted">
+							{% trans "suggestion: " %}{{ temp_password }}
+						</small>
+					</div>
+					
+				</div>
+				<div class="form-group row">
+					<label for="{{ form.password2.id_for_label }}" class="col-sm-2 col-form-label">{% trans 'Password confirmation' %}</label>
+					<div class="col-sm-10">
+					{%  render_field form.password2 class="form-control" type="password" %}
+					</div>
+				</div>
+				{% endif %}
+				<div class="form-group row">
+					<label for="{{ form.classe_ownership.id_for_label }}" class="col-sm-2 col-form-label">{% trans 'Classes' %}</label>
+					<div class="col-sm-10">
+					{%  render_field form.classe_ownership|attr:"multiple" class="selectpicker"  data-max-options="" %}
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="{{ form.subject.id_for_label }}" class="col-sm-2 col-form-label">{% trans 'Subjects' %}</label>
+					<div class="col-sm-10">
+					{%  render_field form.subject|attr:"multiple" class="selectpicker"  data-max-options="" %}
+					</div>
+				</div>
+
+
+				<div class="row mt-3">
+					<div class="col">
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+				</div>
+			
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{# /StudX_dir/StudX/user/templates/user/user_list.html #}
+
+{% extends 'dashboard_base.html' %}
+{% load static i18n %}
+
+{% block title %}User{% endblock %}
+
+{% block content %}
+
+<div class="card">  
+{% include 'user/user_list_filter.html' %} 	
+	<div class="card-body"> 
+	{% if user_list %}
+		<table class="table table-responsive-sm table-hover table-outline" id="UserdataTable" cellspacing="0">
+			<thead>
+				<tr>
+					<th>{% trans "Status" %}</th>
+					<th>{% trans "Username" %}</th>
+					<th>{% trans "Firstname" %}</th>
+					<th>{% trans "Lastname" %}</th>
+					<th>{% trans "Role" %}</th>
+					<th>{% trans "Email" %}</th>
+					<th class="nosort">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+			{% for user in user_list %}
+				{% include 'user/user_item_list.html' %}
+			{% endfor %}
+			</tbody>
+				<tr></tr>
+			<tfoot></tfoot>
+		</table>
+		
+	{% else %}
+		{% trans "No result" %}
+	{% endif %}
+	</div>
+</div>
+
+{% endblock %}

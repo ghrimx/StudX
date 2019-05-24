@@ -1,0 +1,135 @@
+<!-- /StudX_dir/StudX/student/templates/student/disciplines/discipline_details.html -->
+
+{% extends 'dashboard_base.html' %}
+{% load static i18n student_tags %}
+
+{% block title %}disciplines details{% endblock %}
+
+{% block content %}
+
+<div class="container">  
+<div class="row">
+      <div class="col-sm-3">
+	  <div class="card">
+		<div class="card-body">
+			{% if discipline_record.student.picture %}
+				<img class="rounded-circle mx-auto d-block" src="/student{{ discipline_record.student.picture.url }}" height="100" width="100" alt="{{ discipline_record.student.fname}} {{discipline_record.student.lname}}" />
+			{% else %}
+				<img class="rounded-circle mx-auto d-block" height="100" width="100" src="/student/images/profile/default_user.jpeg" alt="default_img"/>
+			{% endif %}
+			<h4 class="profile-username text-center">{{ discipline_record.student.fname}} {{discipline_record.student.lname}}</h4>
+			<ul class="list-group">
+				<li class="list-group-item"><b>{% trans "Matricule" %}</b><a href="{% url 'student:view_student' discipline_record.student.uuid %}" class="float-right text-aqua">{{ discipline_record.student.matricule }}</a></li>
+				<li class="list-group-item"><b>{% trans "Class"%}</b><a class="float-right text-aqua">{{ discipline_record.student.classe.classe_name }}</a></li>
+				<li class="list-group-item"><b>Section</b><a class="float-right text-aqua">{{ discipline_record.student.section.section_name }}</a></li>
+			</ul>
+      </div>
+	  </div>
+	  </div>
+      <!-- col-sm-3 end -->
+	  
+<div class="col-sm-9"> 
+	<div class="row">
+	 <div class="col"> 
+	<div class="card">   
+	<div class="card-body">  
+	  <table class="table table-hover table-condensed table-responsive-md mytable">
+		<thead> 
+			<!-- None -->
+		</thead>
+		<tbody>
+			<tr>
+				<td>{% trans "Sanction" %}</td>
+				<td>{{ discipline_record.type.sanction }}</td>
+			</tr>
+			<tr>
+				<td>{% trans "Date" %}</td>
+				<td>{{ discipline_record.fact_date }} </td>
+			</tr>
+			<tr>
+				<td>{% trans "Motif" %}</td>
+				{% if discipline_record.motif %}
+					<td>{{ discipline_record.motif|safe }}</td>
+				{% else %}
+					<td>N/A</td>
+				{% endif %}
+			</tr>
+			{% if discipline_record.comment %}
+				<tr>
+					<td>{% trans "Comment" %}</td>
+					<td>{{ discipline_record.comment}}</td>
+				</tr>
+			{% endif %}
+				<tr>
+					<td>{% trans "Created by" %}</td>
+					<td>{{ discipline_record.creator.get_full_name }}, {{ discipline_record.created_at }}</td>
+				</tr>
+			{% if discipline_record.last_user %}
+				<tr>
+					<td>{% trans "Modified by" %}</td>
+					<td>{{ discipline_record.last_user.get_full_name }}, {{ discipline_record.updated_at }}</td>
+				</tr>
+			{% endif %}
+		</tbody>
+	  </table> 
+
+	  {% if discipline_details %}
+		<table class="table mt-3 table-hover table-condensed table-responsive-md mytable">
+			 <thead>
+				<tr>
+					<th>#</th>
+					<th>{% trans "Start on" %}</th>
+					{% if discipline_params.start_time %}<th>{% trans "Time" %}</th>{% endif %}
+					{% if discipline_params.end_date %}<th>{% trans "Finish on" %}</th>{% endif %}
+					{% if discipline_params.end_time %}<th>{% trans "Time" %}</th>{% endif %}
+					<th>{% trans "Description" %}</th>
+				</tr>
+			 </thead>
+			 <tbody>
+				{% for d in discipline_details %}
+				<tr>
+					<td>{{ forloop.counter }}</td>
+					<td>{{ d.start_date|date:"l d N" }}</td>
+					{% if discipline_params.start_time %}<td>{{ d.start_time }}</td>{% endif %}
+					{% if discipline_params.end_date %}<td>{{ d.finish_date|date:"l d N" }}</td>{% endif %}
+					{% if discipline_params.end_time %}<td>{{ d.finish_time }}</td>{% endif %}
+					<td>{% if d.description %}{{ d.description }}{% else %}N/A{% endif %} </td>
+				{% endfor %}
+				</tr>
+			 </tbody>
+		</table>
+		{% endif %}
+	  </div>
+	</div>
+	</div>
+	<div class="col-auto"> 
+	{% if discipline_record.creator == user %}
+		<div class="btn-group-vertical btn-group-sm" role="group">
+			<a class="btn btn-outline-info btn-sm" href="{% url 'student:edit_discipline' discipline_record.id %}"><i class="fas fa-pencil-alt"></i> </a>
+			<a class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#DisciplineDeleteModal" href="#""><i class="fas fa-trash-alt"></i> </a>
+		</div>
+		<!-- Discipline Delete Modal -->
+		<div class="modal" id="DisciplineDeleteModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">{% trans "Are you sure ?" %}</div>
+					<div class="modal-footer">
+						<form action="" method='POST'>
+							{% csrf_token %}
+							<button type="button" class="btn btn-danger" data-dismiss="modal">{% trans "Cancel" %}</button>
+							<a class="btn btn-secondary" href="{% url 'student:delete_discipline' discipline_record.id %}">{% trans "Confirm" %}</a>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div> <!-- Discipline Delete Modal - END -->
+	{% endif %}
+		</div>
+	</div>
+</div>
+
+	  
+
+	</div>
+</div> <!-- container - END -->
+{% endblock %}

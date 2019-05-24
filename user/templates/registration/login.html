@@ -1,0 +1,35 @@
+<!-- /StudX_dir/StudX/user/templates/registration/login.html -->
+
+{% load staticfiles %}
+
+<!DOCTYPE html >
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+		
+        <title>{% block title %}StudX{% endblock %}</title>
+
+    </head>
+	<body>    
+		<div class="login-page">
+			{% block main %}
+			<div class="form">
+				<div class="welcome"><h1>StudX</h1></div>
+					<form class="login-form" method="post">
+						{% csrf_token %}
+						{{ form.as_p }}
+						<button class="btn btn-primary">login</button>
+					</form>
+			{% endblock %}
+			</div>
+		</div>
+	</body>
+</html>

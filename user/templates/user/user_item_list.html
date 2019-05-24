@@ -1,0 +1,25 @@
+{# /StudX_dir/StudX/user/templates/user/user_item_list.html #}
+
+{% load i18n %}
+
+<tr>	
+	<td>
+		{% if user.is_active %}
+			<span class="badge badge-pill badge-success">{% trans "Active" %}</span>
+		{% else %}
+			<span class="badge badge-pill badge-danger">{% trans "Inactive" %}</span>
+		{% endif %}
+	</td>
+	<td>{{ user.username }}</td>
+	<td>{{ user.first_name }}</td>
+	<td>{{ user.last_name }}</td>
+	<td>{% for group in user.groups.all %}{{ group }}{% endfor %}</td>
+	<td>{{ user.email }}</td>
+	<td class="actions align-middle">
+		<div class="btn-group btn-group-sm" role="group">
+			<a class="btn btn-outline-info btn-sm" href="{% url 'user:edit_user' user.id %}"><i class="fas fa-pencil-alt"></i></a>
+			<a class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#UserDeleteModal" href="#"><i class="fas fa-trash-alt"></i></a>
+		</div>
+		{% include 'user/user_delete_modal.html' %}
+	</td>
+</tr>

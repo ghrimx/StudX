@@ -1,0 +1,28 @@
+<!-- /StudX_dir/StudX/student/templates/student/student_list_pagination.html -->
+
+{% load i18n %}
+{% load student_tags %}
+
+{% if student_page.has_other_pages %}
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    {% if student_page.has_previous %}
+      <li class="page-item"><a class="page-link" href="?page={{ student_page.previous_page_number }}">{% trans "Previous" %}</a></li>
+    {% else %}
+      <li class="page-item disabled"><a class="page-link" href="#">{% trans "Previous" %}</a></li>
+    {% endif %}
+    {% for i in student_page.paginator.page_range %}
+      {% if student_page.number == i %}
+        <li class="page-item active"><a class="page-link" href="#">{{ i }} <span class="sr-only">(current)</span></a></li>
+      {% else %}
+        <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if student_page.has_next %}
+      <li class="page-item"><a class="page-link" href="?page={{ student_page.next_page_number }}">{% trans "Next" %}</a></li>
+    {% else %}
+      <li class="page-item disabled"><a class="page-link" href="#">{% trans "Next" %}</a></li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}

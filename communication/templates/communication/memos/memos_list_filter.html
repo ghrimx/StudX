@@ -1,0 +1,15 @@
+{# /StudX_dir/StudX/communication/templates/communication/memos/memos_list_filter.html #}
+
+{% load i18n %}
+
+<nav class="navbar navbar-light bg-light justify-content-between">
+	<div class="btn-group" role="group" aria-label="First group">
+		<button type="button" class="btn btn-sm btn-outline-secondary" disabled>Total: {{ memos_obj_list|length }}</button>
+	</div>
+
+	<div class="btn-group float-right" role="group">
+		<a class="btn btn-secondary btn-sm" href="{% url 'communication:create_memo' %}"><i class="fa fa-plus" aria-hidden="true"></i></a>
+		<a class="btn btn-sm btn-secondary" href="#"><i class="fas fa-flag"></i></a>
+	</div>
+
+</nav>

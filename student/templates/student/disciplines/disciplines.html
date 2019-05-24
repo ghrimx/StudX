@@ -1,0 +1,63 @@
+{# /StudX_dir/StudX/student/templates/student/disciplines/disciplines.html #}
+
+{% extends 'dashboard_base.html' %}
+{% load static student_tags i18n %}
+
+{% block title %}Disciplines {% endblock %}
+
+{% block content %}
+
+<div class="card">
+	{% include 'student/disciplines/disciplines_list_filter.html' %} 
+	<div class="card-body">
+		{% if disciplines_obj_list|length == 0 %}
+			{% trans "Nothing found" %}
+		{% else %}
+			<div class="table-responsive">
+				<table class="table table-bordered" id="disciplinesMainTable" width="100%" cellspacing="0">
+					<thead>
+						<tr>
+							<th>Date</th>
+							<th>Sanctions</th>
+							<th>Status</th>
+							<th>{% trans "Student" %}</th>
+							<th>Classe</th>
+							<th>{% trans "Creator" %}</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+					{% for discipline in disciplines_obj_list %}
+					<tr>
+						<td>{{ discipline.fact_date }}</td>
+						<td><a href="{% url 'student:discipline_details' discipline.id %}">{% if discipline.type %}{{ discipline.type.sanction }}{% else %}{% trans "No sanction" %}{% endif %}</a></td>
+						<td>
+							<span class="badge badge-{{ discipline.status|get_status_color }}">{{ discipline.get_status_display }}</span>
+						</td>
+						<td><a href="{% url 'student:view_student' discipline.student.uuid %}">{{ discipline.student.fname }} {{ discipline.student.lname }}</a></td>
+						<td>{{ discipline.student.classe.classe_name }}</td>
+						<td>{{ discipline.creator.get_full_name }}</td>
+						<td class="actions">
+							<div class="btn-group btn-group-sm" role="group">
+								<a class="btn btn-outline-info btn-sm" href="{% url 'student:discipline_details' discipline.id %}"><i class="fas fa-eye"></i> </a>
+								{% if discipline.creator == user %}
+									<a class="btn btn-outline-info btn-sm" href="{% url 'student:edit_discipline' discipline.id %}"><i class="fas fa-pencil-alt"></i> </a>
+									<a class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#DisciplineDeleteModal" href=""><i class="fas fa-trash-alt"></i> </a>
+									</div>
+									{% include 'student/disciplines/discipline_delete_modal.html' %}
+								{% endif %}
+						</td>
+					</tr>
+			  {% endfor %}
+					</tbody>
+						<tr></tr>
+					<tfoot></tfoot>
+				</table>
+			</div> <!-- table-responsive - END -->
+		{% endif %}
+	</div> <!-- card-body - END -->
+</div> <!-- card - END -->
+
+{% endblock %}
+
+{% block extra_js %}<script src="{% static 'js/datatables/datatables.js' %}"></script>{% endblock extra_js %}

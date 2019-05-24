@@ -1,0 +1,19 @@
+{# /StudX_dir/StudX/user/templates/user/user_delete_modal.html #}
+
+{% load i18n %}
+
+<!-- User Delete Modal -->
+<div class="modal" id="UserDeleteModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">{% trans "Are you sure ?" %}</div>
+			<div class="modal-footer">
+				<form action="" method='POST'>
+				{% csrf_token %}
+					<button type="button" class="btn btn-danger" data-dismiss="modal">{% trans "Cancel" %}</button>
+					<a class="btn btn-secondary" href="{% url 'user:delete_user' user.id %}">{% trans "Confirm" %}</a>
+				</form>
+			</div>
+		</div>
+	</div>
+</div> <!-- User Delete Modal - END -->

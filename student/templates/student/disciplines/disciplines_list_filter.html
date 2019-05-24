@@ -1,0 +1,52 @@
+{# /StudX_dir/StudX/student/templates/student/disciplines/disciplines_list_filter.html #}
+
+{% load i18n %}
+
+<nav class="navbar navbar-light bg-light justify-content-between">
+	<div class="btn-group" role="group" aria-label="First group">
+		<button type="button" class="btn btn-sm btn-outline-secondary" disabled>Total: {{ disciplines_obj_list|length }}</button>
+	</div>
+
+	<form id="discipline_list_filter" method="POST" action="">{% csrf_token %}
+			<div class="form-row" >
+				<div class="col">
+					<select class="form-control form-control-sm"}  name="sanction">
+						<option value=""> Sanctions </option>
+						{% for d in disciplines_type_obj_list %}
+							<option value="{{d.id}}" {% if request.POST.sanction %}{% ifequal d.id request.POST.sanction|add:"0" %}selected{% endifequal %}{% endif %}>{{d.sanction }}
+							</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="col">
+					<input type="text" class="form-control form-control-sm" placeholder={% trans "Firstname" %}  name="fname" {% if request.POST %} value="{{request.POST.fname}}" {% endif %}>
+				</div>
+				<div class="col">
+					<input type="text" class="form-control form-control-sm" placeholder={% trans "Lastname" %}  name="lname" {% if request.POST %} value="{{request.POST.lname}}" {% endif %}>
+				</div>
+				<div class="col-md-auto">
+					<select class="form-control form-control-sm"}  name="classe">
+						<option value=""> Classe </option>
+						{% for c in classe_obj_list %}
+							<option value="{{c.id}}" {% if request.POST.classe %}{% ifequal c.id request.POST.classe|add:"0" %}selected{% endifequal %}{% endif %}>{{c.classe_name}}
+							</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="col-md-auto">
+					<input type="date" class="form-control form-control-sm" placeholder={% trans "date" %}  name="fact_date" {% if request.POST %} value="{{request.POST.fact_date}}" {% endif %}>
+				</div>
+				<div class="col-md-auto">
+					<button class="btn btn-info save btn-sm" type="submit">Search</button>
+					<a href="{% url 'student:disciplines_list' %}" class="btn btn-outline-info btn-sm">Clear</a>
+				</div>
+			</div>
+		
+	</form>
+	
+	<div class="btn-group float-right" role="group">
+		<a class="btn btn-secondary btn-sm" href="{% url 'student:create_discipline' %}"><i class="fa fa-plus" aria-hidden="true"></i></a>
+		<a class="btn btn-sm btn-secondary" href="#"><i class="fas fa-flag"></i></a>
+	</div>
+
+</nav>

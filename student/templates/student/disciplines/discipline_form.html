@@ -1,0 +1,196 @@
+<!-- /StudX_dir/StudX/student/templates/student/disciplines/discipline_form.html -->
+
+{% extends 'dashboard_base.html' %}
+{% load static i18n widget_tweaks %}
+
+{% block content %}
+
+{{ form.media }}
+
+<div class="container"> 
+	<div class="card"> 
+		<div class="card-body"> 
+		<form method="post">{% csrf_token %}
+			
+			{{ form.non_field_errors }}
+			
+			{% for hidden_field in form.hidden_fields %}
+				{{ hidden_field.errors }}
+				{{ hidden_field }}
+			{% endfor %}
+			
+			<div class="row">
+
+				<div class="col">
+					<div class="form-group">
+						{{ form.student.label_tag }}
+						{% render_field form.student class="form-control selectpicker" data-style="btn btn-outline-danger" data-live-search="true" %}
+						{% if form.student.help_text %}
+							<small class="form-text text-muted">{{ form.student.help_text }}</small>
+						{% endif %}
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-group">
+						{{ form.type.label_tag }}
+						{% render_field form.type class="form-control" %}
+						{% if form.type.help_text %}
+							<small class="form-text text-muted">{{ form.type.help_text }}</small>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						{{ form.fact_date.label_tag }}
+						{% render_field form.fact_date class="form-control" type="date" %}
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-group">
+						{{ form.status.label_tag }}
+						{% render_field form.status class="form-control" %}
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-group">
+						{{ form.issuer.label_tag }}
+						{% render_field form.issuer class="form-control" %}
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-group sanction-element">
+						{{ form.location.label_tag }}
+						{% render_field form.location class="form-control" %}
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						{{ form.motif.label_tag }}
+						{% render_field form.motif class="form-control" %}
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						{{ form.comment.label_tag }}
+						{% render_field form.comment class="form-control" %}
+					</div>
+				</div>
+			</div>
+			
+			{{ formset.management_form }}
+		<fieldset>
+			{% for form in formset %}
+			<div class="row my-2 py-2 border-top myformset sanction-element">
+				<div class="col">
+					<div class="row">
+						{{ form.id  }}
+						<div class="col">
+							<div class="form-group">
+								{{ form.start_date.label_tag }}
+								{% render_field form.start_date class="form-control" type="date" %}
+							</div>
+						</div>
+						<div class="col">
+							<div class="form-group">
+								{{ form.start_time.label_tag }}
+								{% render_field form.start_time class="form-control" type="time" %}
+							</div>
+						</div>
+						<div class="col">
+							<div class="form-group">
+								{{ form.finish_date.label_tag }}
+								{% render_field form.finish_date class="form-control" type="date" %}
+							</div>
+						</div>
+						<div class="col">
+							<div class="form-group">
+								{{ form.finish_time.label_tag }}
+								{% render_field form.finish_time class="form-control" type="time" %}
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<div class="form-group">
+								{{ form.description.label_tag }}
+								{% render_field form.description|attr:"rows:1" class="form-control" %}
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				{% if form.instance.pk %}
+					{% render_field form.DELETE class="form-check-input" %}
+					<!-- <label class="form-check-label" for="delete"> -->
+						<!-- {% trans "Delete" %} -->
+					<!-- </label> -->
+				{% endif %}
+	
+			</div>
+			{% endfor %}
+		</fieldset>
+			
+			<div class="row my-3">
+				<div class="col">
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+			</div>
+		</form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
+
+{% block extra_js %}
+
+{% comment %}
+	Add two buttons (delete/add) to the inlineformset.
+	This allows to add occurence of a sanction
+{% endcomment %}
+<script type="text/javascript" src="{% static 'js/jquery.formset.js' %}"></script>
+<script>
+    $('.myformset').formset({
+        addText: '{% trans "Add occurence" %}',
+		addCssClass: 'btn btn-outline-success btn-sm my-1 sanction-element',
+		deleteCssClass: 'text-danger m-2',
+        deleteText: '<i class="fas fa-times-circle"></i>',
+		prefix: '{{ formset.prefix }}',
+    });
+</script>
+
+{% comment %}
+	Show sanction form element if selector changed.
+	By default the selector is on "no sanction" and consequently sanction form elements are hidden
+{% endcomment %}
+<script>
+	if(document.getElementById('id_type').value == "1") {
+		$('.sanction-element').hide();
+	}
+
+	$('#id_type').change(function(){
+		if(document.getElementById('id_type').value == "1") {
+			$('.sanction-element').hide();
+		}
+		else {
+			$('.sanction-element').show();
+		}
+	});
+
+</script>
+
+{% comment %} 
+	To style only selects with the selectpicker class 
+{% endcomment %}
+<script>
+	$('.selectpicker').selectpicker();
+</script>
+
+{% endblock extra_js %}

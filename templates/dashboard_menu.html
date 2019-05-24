@@ -1,0 +1,75 @@
+<!-- /StudX_dir/StudX/templates/dashboard_menu.html -->
+
+{% load i18n %}
+
+<ul class="sidebar navbar-nav">
+	<!-- Dashboard -->
+	<li class="nav-item active"> 
+		<a class="nav-link" href="{% url 'dashboard:dashboard' %}">
+			<i class="nav-icon fas fa-fw fa-tachometer-alt"></i>
+			<span>Dashboard</span>
+		</a>
+	</li>
+	<!-- Student -->
+	<li class="nav-item">
+		<a class="nav-link" href="{% url 'student:student_list' %}">
+			<i class=" nav-icon fas fa-address-card"></i>
+			<span>{% trans "Student" %}</span>
+		</a>
+	</li>
+	<!-- Disciplines -->
+	<li class="nav-item dropdown">
+		<a class="nav-link dropdown-toggle" href="#" id="disciplinesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<i class="nav-icon fas fa-user-times"></i>
+			<span>Disciplines</span>
+		</a>
+		<div class="dropdown-menu" aria-labelledby="disciplinesDropdown">
+			<a class="dropdown-item" href="{% url 'student:disciplines_list' %}">{% trans 'List' %}</a>
+			<a class="dropdown-item" href="{% url 'student:create_discipline' %}">Nouveau fait</a>
+		</div>
+	</li>
+	<!-- Attendance -->
+	<li class="nav-item dropdown">
+		<a class="nav-link dropdown-toggle" href="#" id="attendanceDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<i class="nav-icon fas fa-user-clock"></i>
+			<span>{% trans "Attendance" %}</span>
+		</a>
+		<div class="dropdown-menu" aria-labelledby="attendanceDropdown">
+			<a class="dropdown-item" href="{% url 'student:in_out_list' 'Arrival' %}">{% trans 'Arrivals list' %}</a>
+			<a class="dropdown-item" href="{% url 'student:attendance_list' %}">{% trans 'Attendances list' %}</a>
+			<a class="dropdown-item" href="#">Nouveau retard</a>
+		</div>
+	</li>
+	<!-- Communication -->
+	<li class="nav-item dropdown">
+		<a class="nav-link dropdown-toggle" href="#" id="communicationDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<i class="nav-icon fas fa-bullhorn"></i>
+			<span>{% trans "Memos" %}</span>
+		</a>
+		<div class="dropdown-menu" aria-labelledby="communicationDropdown">
+			<a class="dropdown-item" href="{% url 'communication:memos_list' %}">{% trans 'Memos' %}</a>
+			<a class="dropdown-item" href="">{% trans 'Inbox' %}</a>
+		</div>
+	</li>
+	<!-- Schedule -->
+	<li class="nav-item">
+		<a class="nav-link" href="{% url 'schedule:schedule_main' %}">
+			<i class=" nav-icon fas fa-calendar-alt"></i>
+			<span>{% trans "Schedule" %}</span>
+		</a>
+	</li>
+	
+	{# Admin links #}
+	{% if perms.user %}
+		<li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<i class="nav-icon fas fa-life-ring"></i>
+				<span>{% trans "Administration" %}</span>
+			</a>
+			<div class="dropdown-menu" aria-labelledby="adminDropdown">
+				{% if perms.user.can_add_user and perms.user.can_edit_user  %}<a class="dropdown-item" href="{% url 'user:user_list' %}">{% trans 'User' %}</a>{% endif %}
+				<a class="dropdown-item" href="">{% trans 'Settings' %}</a>
+			</div>
+		</li>
+	{% endif %}
+</ul>

@@ -1,0 +1,218 @@
+{# /StudX_dir/StudX/student/templates/student/student_details_discipline.html #}
+
+{% load i18n student_tags %}
+
+<!-- Statistiques list group -->
+<div class="row justify-content-md-center">
+	<div class="col">
+		<ul class="list-group">
+			<!-- header -->
+			<li class="list-group-item active d-flex list-group-item-action justify-content-between align-items-center"><i class="fas fa-user-times"></i> {% trans "Disciplinary Infractions" %}<span class="badge badge-danger badge-pill">{{ student_disciplines_count }}</span></li>
+			
+			{% for item in student_discipline_stats %}
+				<li class="list-group-item d-flex list-group-item-action justify-content-between align-items-center">
+					{{item.type__sanction}}
+					<span class="badge badge-primary badge-pill">{{ item.num_sanction }}</span>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+	
+	<div class="col">
+		<ul class="list-group">
+			<!-- header -->
+			<li class="list-group-item active d-flex list-group-item-action justify-content-between align-items-center"><i class="fas fa-calendar-times"></i> {% trans "Absences"%}<span class="badge badge-danger badge-pill">{{ student_absences_count }}</span></li>
+			
+			{% for item in student_absences_stats %}
+				{% if item.is_excused  %}
+					<li class="list-group-item d-flex list-group-item-action justify-content-between align-items-center">
+						{% trans "Justified" %}
+						<span class="badge badge-primary badge-pill">{{ item.num_abscences }}</span>
+					</li>
+				{% else %}
+					<li class="list-group-item d-flex list-group-item-action justify-content-between align-items-center">
+						{% trans "Non justified" %}
+						<span class="badge badge-primary badge-pill">{{ item.num_abscences }}</span>
+					</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+	</div>
+	
+	<div class="col">
+		<ul class="list-group">
+			<!-- header -->
+			<li class="list-group-item active d-flex list-group-item-action justify-content-between align-items-center"><i class="fas fa-clock"></i> {% trans "Tardiness"%}<span class="badge badge-danger badge-pill">{{ student_tardiness_count }}</span></li>
+			
+			{% for item in student_tardiness_stats %}
+				{% if item.is_excused  %}
+					<li class="list-group-item d-flex list-group-item-action justify-content-between align-items-center">
+						{% trans "Justified" %}
+						<span class="badge badge-primary badge-pill">{{ item.num_tardiness }}</span>
+					</li>
+				{% else %}
+					<li class="list-group-item d-flex list-group-item-action justify-content-between align-items-center">
+						{% trans "Non justified" %}
+						<span class="badge badge-primary badge-pill">{{ item.num_tardiness }}</span>
+					</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+	</div>
+</div>
+<!-- Statistiques list group END -->
+
+<!-- Disciplines table -->
+{% if student_disciplines %}
+<div class="row mt-3">
+	<div class="col"> 
+		<div class="card">
+			<div class="card-header p-3 mb-2 bg-primary text-white"><i class="fas fa-user-times"></i> {% trans "Disciplinary Infractions" %}</div>
+			<div class="card-body">
+				<div class="table-responsive">
+					<table class="table table-bordered" id="disciplinesTable" width="100%" cellspacing="0">
+					   <thead>
+						  <tr>
+							<th>{% trans "Date" %}</th>
+							<th>Sanctions</th>
+							<th>{% trans "Creator" %}</th>
+							<th>{% trans "Motif" %}</th>
+							<th style="width: 20px;">Status</th>
+							<th style="width: 20px;">Action</th>
+						  </tr>
+					   </thead>
+					   <tbody>
+						  {% for discipline in student_disciplines %}
+							  <tr>
+								<td>{{ discipline.fact_date }}</td>
+								<td><a href="{% url 'student:discipline_details' discipline.id %}">{% if discipline.type.sanction %}{{ discipline.type.sanction }}{% else %}{% trans "No sanction" %}{% endif %}</a></td>
+								<td>{{ discipline.creator.get_full_name }}</td>
+								<td>{{ discipline.motif|truncatechars_html:50|safe }}</td>
+								<td><span class="badge badge-{{ discipline.status|get_status_color }} badge-pill">{{ discipline.get_status_display }}</span></td>
+								<td class="actions">
+								<div class="btn-group btn-group-sm" role="group">
+								   <a class="btn btn-outline-info btn-sm" href="{% url 'student:discipline_details' discipline.id %}"><i class="fas fa-eye"></i> </a>
+								   {% if discipline.creator == user %}
+										<a class="btn btn-outline-info btn-sm" href="{% url 'student:edit_discipline' discipline.id %}"><i class="fas fa-pencil-alt"></i> </a>
+										<a class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#DisciplineDeleteModal" href="#""><i class="fas fa-trash-alt"></i> </a>   
+								</div>
+										{% include 'student/disciplines/discipline_delete_modal.html' %}
+									{% endif %}
+								 </td>
+							  </tr>
+						  {% endfor %}
+					   </tbody>
+					</table>
+				</div> <!-- table-responsive - END -->
+			</div> <!-- card-body - END -->
+		</div> <!-- card - END -->
+	</div> <!-- col - END -->
+</div> <!-- row mt-3 - END -->
+{% endif %}
+<!-- Disciplines table END -->
+
+<!-- Tardiness table -->
+{% if student_tardiness %}
+<div class="row mt-3">
+	<div class="col">
+		<div class="card">
+			<div class="card-header p-3 mb-2 bg-primary text-white"><i class="fas fa-clock"></i> {% trans "Tardiness" %}</div>
+			<div class="card-body">
+				<div class="table-responsive">
+					<table class="table table-bordered" id="tardinessTable" width="100%" cellspacing="0">
+					   <thead>
+						  <tr>
+							<th style="width: 10px;"></th>
+							<th>Date</th>
+							<th>{% trans "Time" %}</th>
+							<th>{% trans "Difference" %}</th>
+							<th>{% trans "Justification" %}</th>
+							<th style="width: 20px;">Action</th>
+						  </tr>
+					   </thead>
+					   <tbody>
+						  {% for element in student_tardiness %}
+							  <tr>
+								<td>
+									{% if element.is_excused  %}
+										<i class="fas fa-clock text-success" data-toggle="tooltip" title='{% trans "Justified" %}'></i>
+									{% else %}
+										<i class="fas fa-clock text-danger" data-toggle="tooltip" title='{% trans "Non justified" %}'></i>
+									{% endif%}
+								</td>
+								<td>{{ element.apply_on_date }}</td>
+								<td>{{ element.apply_on_time }}</td>
+								<td>{{ element.time_delta|time:"H:i" }}</td>
+								<td>{{ element.justification }}</td>
+								<td>
+									<div class="btn-group btn-group-sm" role="group">
+										<a class="btn btn-outline-info btn-sm" href="{% url 'student:in_out_details' 'Arrival' element.id %}"><i class="fas fa-eye"></i> </a>
+										{% if element.creator == user %}
+										<a class="btn btn-outline-info btn-sm" href=""><i class="fas fa-pencil-alt"></i> </a>
+										<a class="btn btn-outline-info btn-sm" href="#"><i class="fas fa-trash-alt"></i> </a>
+										{% endif %}
+									</div>
+								</td>
+							  </tr>
+						  {% endfor %}
+					   </tbody>
+					</table>
+				</div><!-- table-responsive - END -->
+			</div> <!-- card-body - END -->
+		</div> <!-- card - END -->
+	</div><!-- col - END -->
+</div><!-- row mt-3 - END -->
+{% endif %}
+<!-- Tardiness table END-->
+
+
+<!-- Attendances table -->
+{% if student_attendances %}
+<div class="row mt-3">
+	<div class="col">
+		<div class="card">
+			<div class="card-header p-3 mb-2 bg-primary text-white">
+			<i class="fas fa-calendar-times"></i> {% trans "Absences" %}</div>
+			<div class="card-body">
+				<div class="table-responsive">
+					<table class="table table-bordered" id="attendanceTable" width="100%" cellspacing="0">
+					   <thead>
+						  <tr>
+							<th style="width: 10px;"></th>
+							<th>Date</th>
+							<th>{% trans "Motif" %}</th>
+							<th style="width: 20px;">Action</th>
+						  </tr>
+					   </thead>
+					   <tbody>
+						  {% for element in student_attendances %}
+							  <tr>
+								<td>
+									{% if element.is_excused  %}
+										<i class="fas fa-circle text-success" data-toggle="tooltip" title='{% trans "Justified" %}'></i>
+									{% else %}
+										<i class="fas fa-circle text-danger" data-toggle="tooltip" title='{% trans "non justified" %}'></i>
+									{% endif%}
+								</td>
+								<td>{{ element.start_date }}</td>
+								<td>{{ element.motif }}</td>
+								<td>
+									<div class="btn-group btn-group-sm" role="group">
+										<a class="btn btn-outline-info btn-sm" href=""><i class="fas fa-eye"></i> </a>
+										{% if element.creator == user %}
+										<a class="btn btn-outline-info btn-sm" href=""><i class="fas fa-pencil-alt"></i> </a>
+										<a class="btn btn-outline-info btn-sm" href="#"><i class="fas fa-trash-alt"></i> </a>
+										{% endif %}
+									</div>
+								</td>
+							  </tr>
+						  {% endfor %}
+					   </tbody>
+					</table>
+				</div><!-- table-responsive - END -->
+			</div> <!-- card-body - END -->
+		</div> <!-- card - END -->
+	</div><!-- col - END -->
+</div><!-- row mt-3 - END -->
+{% endif %}
+<!-- Attendances table END-->

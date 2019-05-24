@@ -1,0 +1,43 @@
+{# /StudX_dir/StudX/student/templates/student/student_details.html #}
+
+{% extends 'dashboard_base.html' %}
+{% load static i18n student_tags %}
+
+{% block title %}Student details{% endblock %}
+
+{% block content %}
+
+
+      <!-- Tabs nav -->
+      <ul class="nav nav-tabs tabs-bordered" role="tablist">
+         <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#profile">Profile</a></li>
+         <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#guardian">{% trans "Guardian" %}</a></li>
+		 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#discipline2">{% trans "Discipline" %}</a></li>
+         <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#documents">Documents</a></li>
+         <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#student_note">{% trans "Notes"%}</a></li>
+      </ul><!-- Tabs nav end -->
+      <!-- Tabs content --> 
+      <div class="tab-content">
+         <div id="profile" class="tab-pane fade in active show active">
+            {% include 'student/student_details/student_details_profile_details.html' %}
+         </div>
+         <div id="guardian" class="tab-pane fade">
+            {% include 'student/student_details/student_details_guardian.html' %}
+         </div>
+		 <div id="discipline2" class="tab-pane fade">
+            {% include 'student/student_details/student_details_discipline.html' %}
+         </div>
+         <div id="documents" class="tab-pane fade">
+            <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+         </div>
+		 <div id="student_note" class="tab-pane fade">
+			{% include 'student/notes/student_notes.html' %}
+		 </div>
+      </div><!-- tab-content end -->
+
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/datatables/datatables.js' %}"></script>
+{% endblock extra_js %}

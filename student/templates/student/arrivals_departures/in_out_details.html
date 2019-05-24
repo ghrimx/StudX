@@ -1,0 +1,107 @@
+{# /StudX_dir/StudX/student/templates/student/arrivals/in_out_details.html #}
+
+{% extends 'dashboard_base.html' %}
+{% load static i18n student_tags %}
+
+{% block content %}
+
+<div class="container">  
+	<div class="row">
+		<div class="col-sm-3">
+			<div class="card">
+				<div class="card-body">
+					{% if record.student.picture %}
+					<img class="rounded-circle mx-auto d-block" src="/student{{ record.student.picture.url }}" height="100" width="100" alt="{{ record.student.fname}} {{record.student.lname}}" />
+					{% else %}
+					<img class="rounded-circle mx-auto d-block" height="100" width="100" src="/student/images/profile/default_user.jpeg" alt="default_img"/>
+					{% endif %}
+					<h4 class="profile-username text-center">{{ record.student.fname}} {{record.student.lname}}</h4>
+					<ul class="list-group">
+						<li class="list-group-item"><b>{% trans "Matricule" %}</b><a class="float-right text-aqua" href="{% url 'student:view_student' record.student.uuid %}" >{{ record.student.matricule }}</a></li>
+						<li class="list-group-item"><b>{% trans "Class"%}</b><a class="float-right text-aqua">{{ record.student.classe.classe_name }}</a></li>
+						<li class="list-group-item"><b>Section</b><a class="float-right text-aqua">{{ record.student.section.section_name }}</a></li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- col-sm-3 end -->
+
+		<div class="col-sm-9">  
+			<div class="row">
+				<div class="col"> 
+					<div class="card">  
+						<div class="card-body"> 
+							<table class="table table-hover table-condensed table-responsive-md mytable">
+								<thead><!-- None --></thead>
+								<tbody>
+									<tr>	
+										<td>Type</td>
+									{% if record.is_excused  %}
+										<td class="text-success">{% trans "Late excused" %}</td>
+									{% else %}
+										<td class="text-danger">{% trans "Late unexcused" %}</td>
+									{% endif %}
+									</tr>
+									<tr>
+										<td>{% trans "Date" %}</td>
+										<td>{{ record.apply_on_date }} </td>
+									</tr>
+									<tr>
+										<td>{% trans "Time of arrival" %}</td>
+										<td>{{ record.apply_on_time|time:"H:i" }}</td>
+									</tr>
+									<tr>
+										<td>{% trans "Difference" %}</td>
+										<td>{{ record.time_delta|time:"H:i" }}</td>
+									</tr>
+									<tr>
+										<td>{% trans "Justification" %}</td>
+									{% if record.justification %}
+										<td>{{ record.justification }}</td>
+									{% else %}
+										<td>N/A</td>
+									{% endif %}
+									</tr>
+									{% if record.document %}
+									<tr>
+										<td>{% trans "document" %}</td>
+										<td>{{ record.document}}</td>
+									</tr>
+									{% endif %}
+									{% if record.comment %}
+									<tr>
+										<td>{% trans "Comment" %}</td>
+										<td>{{ record.comment}}</td>
+									</tr>
+									{% endif %}
+									<tr>
+										<td>{% trans "Created by" %}</td>
+										<td>{{ record.creator.get_full_name }}, {{ record.created_at }}</td>
+									</tr>
+									{% if record.last_user %}
+									<tr>
+										<td>{% trans "Modified by" %}</td>
+										<td>{{ record.last_user.get_full_name }}, {{ record.updated_at }}</td>
+									</tr>
+									{% endif %}
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="col-auto"> 
+				{% if record.creator == user %}
+					<div class="btn-group-vertical btn-group-sm" role="group">
+						<a class="btn btn-outline-info btn-sm" href="{% url 'student:edit_inout' 'Arrival' record.id %}"><i class="fas fa-pencil-alt"></i> </a>
+						<a class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#ArrivalDepartureDeleteModal" href="#""><i class="fas fa-trash-alt"></i> </a>
+					</div>
+					{% include 'student/arrivals_departures/in_out_delete_modal.html' %}
+				{% endif %}
+				</div>
+			</div>
+		</div> <!-- col-sm-9 - END -->
+	</div> <!-- row- END -->
+</div> <!-- container - END -->
+
+{% endblock %}
+
+{% block extra_js %}{% endblock extra_js %}

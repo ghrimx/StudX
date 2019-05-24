@@ -1,0 +1,36 @@
+{# /StudX_dir/StudX/student/templates/student/student_list_filter.html #}
+
+{% load i18n %}
+
+<nav class="navbar navbar-light bg-light justify-content-between">
+	<div class="btn-group" role="group" aria-label="First group">
+		<button type="button" class="btn btn-sm btn-outline-secondary float-left" disabled>Total: {{ student_obj_list|length }}</button>
+	</div>
+
+		<form id="student_list_filter" class="form-inline" method="POST" action="">{% csrf_token %}
+
+			<div class="form-row" >
+				<div class="col">
+					<input type="text" class="form-control form-control-sm" placeholder={% trans "Firstname" %}  name="fname" {% if request.POST %} value="{{request.POST.fname}}" {% endif %}>
+				</div>
+				<div class="col">
+					<input type="text" class="form-control form-control-sm" placeholder={% trans "Lastname" %}  name="lname" {% if request.POST %} value="{{request.POST.lname}}" {% endif %}>
+				</div>
+				<div class="col">
+					<select class="form-control form-control-sm"}  name="classe">
+						<option value=""> Classe </option>
+							{% for c in classes %}
+								<option value="{{c.id}}" {% if request.POST.classe %}{% ifequal c.id request.POST.classe|add:"0" %}selected{% endifequal %}{% endif %}>{{c.classe_name}}
+								</option>
+							{% endfor %}
+					</select>
+				</div>
+				<div class="col-md-auto">
+					<button class="btn btn-info save btn-sm" type="submit">Search</button>
+					<a href="{% url 'student:student_list' %}" class="btn btn-outline-info btn-sm">Clear</a>
+				</div>
+			</div>
+
+				</form>
+
+		</nav>

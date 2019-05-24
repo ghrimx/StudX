@@ -1,0 +1,89 @@
+{# /StudX_dir/StudX/communication/templates/communication/memos/memos_list.html #}
+
+{% extends 'dashboard_base.html' %}
+{% load static student_tags i18n %}
+
+{% block content %}
+
+<div class="card">
+{% include 'communication/memos/memos_list_filter.html' %}
+	<div class="card-body">
+		{% if memos_obj_list  %}
+		<table class="table table-hover table-condensed table-responsive-md mx-auto mytable">
+			<thead></thead>
+			<tbody>
+			{% for memo in memos_obj_list %}
+				<tr>
+					<td style="width:100%" >
+						<div class="d-flex w-100 justify-content-between  align-middle"><h5 class="mb-1"><a href="#" data-toggle="modal" data-target="#memo-{{ forloop.counter }}">{{ memo.title }}</a></h5> <div class="float-right"><small>{{ memo.updated_at }}</small></div></div>
+						<div id="memo_content">
+							{{ memo.content|truncatewords_html:50 | safe }}
+							<!-- Modal -->
+							<div class="modal fade" id="memo-{{forloop.counter}}" tabindex="-1" role="dialog" aria-labelledby="MemoContentModal" aria-hidden="true">
+								<div class="modal-dialog modal-lg" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="MemoContentModal">{{ memo.title }}</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											{{ memo.content | safe }}
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Modal END -->
+						</div>
+						<div class="float-right"><small>{{ memo.creator.get_full_name }}</small></div>
+					</td>
+					<td> 
+						<div class="dropdown">
+						  <a class="btn btn-sm dropdown-toggle bg-white" href="#" role="button" id="Memodropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+						<div class="dropdown-menu" aria-labelledby="Memodropdown">
+							<a class="dropdown-item text-info" href="#"  data-toggle="modal" data-target="#memo-{{ forloop.counter }}"><i class="fas fa-eye mr-2"></i><span>{% trans "View" %}</span></a>
+						
+						{% if request.user == memo.creator %}
+							<a class="dropdown-item text-info" href="{% url 'communication:edit_memo' memo.uuid %}"><i class="fas fa-pencil-alt mr-2"></i><span>{% trans "Edit" %}</span></a>
+							<a class="dropdown-item text-info" href="#" data-toggle="modal" data-target="#MemoDeleteModal-{{ forloop.counter }}"><i class="fas fa-trash-alt mr-2"></i><span>{% trans "Delete" %}</span></a>
+
+						</div> <!-- Memodropdown - END -->
+							</div>
+							<!-- Memo Delete Modal -->
+							<div class="modal" id="MemoDeleteModal-{{ forloop.counter }}">
+							  <div class="modal-dialog">
+								<div class="modal-content">
+								  <div class="modal-body">
+									{% trans "Do you want to delete ?" %}
+								  </div>
+								  <div class="modal-footer">
+									<form action="" method='POST'>
+										{% csrf_token %}
+										<button type="button" class="btn btn-danger" data-dismiss="modal">{% trans "Cancel" %}</button>
+										<a class="btn btn-secondary" href="{% url 'communication:delete_memo' memo.uuid %}">{% trans "Confirm" %}</a>
+									</form>
+								  </div>
+								</div>
+							  </div>
+							</div> <!-- Memo Delete Modal - END -->
+						{% endif %}
+					</td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+		{% else %}
+			{% trans "Nothing found" %}
+		{% endif %}
+	</div> <!-- card-body - END -->
+</div> <!-- card - END -->
+
+
+	
+
+
+{% endblock %}

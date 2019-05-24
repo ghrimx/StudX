@@ -1,0 +1,29 @@
+{# /StudX_dir/StudX/student/templates/student/student_item_list.html  #}
+
+{% load i18n %}
+
+<tr>
+	<td class="text-center align-middle">
+		<div class="avatar">
+		{% if student.picture %}
+			<img class="img-avatar" src="/student{{ student.picture.url }}" alt="{{ student.fname }} {{ student.lname }}">
+		{% else %}
+			<img class="rounded-circle mx-auto d-block" height="100" width="100" src="/student/images/profile/default_user.jpeg" alt="default_img"/>
+	   {% endif %}
+		</div>
+	</td>
+	<td class="align-middle"><a href="{% url 'student:view_student' student.uuid %}">{{ student.matricule }}</a></td>
+	<td class="align-middle">{{ student.fname }}</td>
+	<td class="align-middle">{{ student.lname }}</td>
+	<td class="align-middle">{% if student.classe %}
+			{{student.classe.classe_name}}
+		{% else %}
+			{% trans "Not Specified" %}
+		{% endif %}
+	</td>
+	<td class="actions align-middle">
+		<a href="{% url 'student:view_student' student.uuid %}"><i class="fas fa-eye"></i></a>
+		<!-- <a href="#" class="btn btn-success edit"><i class="fas fa-pencil-alt"></i></a> -->
+		<!-- <a href="#" class="btn btn-danger delete remove_account"><i class="fas fa-trash-alt"></i></a> -->
+	</td>
+</tr>

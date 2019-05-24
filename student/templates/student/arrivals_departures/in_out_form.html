@@ -1,0 +1,162 @@
+{# /StudX_dir/StudX/student/templates/student/arrivals_departures/in_out_form.html #}
+
+{% extends 'dashboard_base.html' %}
+{% load static i18n student_tags widget_tweaks %}
+
+{{ form.media }}
+
+{% block content %}
+
+<div class="container">
+	<div class="card"> 
+		<div class="card-body"> 
+			<form method="post">{% csrf_token %}
+				
+				{{ form.non_field_errors }}
+				
+				{% for hidden_field in form.hidden_fields %}
+					{{ hidden_field.errors }}
+					{{ hidden_field }}
+				{% endfor %}
+				
+				<div class="form-row">
+					<div class="form-group col-4">
+						{{ form.student.label_tag }}
+						{% render_field form.student class="form-control selectpicker" data-style="border border-danger bg-white" data-live-search="true" %}
+						{% if form.student.help_text %}
+							<small class="form-text text-muted">{{ form.student.help_text }}</small>
+						{% endif %}
+					</div>
+				</div> <!-- form-row - END -->
+				
+				<div class="form-row"> 
+				
+						<div class="form-group col-md">
+							{{ form.apply_on_date.label_tag }}
+							{% render_field form.apply_on_date class="form-control" type="date" %}
+						</div>
+
+						<div class="form-group col-md">
+							{{ form.apply_on_time.label_tag }}
+							{% render_field form.apply_on_time class="form-control" type="time" %}
+						</div>
+						
+						<div class="form-group col-md">
+							{{ form.scheduled_time.label_tag }}
+							{% render_field form.scheduled_time class="form-control" type="time" %}
+						</div>
+						
+					{% if id_type == 1 %}	
+						<div class="form-group col-md">
+							<label for="id_time_delta">{% trans "Difference time" %}</label>
+							{% render_field form.time_delta|append_attr:"readonly:readonly" class="form-control border border-danger bg-white" type="time" %}
+						</div>
+					{% endif %}
+
+				</div> <!-- form-row - END -->
+				
+				<div class="form-row">
+
+					<div class="form-group col">
+						<div class="form-check">
+
+							{% render_field form.is_excused class="form-check-input" %}
+							<label class="form-check-label" for="id_is_excused">
+								{% trans "Excused ?" %}
+							</label>
+							
+							{% if form.is_excused.help_text %}
+								<small class="form-text text-muted">{{ form.is_excused.help_text }}</small>
+							{% endif %}
+						</div>
+					</div>
+				
+				</div> <!-- row - END -->
+				
+				<div class="form-row">
+
+					<div class="form-group col-md justification-element">
+						{{ form.justification.label_tag }}
+						{% render_field form.justification class="form-control" rows="3" %}
+					</div>
+
+				</div> <!-- row - END -->
+				
+				<div class="form-row justification-element">
+
+					<div class="form-group col">
+						{{ form.document.label_tag }}
+						{% render_field form.document class="form-control-file" type="file" %}
+					</div>
+
+				</div> <!-- row - END -->
+				
+				<div class="form-row">
+
+					<div class="form-group col">
+						{{ form.comment.label_tag }}
+						{% render_field form.comment class="form-control" %}
+					</div>
+
+				</div> <!-- row - END -->
+				
+				<div class="form-row">
+						<div class="form-group col">
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+				</div> <!-- row - END -->
+				
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>$('.selectpicker').selectpicker();</script>
+
+{% comment %}
+	Show justification form element if selector changed.
+	By default the selector is on "no justification" and consequently justification form elements are hidden
+{% endcomment %}
+
+<script src="{% static 'js/timediff/timediff.js' %}"></script>
+
+<script>
+
+	if(document.getElementById('id_is_excused').checked == false ) {
+		$('.justification-element').hide();
+	}
+	$('#id_is_excused').change(function(){
+		if(document.getElementById('id_is_excused').checked == false) {
+			$('.justification-element').hide();
+		}
+		else {
+			$('.justification-element').show();
+		}
+	});
+
+	var time1;
+	var time2;
+	time1 = document.getElementById('id_apply_on_time').value
+	time2 = document.getElementById('id_scheduled_time').value	
+	
+	if(time1 !== null && time1 !== '' && time2 !== null && time2 !== '') {
+		document.getElementById('id_time_delta').value = TimeDiff(time1,time2)
+	}
+	
+	$('#id_apply_on_time').change(function(){
+		time1 = document.getElementById('id_apply_on_time').value
+		time2 = document.getElementById('id_scheduled_time').value
+		document.getElementById('id_time_delta').value = TimeDiff(time1,time2)
+	});
+	
+	$('#id_scheduled_time').change(function(){
+		time1 = document.getElementById('id_apply_on_time').value
+		time2 = document.getElementById('id_scheduled_time').value
+		document.getElementById('id_time_delta').value = TimeDiff(time1,time2)
+	});
+</script>
+
+{% endblock extra_js %}

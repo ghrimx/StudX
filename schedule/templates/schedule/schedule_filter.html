@@ -1,0 +1,41 @@
+{# /StudX_dir/StudX/schedule/templates/schedule/schedule_filter.html #}
+
+{% load i18n %}
+
+<nav class="navbar navbar-light bg-light justify-content-between">
+
+	<form id="schedule_list_filter" class="form-inline" method="POST" action="">{% csrf_token %}
+
+		<div class="form-row" >
+			<!-- <div class="col"> -->
+				<!-- <select class="form-control form-control-sm"}  name="section"> -->
+					<!-- <option value=""> Section </option> -->
+						<!-- {% for s in sections %} -->
+							<!-- <option value="{{c.id}}" {% if request.POST.section %}{% ifequal s.id request.POST.section|add:"0" %}selected{% endifequal %}{% endif %}>{{s.section_name}} -->
+							<!-- </option> -->
+						<!-- {% endfor %} -->
+				<!-- </select> -->
+			<!-- </div> -->
+			<div class="col">
+				<select class="form-control form-control-sm"}  name="classe">
+					<option value=""> Classe </option>
+						{% for c in classes %}
+							<option value="{{c.id}}" {% if request.POST.classe %}{% ifequal c.id request.POST.classe|add:"0" %}selected{% endifequal %}{% endif %}>{{c.classe_name}}
+							</option>
+						{% endfor %}
+				</select>
+			</div>
+			<div class="col-md-auto">
+				<button class="btn btn-info save btn-sm" type="submit">Search</button>
+				<a href="{% url 'schedule:schedule_main' %}" class="btn btn-outline-info btn-sm">Clear</a>
+			</div>
+		</div>
+
+	</form>
+	<div class="btn-group float-right" role="group">
+		<a class="btn btn-secondary btn-sm" href="{% url 'schedule:create_slot' %}"><i class="fa fa-plus" aria-hidden="true"></i></a>
+		<a class="btn btn-sm btn-secondary" href="#"><i class="fas fa-flag"></i></a>
+	</div>
+
+
+</nav>

@@ -1,0 +1,29 @@
+{# /StudX_dir/StudX/schedule/templates/schedule/slot_form.html #}
+
+{% extends 'dashboard_base.html' %}
+{% load static i18n widget_tweaks %}
+
+{% block content %}
+
+
+{% for classe in classes %}
+
+
+<p>
+	<input type="checkbox" aria-label="Checkbox{{ classe.classe_name }}">
+  <a class="#" data-toggle="collapse" href="#collapse{{ classe.classe_name }}" role="button" aria-expanded="false" aria-controls="collapse{{ classe.classe_name }}">
+    {{ classe.classe_name }}
+  </a>
+</p>
+<div class="collapse" id="collapse{{ classe.classe_name }}">
+  <div class="card card-body">
+    {% for student in classe.student_classe.all %}
+				{{student.fname}} {{student.lname}} {{student.matricule}}
+			{% endfor %}
+  </div>
+</div>
+
+  
+ {% endfor %}
+
+{% endblock content %}
