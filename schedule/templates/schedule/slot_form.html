@@ -8,22 +8,47 @@
 
 {% for classe in classes %}
 
-
-<p>
-	<input type="checkbox" aria-label="Checkbox{{ classe.classe_name }}">
+<ul class="list-group" style="width:400px;">
+	<li class="list-group-item list-group-item-secondary">
+	<input type="checkbox" name="{{ classe.classe_name }}" id="{{ classe.classe_name }}" aria-label="CheckAll{{ classe.classe_name }}" onClick="toggle(this,'{{ classe.classe_name }}')">
   <a class="#" data-toggle="collapse" href="#collapse{{ classe.classe_name }}" role="button" aria-expanded="false" aria-controls="collapse{{ classe.classe_name }}">
     {{ classe.classe_name }}
   </a>
-</p>
-<div class="collapse" id="collapse{{ classe.classe_name }}">
-  <div class="card card-body">
-    {% for student in classe.student_classe.all %}
-				{{student.fname}} {{student.lname}} {{student.matricule}}
-			{% endfor %}
-  </div>
-</div>
+	
+	</li>
+	<div class="collapse" id="collapse{{ classe.classe_name }}">
+{% for student in classe.student_classe.all %}
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+	<input type="checkbox" name="{{ classe.classe_name }}" id="{{ student.matricule }}" aria-label="Checkbox{{ student.matricule }}">
+    <div class="avatar">
+	{% if student.picture %}
+		<img class="img-avatar" src="/student{{ student.picture.url }}" alt="{{ student.fname }} {{ student.lname }}">
+	{% else %}
+		<img class="rounded-circle mx-auto d-block" height="100" width="100" src="/student/images/profile/default_user.jpeg" alt="default_img"/>
+   {% endif %}
+	</div>
+	
+	<span>{{ student.fname }} {{ student.lname }}</span>
+	<span><a href="{% url 'student:view_student' student.uuid %}">{{ student.matricule }}</a></span>
+  </li>
+ 
+{% endfor %}
+ </div>
+</ul>
+
+
+
 
   
- {% endfor %}
+{% endfor %}
+
+<script>
+function toggle(source, checkboxes_name) {
+  checkboxes = document.getElementsByName(checkboxes_name);
+  for(var i=0, n=checkboxes.length;i<n;i++) {
+    checkboxes[i].checked = source.checked;
+  }
+}
+</script>
 
 {% endblock content %}

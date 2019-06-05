@@ -147,6 +147,11 @@ BOOTSTRAP4 = {
     'include_jquery': True,
 }
 
+# Fixtures
+FIXTURE_DIRS = (
+   '/fixtures/',
+)
+
 # change this to the main dashboard
 LOGIN_REDIRECT_URL = 'dashboard:dashboard' 
 LOGIN_URL = 'user:login'

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+  <object model="schedule.schedule" pk="3">
+    <field name="weekDay" type="IntegerField">1</field>
+    <field name="startAt" type="TimeField">08:00:00</field>
+    <field name="finishtAt" type="TimeField">09:00:00</field>
+    <field name="duration" type="DurationField">01:00:00</field>
+    <field name="location" rel="ManyToOneRel" to="configuration.location">1</field>
+    <field name="subject" rel="ManyToOneRel" to="configuration.subjects">2</field>
+    <field name="status" type="IntegerField">1</field>
+    <field name="comment" type="CharField"><None></None></field>
+    <field name="updated_at" type="DateTimeField">2019-05-15T11:50:59.001996+00:00</field>
+    <field name="last_user" rel="ManyToOneRel" to="user.user">1</field>
+    <field name="creator" rel="ManyToOneRel" to="user.user"><None></None></field>
+    <field name="teacher" rel="ManyToManyRel" to="user.user"><object pk="7"></object></field>
+  </object>
+  <object model="schedule.schedule" pk="4">
+    <field name="weekDay" type="IntegerField">1</field>
+    <field name="startAt" type="TimeField">10:00:00</field>
+    <field name="finishtAt" type="TimeField">11:00:00</field>
+    <field name="duration" type="DurationField">01:00:00</field>
+    <field name="location" rel="ManyToOneRel" to="configuration.location">1</field>
+    <field name="subject" rel="ManyToOneRel" to="configuration.subjects">5</field>
+    <field name="status" type="IntegerField">1</field>
+    <field name="comment" type="CharField"><None></None></field>
+    <field name="updated_at" type="DateTimeField">2019-05-15T11:51:33.366940+00:00</field>
+    <field name="last_user" rel="ManyToOneRel" to="user.user">1</field>
+    <field name="creator" rel="ManyToOneRel" to="user.user"><None></None></field>
+    <field name="teacher" rel="ManyToManyRel" to="user.user"><object pk="7"></object></field>
+  </object>
+  <object model="schedule.schedule" pk="5">
+    <field name="weekDay" type="IntegerField">2</field>
+    <field name="startAt" type="TimeField">09:00:00</field>
+    <field name="finishtAt" type="TimeField"><None></None></field>
+    <field name="duration" type="DurationField">00:00:50</field>
+    <field name="location" rel="ManyToOneRel" to="configuration.location">1</field>
+    <field name="subject" rel="ManyToOneRel" to="configuration.subjects">5</field>
+    <field name="status" type="IntegerField">1</field>
+    <field name="comment" type="CharField"><None></None></field>
+    <field name="updated_at" type="DateTimeField">2019-05-15T11:53:08.001503+00:00</field>
+    <field name="last_user" rel="ManyToOneRel" to="user.user">7</field>
+    <field name="creator" rel="ManyToOneRel" to="user.user"><None></None></field>
+    <field name="teacher" rel="ManyToManyRel" to="user.user"><object pk="7"></object></field>
+  </object>
+</django-objects>
