@@ -2,7 +2,6 @@
 
 from django.utils.translation import ugettext_lazy as _
 
-
 INACTIVE = 0
 ACTIVE = 1
 CANCELLED = 2

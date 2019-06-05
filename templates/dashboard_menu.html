@@ -68,8 +68,12 @@
 			</a>
 			<div class="dropdown-menu" aria-labelledby="adminDropdown">
 				{% if perms.user.can_add_user and perms.user.can_edit_user  %}<a class="dropdown-item" href="{% url 'user:user_list' %}">{% trans 'User' %}</a>{% endif %}
+				{% if request.user.is_staff %}
+				<a class="dropdown-item" href="{% url 'configuration:init_with_file' %}">{% trans 'Init' %}</a>
+				{% endif %}
 				<a class="dropdown-item" href="">{% trans 'Settings' %}</a>
 			</div>
+			
 		</li>
 	{% endif %}
 </ul>

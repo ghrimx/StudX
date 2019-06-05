@@ -1,0 +1,60 @@
+{# /StudX_dir/StudX/configuration/templates/configuration/init_file_form.html #}
+
+{% extends 'dashboard_base.html' %}
+{% load static i18n widget_tweaks %}
+
+{% block content %}
+
+<div class="accordion" id="accordionTeacher">
+  <div class="card">
+    <div class="card-header" id="headingTeacher">
+      <h5 class="mb-0">
+        <a href="{% url 'configuration:generate_teacher_template' %}"class="btn btn-info"><i class="fas fa-download"></i></a>
+      </h5>
+    </div>
+
+    <div id="collapseTeacher" class="collapse" aria-labelledby="headingTeacher" data-parent="#accordionTeacher">
+      <div class="card-body">
+       {# add dowload button #}
+	   <button type="button" class="btn btn-primary">{% trans 'Download template'%}</button>
+	   <form>
+		  <div class="form-group">
+			<label for="FormControlTeacherFile">{% trans 'Upload file' %}</label>
+			<input type="file" class="form-control-file" id="FormControlTeacherFil">
+		  </div>
+		</form>
+		
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Collapsible Group Item #2
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordiTeacher">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Collapsible Group Item #3
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordiTeacher">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
