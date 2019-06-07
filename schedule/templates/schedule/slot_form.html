@@ -5,50 +5,67 @@
 
 {% block content %}
 
+<div class="container">
+	<form method="post">
+		{% csrf_token %}
+		{{ form.non_field_errors }}
+		{% for hidden_field in form.hidden_fields %}
+		{{ hidden_field.errors }}
+		{{ hidden_field }}
+		{% endfor %}
 
-{% for classe in classes %}
+		<div class="form-group row">
+			<div class="col-4">
+				{% for classe in classes %}
+				<ul class="list-group" style="width:400px;">
+					<li class="list-group-item list-group-item-secondary">
+						<input type="checkbox" name="{{ classe.classe_name }}" id="{{ classe.classe_name }}" aria-label="CheckAll{{ classe.classe_name }}" onClick="toggle(this,'{{ classe.classe_name }}')">
+						<a class="#" data-toggle="collapse" href="#collapse{{ classe.classe_name }}" role="button" aria-expanded="false" aria-controls="collapse{{ classe.classe_name }}">
+							{{ classe.classe_name }}
+						</a>
 
-<ul class="list-group" style="width:400px;">
-	<li class="list-group-item list-group-item-secondary">
-	<input type="checkbox" name="{{ classe.classe_name }}" id="{{ classe.classe_name }}" aria-label="CheckAll{{ classe.classe_name }}" onClick="toggle(this,'{{ classe.classe_name }}')">
-  <a class="#" data-toggle="collapse" href="#collapse{{ classe.classe_name }}" role="button" aria-expanded="false" aria-controls="collapse{{ classe.classe_name }}">
-    {{ classe.classe_name }}
-  </a>
-	
-	</li>
-	<div class="collapse" id="collapse{{ classe.classe_name }}">
-{% for student in classe.student_classe.all %}
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-	<input type="checkbox" name="{{ classe.classe_name }}" id="{{ student.matricule }}" aria-label="Checkbox{{ student.matricule }}">
-    <div class="avatar">
-	{% if student.picture %}
-		<img class="img-avatar" src="/student{{ student.picture.url }}" alt="{{ student.fname }} {{ student.lname }}">
-	{% else %}
-		<img class="rounded-circle mx-auto d-block" height="100" width="100" src="/student/images/profile/default_user.jpeg" alt="default_img"/>
-   {% endif %}
-	</div>
-	
-	<span>{{ student.fname }} {{ student.lname }}</span>
-	<span><a href="{% url 'student:view_student' student.uuid %}">{{ student.matricule }}</a></span>
-  </li>
- 
-{% endfor %}
- </div>
-</ul>
+					</li>
+					<div class="collapse" id="collapse{{ classe.classe_name }}">
+						{% for student in classe.student_classe.all %}
+						<li class="list-group-item d-flex justify-content-between align-items-center">
+							<input type="checkbox" name="{{ classe.classe_name }}" id="{{ student.matricule }}" aria-label="Checkbox{{ student.matricule }}">
+							<div class="avatar">
+								{% if student.picture %}
+								<img class="img-avatar" src="/student{{ student.picture.url }}" alt="{{ student.fname }} {{ student.lname }}">
+								{% else %}
+								<img class="rounded-circle mx-auto d-block" height="100" width="100" src="/student/images/profile/default_user.jpeg" alt="default_img"/>
+								{% endif %}
+							</div>
 
+							<span>{{ student.fname }} {{ student.lname }}</span>
+							<span><a href="{% url 'student:view_student' student.uuid %}">{{ student.matricule }}</a></span>
+						</li>
 
+						{% endfor %}
+					</div>
+				</ul>
+				{% endfor %}
+			</div> <!-- col-4 -->
+			<div class="col-8">
+				<div class="form-group row">
+					<label for="{{ form.teacher.id_for_label }}" class="col-sm-2 col-form-label">{% trans 'Teacher' %}</label>
+					<div class="col-sm">
+						{% render_field form.teacher|attr:"multiple" class=selectpicker" %}
+					</div> <!-- col-sm -->
+				</div> <!-- form-group row -->
+			</div> <!-- col-8 -->
+		</div> <!-- form-group row -->
 
-
-  
-{% endfor %}
+	</form>
+</div> <!-- container -->
 
 <script>
-function toggle(source, checkboxes_name) {
-  checkboxes = document.getElementsByName(checkboxes_name);
-  for(var i=0, n=checkboxes.length;i<n;i++) {
-    checkboxes[i].checked = source.checked;
-  }
-}
+	function toggle(source, checkboxes_name) {
+		checkboxes = document.getElementsByName(checkboxes_name);
+		for(var i=0, n=checkboxes.length;i<n;i++) {
+			checkboxes[i].checked = source.checked;
+		}
+	}
 </script>
 
 {% endblock content %}
