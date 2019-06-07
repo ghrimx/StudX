@@ -36,24 +36,14 @@ def schedule_main(request):
 	classes_filter = request.POST.get('classe')
 	
 	if classes_filter:
-		student = Student.objects.filter(classe=classes_filter)
-		print('student: ',student)
-		schedule = Schedule.objects.filter(student__in=student)
-	
-	
-	print('schedule: ', schedule)
-	print('days: ',DAYS_OF_THE_WEEK)
-	
-	if schedule.filter(weekDay=SUNDAY).exists() or schedule.filter(weekDay=SATURDAY).exists():
-		WeekEnd = True
-	else: WeekEnd = False
-	
-	print('WeekEnd: ', WeekEnd)
+		schedule = Schedule.objects.filter(student__classe=classes_filter)
+		for i in range(1,8):
+			schedule_list[i] = schedule.filter(weekDay=i)
+		print('schedule: ', schedule_list)
 	
 	variables = {
-		'WeekEnd': WeekEnd,
-		'days': DAYS_OF_THE_WEEK,
-		'schedule':schedule,
+		'days':DAYS_OF_THE_WEEK,
+		'schedule_list':schedule_list,
 		'classes':classes, 
 	}
 	
