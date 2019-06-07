@@ -37,9 +37,11 @@ def schedule_main(request):
 	
 	if classes_filter:
 		schedule = Schedule.objects.filter(student__classe=classes_filter)
-		for i in range(1,8):
-			schedule_list[i] = schedule.filter(weekDay=i)
-		print('schedule: ', schedule_list)
+	
+	for i in range(1,8):
+		schedule_list[i] = schedule.filter(weekDay=i)
+		
+	print('schedule: ', schedule_list)
 	
 	variables = {
 		'days':DAYS_OF_THE_WEEK,
