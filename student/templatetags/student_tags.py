@@ -30,3 +30,7 @@ def get_status_color(status):
 		3:"light"
 		}
 	return status_color.get(status)
+	
+@register.filter
+def get_item(dictionary, key):
+    return dictionary.get(key)

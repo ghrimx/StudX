@@ -1,6 +1,29 @@
 # /StudX_dir/StudX/common/utils.py
 
 from django.utils.translation import ugettext_lazy as _
+from datetime import time, datetime, timedelta
+
+def GenTimeList():
+	StartTime_str = '0100-01-01 08:00:00'
+	StartTime = datetime.strptime(StartTime_str,'%Y-%m-%d %H:%M:%S')
+
+	EndTime_str = '0100-01-01 17:00:00'
+	EndTime = datetime.strptime(EndTime_str,'%Y-%m-%d %H:%M:%S')
+
+	TimeStep_int = 30
+	TimeStep = timedelta(minutes=TimeStep_int)
+
+	TimeList = list()
+
+	TimeInc = StartTime
+	while(TimeInc <= EndTime):
+	  TimeList.append(datetime.strftime(TimeInc,'%H:%M'))
+	  TimeInc = TimeInc + TimeStep
+	  
+	return(TimeList)
+
+TimeList = GenTimeList()
+
 
 INACTIVE = 0
 ACTIVE = 1

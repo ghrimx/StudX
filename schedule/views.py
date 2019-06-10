@@ -29,22 +29,28 @@ from schedule.forms import SlotForm
 
 @login_required
 def schedule_main(request):
-
+	
+	# Init objects
 	classes = Classes.objects.all()
 	schedule = Schedule.objects.none()
 	
+	# Filters
 	classes_filter = request.POST.get('classe')
 	
-	schedule_list = list()
+	schedule_dict = dict()
 	if classes_filter:
 		schedule = Schedule.objects.filter(student__classe=classes_filter)
-		if schedule :
-			for i in range(1,8):
-				schedule_list[i] = schedule.filter(weekDay=i)
 	
+		if schedule :
+			for day in DAYS_OF_THE_WEEK:
+				schedule_dict[day[1]] = schedule.filter(weekDay=day[0])
+	
+		print(schedule_dict)
+
 	variables = {
-		'days':DAYS_OF_THE_WEEK,
-		'schedule':schedule_list,
+		'TimeList':TimeList, # init from /StudX_dir/StudX/common/utils.py
+		'days':DAYS_OF_THE_WEEK[0:5],
+		'schedule':schedule_dict,
 		'classes':classes, 
 	}
 	
