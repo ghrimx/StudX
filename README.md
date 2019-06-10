@@ -8,6 +8,10 @@ The application records personal data of student, teacher and Staff people. It a
 :loudspeaker:
 **Notic:** This project has been initiated while learning Python 3 and the Django framework. It is still under development and all features are not completed yet! If you notice any coding error or security issue or if you have recommendations on design, coding or recommendations in general do not hesitate to contact me.
 
+## Screenshots
+![image](https://user-images.githubusercontent.com/6607633/59228606-890c6b00-8bd8-11e9-8949-16ebb0014900.png)
+
+
 ### In development features
 
 * Student records keeping
