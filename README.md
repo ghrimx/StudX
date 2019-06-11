@@ -62,7 +62,7 @@ I use exclusively Github
 
 ## Authors
 
-* **ghrimx**
+* **Debruycker Vincent**
 
 ## License
 
