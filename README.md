@@ -14,7 +14,7 @@ The application records personal data of student, teacher and Staff people. It a
 ![image](https://user-images.githubusercontent.com/6607633/59228742-e4d6f400-8bd8-11e9-85bc-1257341b49c5.png)
 ![image](https://user-images.githubusercontent.com/6607633/59228919-56af3d80-8bd9-11e9-8154-afbda218d6e6.png)
 ![image](https://user-images.githubusercontent.com/6607633/59228606-890c6b00-8bd8-11e9-8949-16ebb0014900.png)
-
+![image](https://user-images.githubusercontent.com/6607633/59386455-0239c880-8d67-11e9-8291-8110ea255387.png)
 
 ### In development features
 
