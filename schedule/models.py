@@ -22,7 +22,6 @@ class Schedule(models.Model):
 	weekDay = models.IntegerField(choices=DAYS_OF_THE_WEEK)
 	startAt = models.TimeField(null=True, blank=True)
 	finishtAt = models.TimeField(null=True, blank=True)
-	duration = models.DurationField(null=True, blank=True)
 	location = models.ForeignKey(to='configuration.Location', on_delete=models.SET_NULL, related_name='schedule_classrooms', null=True, blank=True)
 	subject = models.ForeignKey(to='configuration.Subjects', on_delete=models.CASCADE, related_name='schedule_subjects', null=True, blank=True)
 	teacher = models.ManyToManyField(to=settings.AUTH_USER_MODEL, related_name='schedule_teachers')

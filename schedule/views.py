@@ -39,13 +39,13 @@ def schedule_main(request):
 	
 	schedule_dict = dict()
 	if classes_filter:
-		schedule = Schedule.objects.filter(student__classe=classes_filter)
+		schedule = Schedule.objects.filter(student__classe=classes_filter).distinct().prefetch_related('teacher')
+		
+		print(schedule)
 	
 		if schedule :
 			for day in DAYS_OF_THE_WEEK:
 				schedule_dict[day[1]] = schedule.filter(weekDay=day[0])
-	
-		print(schedule_dict)
 
 	variables = {
 		'TimeList':TimeList, # init from /StudX_dir/StudX/common/utils.py
@@ -83,15 +83,17 @@ def create_edit_slot(request, id=None):
 			if id:
 				slot_instance.last_user = user
 			
-			schedule.teacher.clear()
-			for teacher in form.cleaned_data['teacher']:
-				schedule.teacher.add(teacher)
-			
-			schedule.student.clear()
-			for student in form.cleaned_data['student']:
-				schedule.student.add(student)
-				
 			slot_instance.save()
+			
+			slot.teacher.clear()
+			for teacher in form.cleaned_data['teacher']:
+				slot.teacher.add(teacher)
+			
+			slot.student.clear()
+			for student in form.cleaned_data['student']:
+				slot.student.add(student)
+				
+			return redirect('schedule:schedule_main')
 		else: 
 			print('SlotForm is invalid')
 			print('errors: ', form.errors)

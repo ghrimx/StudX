@@ -10,4 +10,4 @@ from schedule.models import Schedule
 class SlotForm(forms.ModelForm):
 	class Meta:
 		model = Schedule
-		fields =['weekDay', 'startAt', 'finishtAt', 'duration', 'location', 'subject', 'teacher', 'student', 'status', 'comment']
+		fields =['weekDay', 'startAt', 'finishtAt', 'location', 'subject', 'teacher', 'student', 'status', 'comment']

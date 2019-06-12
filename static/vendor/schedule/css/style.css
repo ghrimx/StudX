@@ -2098,6 +2098,914 @@ u {
 	--cd-color-event-4-h: 31;
 	--cd-color-event-4-s: 89%;
 	--cd-color-event-4-l: 68%;
+	--cd-color-event-5: hsl(240,100%,34%);
+	--cd-color-event-5-h: 240;
+	--cd-color-event-5-s: 100%;
+	--cd-color-event-5-l: 34%;
+	--cd-color-event-6: hsl(240, 100%, 42%);
+	--cd-color-event-6-h: 240;
+	--cd-color-event-6-s: 100%;
+	--cd-color-event-6-l: 42%;
+	--cd-color-event-7: hsl(240, 100%, 50%);
+	--cd-color-event-7-h: 240;
+	--cd-color-event-7-s: 100%;
+	--cd-color-event-7-l: 50%;
+	--cd-color-event-8: hsl(120, 100%, 18%);
+	--cd-color-event-8-h: 120;
+	--cd-color-event-8-s: 100%;
+	--cd-color-event-8-l: 18%;
+	--cd-color-event-9: hsl(180, 100%, 18%);
+	--cd-color-event-9-h: 180;
+	--cd-color-event-9-s: 100%;
+	--cd-color-event-9-l: 18%;
+--cd-color-event-10: hsl(97, 100%, 26%);
+--cd-color-event-10-h: 97;
+--cd-color-event-10-s: 100%;
+--cd-color-event-10-l: 26%;
+--cd-color-event-11: hsl(07, 100%, 34%);
+--cd-color-event-11-h: 07;
+--cd-color-event-11-s: 100%;
+--cd-color-event-11-l: 34%;
+--cd-color-event-12: hsl(13, 100%, 42%);
+--cd-color-event-12-h: 13;
+--cd-color-event-12-s: 100%;
+--cd-color-event-12-l: 42%;
+--cd-color-event-13: hsl(17, 100%, 50%);
+--cd-color-event-13-h: 17;
+--cd-color-event-13-s: 100%;
+--cd-color-event-13-l: 50%;
+--cd-color-event-14: hsl(120, 100%, 26%);
+--cd-color-event-14-h: 120;
+--cd-color-event-14-s: 100%;
+--cd-color-event-14-l: 26%;
+--cd-color-event-15: hsl(62, 100%, 26%);
+--cd-color-event-15-h: 62;
+--cd-color-event-15-s: 100%;
+--cd-color-event-15-l: 26%;
+--cd-color-event-16: hsl(180, 100%, 26%);
+--cd-color-event-16-h: 180;
+--cd-color-event-16-s: 100%;
+--cd-color-event-16-l: 26%;
+--cd-color-event-17: hsl(93, 100%, 34%);
+--cd-color-event-17-h: 93;
+--cd-color-event-17-s: 100%;
+--cd-color-event-17-l: 34%;
+--cd-color-event-18: hsl(02, 100%, 42%);
+--cd-color-event-18-h: 02;
+--cd-color-event-18-s: 100%;
+--cd-color-event-18-l: 42%;
+--cd-color-event-19: hsl(08, 100%, 50%);
+--cd-color-event-19-h: 08;
+--cd-color-event-19-s: 100%;
+--cd-color-event-19-l: 50%;
+--cd-color-event-20: hsl(120, 100%, 34%);
+--cd-color-event-20-h: 120;
+--cd-color-event-20-s: 100%;
+--cd-color-event-20-l: 34%;
+--cd-color-event-21: hsl(52, 100%, 34%);
+--cd-color-event-21-h: 52;
+--cd-color-event-21-s: 100%;
+--cd-color-event-21-l: 34%;
+--cd-color-event-22: hsl(66, 100%, 34%);
+--cd-color-event-22-h: 66;
+--cd-color-event-22-s: 100%;
+--cd-color-event-22-l: 34%;
+--cd-color-event-23: hsl(180, 100%, 34%);
+--cd-color-event-23-h: 180;
+--cd-color-event-23-s: 100%;
+--cd-color-event-23-l: 34%;
+--cd-color-event-24: hsl(91, 100%, 42%);
+--cd-color-event-24-h: 91;
+--cd-color-event-24-s: 100%;
+--cd-color-event-24-l: 42%;
+--cd-color-event-25: hsl(98, 100%, 50%);
+--cd-color-event-25-h: 98;
+--cd-color-event-25-s: 100%;
+--cd-color-event-25-l: 50%;
+--cd-color-event-26: hsl(120, 100%, 42%);
+--cd-color-event-26-h: 120;
+--cd-color-event-26-s: 100%;
+--cd-color-event-26-l: 42%;
+--cd-color-event-27: hsl(46, 100%, 42%);
+--cd-color-event-27-h: 46;
+--cd-color-event-27-s: 100%;
+--cd-color-event-27-l: 42%;
+--cd-color-event-28: hsl(57, 100%, 42%);
+--cd-color-event-28-h: 57;
+--cd-color-event-28-s: 100%;
+--cd-color-event-28-l: 42%;
+--cd-color-event-29: hsl(68, 100%, 42%);
+--cd-color-event-29-h: 68;
+--cd-color-event-29-s: 100%;
+--cd-color-event-29-l: 42%;
+--cd-color-event-30: hsl(180, 100%, 42%);
+--cd-color-event-30-h: 180;
+--cd-color-event-30-s: 100%;
+--cd-color-event-30-l: 42%;
+--cd-color-event-31: hsl(89, 100%, 50%);
+--cd-color-event-31-h: 89;
+--cd-color-event-31-s: 100%;
+--cd-color-event-31-l: 50%;
+--cd-color-event-32: hsl(120, 100%, 50%);
+--cd-color-event-32-h: 120;
+--cd-color-event-32-s: 100%;
+--cd-color-event-32-l: 50%;
+--cd-color-event-33: hsl(42, 100%, 50%);
+--cd-color-event-33-h: 42;
+--cd-color-event-33-s: 100%;
+--cd-color-event-33-l: 50%;
+--cd-color-event-34: hsl(51, 100%, 50%);
+--cd-color-event-34-h: 51;
+--cd-color-event-34-s: 100%;
+--cd-color-event-34-l: 50%;
+--cd-color-event-35: hsl(61, 100%, 50%);
+--cd-color-event-35-h: 61;
+--cd-color-event-35-s: 100%;
+--cd-color-event-35-l: 50%;
+--cd-color-event-36: hsl(70, 100%, 50%);
+--cd-color-event-36-h: 70;
+--cd-color-event-36-s: 100%;
+--cd-color-event-36-l: 50%;
+--cd-color-event-37: hsl(180, 100%, 50%);
+--cd-color-event-37-h: 180;
+--cd-color-event-37-s: 100%;
+--cd-color-event-37-l: 50%;
+--cd-color-event-38: hsl(0, 100%, 18%);
+--cd-color-event-38-h: 0;
+--cd-color-event-38-s: 100%;
+--cd-color-event-38-l: 18%;
+--cd-color-event-39: hsl(300, 100%, 18%);
+--cd-color-event-39-h: 300;
+--cd-color-event-39-s: 100%;
+--cd-color-event-39-l: 18%;
+--cd-color-event-40: hsl(82, 100%, 26%);
+--cd-color-event-40-h: 82;
+--cd-color-event-40-s: 100%;
+--cd-color-event-40-l: 26%;
+--cd-color-event-41: hsl(72, 100%, 34%);
+--cd-color-event-41-h: 72;
+--cd-color-event-41-s: 100%;
+--cd-color-event-41-l: 34%;
+--cd-color-event-42: hsl(66, 100%, 42%);
+--cd-color-event-42-h: 66;
+--cd-color-event-42-s: 100%;
+--cd-color-event-42-l: 42%;
+--cd-color-event-43: hsl(62, 100%, 50%);
+--cd-color-event-43-h: 62;
+--cd-color-event-43-s: 100%;
+--cd-color-event-43-l: 50%;
+--cd-color-event-44: hsl(60, 100%, 18%);
+--cd-color-event-44-h: 60;
+--cd-color-event-44-s: 100%;
+--cd-color-event-44-l: 18%;
+--cd-color-event-45: hsl(0, 0%, 37%);
+--cd-color-event-45-h: 0;
+--cd-color-event-45-s: 0%;
+--cd-color-event-45-l: 37%;
+--cd-color-event-46: hsl(240, 17%, 45%);
+--cd-color-event-46-h: 240;
+--cd-color-event-46-s: 17%;
+--cd-color-event-46-l: 45%;
+--cd-color-event-47: hsl(240, 33%, 52%);
+--cd-color-event-47-h: 240;
+--cd-color-event-47-s: 33%;
+--cd-color-event-47-l: 52%;
+--cd-color-event-48: hsl(240, 60%, 60%);
+--cd-color-event-48-h: 240;
+--cd-color-event-48-s: 60%;
+--cd-color-event-48-l: 60%;
+--cd-color-event-49: hsl(240, 100%, 68%);
+--cd-color-event-49-h: 240;
+--cd-color-event-49-s: 100%;
+--cd-color-event-49-l: 68%;
+--cd-color-event-50: hsl(7, 100%, 26%);
+--cd-color-event-50-h: 7;
+--cd-color-event-50-s: 100%;
+--cd-color-event-50-l: 26%;
+--cd-color-event-51: hsl(120, 17%, 45%);
+--cd-color-event-51-h: 120;
+--cd-color-event-51-s: 17%;
+--cd-color-event-51-l: 45%;
+--cd-color-event-52: hsl(180, 17%, 45%);
+--cd-color-event-52-h: 180;
+--cd-color-event-52-s: 17%;
+--cd-color-event-52-l: 45%;
+--cd-color-event-53: hsl(210, 33%, 52%);
+--cd-color-event-53-h: 210;
+--cd-color-event-53-s: 33%;
+--cd-color-event-53-l: 52%;
+--cd-color-event-54: hsl(220, 60%, 60%);
+--cd-color-event-54-h: 220;
+--cd-color-event-54-s: 60%;
+--cd-color-event-54-l: 60%;
+--cd-color-event-55: hsl(225, 100%, 68%);
+--cd-color-event-55-h: 225;
+--cd-color-event-55-s: 100%;
+--cd-color-event-55-l: 68%;
+--cd-color-event-56: hsl(7, 100%, 34%);
+--cd-color-event-56-h: 7;
+--cd-color-event-56-s: 100%;
+--cd-color-event-56-l: 34%;
+--cd-color-event-57: hsl(120, 33%, 52%);
+--cd-color-event-57-h: 120;
+--cd-color-event-57-s: 33%;
+--cd-color-event-57-l: 52%;
+--cd-color-event-58: hsl(150, 33%, 52%);
+--cd-color-event-58-h: 150;
+--cd-color-event-58-s: 33%;
+--cd-color-event-58-l: 52%;
+--cd-color-event-59: hsl(180, 33%, 52%);
+--cd-color-event-59-h: 180;
+--cd-color-event-59-s: 33%;
+--cd-color-event-59-l: 52%;
+--cd-color-event-60: hsl(200, 60%, 60%);
+--cd-color-event-60-h: 200;
+--cd-color-event-60-s: 60%;
+--cd-color-event-60-l: 60%;
+--cd-color-event-61: hsl(210, 100%, 68%);
+--cd-color-event-61-h: 210;
+--cd-color-event-61-s: 100%;
+--cd-color-event-61-l: 68%;
+--cd-color-event-62: hsl(3, 100%, 42%);
+--cd-color-event-62-h: 3;
+--cd-color-event-62-s: 100%;
+--cd-color-event-62-l: 42%;
+--cd-color-event-63: hsl(120, 60%, 60%);
+--cd-color-event-63-h: 120;
+--cd-color-event-63-s: 60%;
+--cd-color-event-63-l: 60%;
+--cd-color-event-64: hsl(140, 60%, 60%);
+--cd-color-event-64-h: 140;
+--cd-color-event-64-s: 60%;
+--cd-color-event-64-l: 60%;
+--cd-color-event-65: hsl(160, 60%, 60%);
+--cd-color-event-65-h: 160;
+--cd-color-event-65-s: 60%;
+--cd-color-event-65-l: 60%;
+--cd-color-event-66: hsl(180, 60%, 60%);
+--cd-color-event-66-h: 180;
+--cd-color-event-66-s: 60%;
+--cd-color-event-66-l: 60%;
+--cd-color-event-67: hsl(195, 100%, 68%);
+--cd-color-event-67-h: 195;
+--cd-color-event-67-s: 100%;
+--cd-color-event-67-l: 68%;
+--cd-color-event-68: hsl(7, 100%, 50%);
+--cd-color-event-68-h: 7;
+--cd-color-event-68-s: 100%;
+--cd-color-event-68-l: 50%;
+--cd-color-event-69: hsl(120, 100%, 68%);
+--cd-color-event-69-h: 120;
+--cd-color-event-69-s: 100%;
+--cd-color-event-69-l: 68%;
+--cd-color-event-70: hsl(135, 100%, 68%);
+--cd-color-event-70-h: 135;
+--cd-color-event-70-s: 100%;
+--cd-color-event-70-l: 68%;
+--cd-color-event-71: hsl(150, 100%, 68%);
+--cd-color-event-71-h: 150;
+--cd-color-event-71-s: 100%;
+--cd-color-event-71-l: 68%;
+--cd-color-event-72: hsl(165, 100%, 68%);
+--cd-color-event-72-h: 165;
+--cd-color-event-72-s: 100%;
+--cd-color-event-72-l: 68%;
+--cd-color-event-73: hsl(180, 100%, 68%);
+--cd-color-event-73-h: 180;
+--cd-color-event-73-s: 100%;
+--cd-color-event-73-l: 68%;
+--cd-color-event-74: hsl(0, 100%, 26%);
+--cd-color-event-74-h: 0;
+--cd-color-event-74-s: 100%;
+--cd-color-event-74-l: 26%;
+--cd-color-event-75: hsl(17, 100%, 26%);
+--cd-color-event-75-h: 17;
+--cd-color-event-75-s: 100%;
+--cd-color-event-75-l: 26%;
+--cd-color-event-76: hsl(300, 100%, 26%);
+--cd-color-event-76-h: 300;
+--cd-color-event-76-s: 100%;
+--cd-color-event-76-l: 26%;
+--cd-color-event-77: hsl(86, 100%, 34%);
+--cd-color-event-77-h: 86;
+--cd-color-event-77-s: 100%;
+--cd-color-event-77-l: 34%;
+--cd-color-event-78: hsl(77, 100%, 42%);
+--cd-color-event-78-h: 77;
+--cd-color-event-78-s: 100%;
+--cd-color-event-78-l: 42%;
+--cd-color-event-79: hsl(71, 100%, 50%);
+--cd-color-event-79-h: 71;
+--cd-color-event-79-s: 100%;
+--cd-color-event-79-l: 50%;
+--cd-color-event-80: hsl(2, 100%, 26%);
+--cd-color-event-80-h: 2;
+--cd-color-event-80-s: 100%;
+--cd-color-event-80-l: 26%;
+--cd-color-event-81: hsl(0, 17%, 45%);
+--cd-color-event-81-h: 0;
+--cd-color-event-81-s: 17%;
+--cd-color-event-81-l: 45%;
+--cd-color-event-82: hsl(300, 17%, 45%);
+--cd-color-event-82-h: 300;
+--cd-color-event-82-s: 17%;
+--cd-color-event-82-l: 45%;
+--cd-color-event-83: hsl(270, 33%, 52%);
+--cd-color-event-83-h: 270;
+--cd-color-event-83-s: 33%;
+--cd-color-event-83-l: 52%;
+--cd-color-event-84: hsl(260, 60%, 60%);
+--cd-color-event-84-h: 260;
+--cd-color-event-84-s: 60%;
+--cd-color-event-84-l: 60%;
+--cd-color-event-85: hsl(255, 100%, 68%);
+--cd-color-event-85-h: 255;
+--cd-color-event-85-s: 100%;
+--cd-color-event-85-l: 68%;
+--cd-color-event-86: hsl(60, 100%, 26%);
+--cd-color-event-86-h: 60;
+--cd-color-event-86-s: 100%;
+--cd-color-event-86-l: 26%;
+--cd-color-event-87: hsl(60, 17%, 45%);
+--cd-color-event-87-h: 60;
+--cd-color-event-87-s: 17%;
+--cd-color-event-87-l: 45%;
+--cd-color-event-88: hsl(0, 0%, 52%);
+--cd-color-event-88-h: 0;
+--cd-color-event-88-s: 0%;
+--cd-color-event-88-l: 52%;
+--cd-color-event-89: hsl(240, 20%, 60%);
+--cd-color-event-89-h: 240;
+--cd-color-event-89-s: 20%;
+--cd-color-event-89-l: 60%;
+--cd-color-event-90: hsl(240, 50%, 68%);
+--cd-color-event-90-h: 240;
+--cd-color-event-90-s: 50%;
+--cd-color-event-90-l: 68%;
+--cd-color-event-91: hsl(240, 100%, 76%);
+--cd-color-event-91-h: 240;
+--cd-color-event-91-s: 100%;
+--cd-color-event-91-l: 76%;
+--cd-color-event-92: hsl(3, 100%, 34%);
+--cd-color-event-92-h: 3;
+--cd-color-event-92-s: 100%;
+--cd-color-event-92-l: 34%;
+--cd-color-event-93: hsl(90, 33%, 52%);
+--cd-color-event-93-h: 90;
+--cd-color-event-93-s: 33%;
+--cd-color-event-93-l: 52%;
+--cd-color-event-94: hsl(120, 20%, 60%);
+--cd-color-event-94-h: 120;
+--cd-color-event-94-s: 20%;
+--cd-color-event-94-l: 60%;
+--cd-color-event-95: hsl(180, 20%, 60%);
+--cd-color-event-95-h: 180;
+--cd-color-event-95-s: 20%;
+--cd-color-event-95-l: 60%;
+--cd-color-event-96: hsl(210, 50%, 68%);
+--cd-color-event-96-h: 210;
+--cd-color-event-96-s: 50%;
+--cd-color-event-96-l: 68%;
+--cd-color-event-97: hsl(220, 100%, 76%);
+--cd-color-event-97-h: 220;
+--cd-color-event-97-s: 100%;
+--cd-color-event-97-l: 76%;
+--cd-color-event-98: hsl(2, 100%, 42%);
+--cd-color-event-98-h: 2;
+--cd-color-event-98-s: 100%;
+--cd-color-event-98-l: 42%;
+--cd-color-event-99: hsl(100, 60%, 60%);
+--cd-color-event-99-h: 100;
+--cd-color-event-99-s: 60%;
+--cd-color-event-99-l: 60%;
+--cd-color-event-100: hsl(120, 50%, 68%);
+--cd-color-event-100-h: 120;
+--cd-color-event-100-s: 50%;
+--cd-color-event-100-l: 68%;
+--cd-color-event-101: hsl(150, 50%, 68%);
+--cd-color-event-101-h: 150;
+--cd-color-event-101-s: 50%;
+--cd-color-event-101-l: 68%;
+--cd-color-event-102: hsl(180, 50%, 68%);
+--cd-color-event-102-h: 180;
+--cd-color-event-102-s: 50%;
+--cd-color-event-102-l: 68%;
+--cd-color-event-103: hsl(200, 100%, 76%);
+--cd-color-event-103-h: 200;
+--cd-color-event-103-s: 100%;
+--cd-color-event-103-l: 76%;
+--cd-color-event-104: hsl(8, 100%, 50%);
+--cd-color-event-104-h: 8;
+--cd-color-event-104-s: 100%;
+--cd-color-event-104-l: 50%;
+--cd-color-event-105: hsl(105, 100%, 68%);
+--cd-color-event-105-h: 105;
+--cd-color-event-105-s: 100%;
+--cd-color-event-105-l: 68%;
+--cd-color-event-106: hsl(120, 100%, 76%);
+--cd-color-event-106-h: 120;
+--cd-color-event-106-s: 100%;
+--cd-color-event-106-l: 76%;
+--cd-color-event-107: hsl(140, 100%, 76%);
+--cd-color-event-107-h: 140;
+--cd-color-event-107-s: 100%;
+--cd-color-event-107-l: 76%;
+--cd-color-event-108: hsl(160, 100%, 76%);
+--cd-color-event-108-h: 160;
+--cd-color-event-108-s: 100%;
+--cd-color-event-108-l: 76%;
+--cd-color-event-109: hsl(180, 100%, 76%);
+--cd-color-event-109-h: 180;
+--cd-color-event-109-s: 100%;
+--cd-color-event-109-l: 76%;
+--cd-color-event-110: hsl(0, 100%, 34%);
+--cd-color-event-110-h: 0;
+--cd-color-event-110-s: 100%;
+--cd-color-event-110-l: 34%;
+--cd-color-event-111: hsl(27, 100%, 34%);
+--cd-color-event-111-h: 27;
+--cd-color-event-111-s: 100%;
+--cd-color-event-111-l: 34%;
+--cd-color-event-112: hsl(13, 100%, 34%);
+--cd-color-event-112-h: 13;
+--cd-color-event-112-s: 100%;
+--cd-color-event-112-l: 34%;
+--cd-color-event-113: hsl(300, 100%, 34%);
+--cd-color-event-113-h: 300;
+--cd-color-event-113-s: 100%;
+--cd-color-event-113-l: 34%;
+--cd-color-event-114: hsl(88, 100%, 42%);
+--cd-color-event-114-h: 88;
+--cd-color-event-114-s: 100%;
+--cd-color-event-114-l: 42%;
+--cd-color-event-115: hsl(81, 100%, 50%);
+--cd-color-event-115-h: 81;
+--cd-color-event-115-s: 100%;
+--cd-color-event-115-l: 50%;
+--cd-color-event-116: hsl(2, 100%, 34%);
+--cd-color-event-116-h: 2;
+--cd-color-event-116-s: 100%;
+--cd-color-event-116-l: 34%;
+--cd-color-event-117: hsl(0, 33%, 52%);
+--cd-color-event-117-h: 0;
+--cd-color-event-117-s: 33%;
+--cd-color-event-117-l: 52%;
+--cd-color-event-118: hsl(330, 33%, 52%);
+--cd-color-event-118-h: 330;
+--cd-color-event-118-s: 33%;
+--cd-color-event-118-l: 52%;
+--cd-color-event-119: hsl(300, 33%, 52%);
+--cd-color-event-119-h: 300;
+--cd-color-event-119-s: 33%;
+--cd-color-event-119-l: 52%;
+--cd-color-event-120: hsl(280, 60%, 60%);
+--cd-color-event-120-h: 280;
+--cd-color-event-120-s: 60%;
+--cd-color-event-120-l: 60%;
+--cd-color-event-121: hsl(270, 100%, 68%);
+--cd-color-event-121-h: 270;
+--cd-color-event-121-s: 100%;
+--cd-color-event-121-l: 68%;
+--cd-color-event-122: hsl(6, 100%, 34%);
+--cd-color-event-122-h: 6;
+--cd-color-event-122-s: 100%;
+--cd-color-event-122-l: 34%;
+--cd-color-event-123: hsl(30, 33%, 52%);
+--cd-color-event-123-h: 30;
+--cd-color-event-123-s: 33%;
+--cd-color-event-123-l: 52%;
+--cd-color-event-124: hsl(0, 20%, 60%);
+--cd-color-event-124-h: 0;
+--cd-color-event-124-s: 20%;
+--cd-color-event-124-l: 60%;
+--cd-color-event-125: hsl(300, 20%, 60%);
+--cd-color-event-125-h: 300;
+--cd-color-event-125-s: 20%;
+--cd-color-event-125-l: 60%;
+--cd-color-event-126: hsl(270, 50%, 68%);
+--cd-color-event-126-h: 270;
+--cd-color-event-126-s: 50%;
+--cd-color-event-126-l: 68%;
+--cd-color-event-127: hsl(260, 100%, 76%);
+--cd-color-event-127-h: 260;
+--cd-color-event-127-s: 100%;
+--cd-color-event-127-l: 76%;
+--cd-color-event-128: hsl(60, 100%, 34%);
+--cd-color-event-128-h: 60;
+--cd-color-event-128-s: 100%;
+--cd-color-event-128-l: 34%;
+--cd-color-event-129: hsl(60, 33%, 52%);
+--cd-color-event-129-h: 60;
+--cd-color-event-129-s: 33%;
+--cd-color-event-129-l: 52%;
+--cd-color-event-130: hsl(60, 20%, 60%);
+--cd-color-event-130-h: 60;
+--cd-color-event-130-s: 20%;
+--cd-color-event-130-l: 60%;
+--cd-color-event-131: hsl(0, 0%, 68%);
+--cd-color-event-131-h: 0;
+--cd-color-event-131-s: 0%;
+--cd-color-event-131-l: 68%;
+--cd-color-event-132: hsl(240, 33%, 76%);
+--cd-color-event-132-h: 240;
+--cd-color-event-132-s: 33%;
+--cd-color-event-132-l: 76%;
+--cd-color-event-133: hsl(240, 100%, 84%);
+--cd-color-event-133-h: 240;
+--cd-color-event-133-s: 100%;
+--cd-color-event-133-l: 84%;
+--cd-color-event-134: hsl(1, 100%, 42%);
+--cd-color-event-134-h: 1;
+--cd-color-event-134-s: 100%;
+--cd-color-event-134-l: 42%;
+--cd-color-event-135: hsl(80, 60%, 60%);
+--cd-color-event-135-h: 80;
+--cd-color-event-135-s: 60%;
+--cd-color-event-135-l: 60%;
+--cd-color-event-136: hsl(90, 50%, 68%);
+--cd-color-event-136-h: 90;
+--cd-color-event-136-s: 50%;
+--cd-color-event-136-l: 68%;
+--cd-color-event-137: hsl(120, 33%, 76%);
+--cd-color-event-137-h: 120;
+--cd-color-event-137-s: 33%;
+--cd-color-event-137-l: 76%;
+--cd-color-event-138: hsl(180, 33%, 76%);
+--cd-color-event-138-h: 180;
+--cd-color-event-138-s: 33%;
+--cd-color-event-138-l: 76%;
+--cd-color-event-139: hsl(210, 100%, 84%);
+--cd-color-event-139-h: 210;
+--cd-color-event-139-s: 100%;
+--cd-color-event-139-l: 84%;
+--cd-color-event-140: hsl(8, 100%, 50%);
+--cd-color-event-140-h: 8;
+--cd-color-event-140-s: 100%;
+--cd-color-event-140-l: 50%;
+--cd-color-event-141: hsl(90, 100%, 68%);
+--cd-color-event-141-h: 90;
+--cd-color-event-141-s: 100%;
+--cd-color-event-141-l: 68%;
+--cd-color-event-142: hsl(100, 100%, 76%);
+--cd-color-event-142-h: 100;
+--cd-color-event-142-s: 100%;
+--cd-color-event-142-l: 76%;
+--cd-color-event-143: hsl(120, 100%, 84%);
+--cd-color-event-143-h: 120;
+--cd-color-event-143-s: 100%;
+--cd-color-event-143-l: 84%;
+--cd-color-event-144: hsl(150, 100%, 84%);
+--cd-color-event-144-h: 150;
+--cd-color-event-144-s: 100%;
+--cd-color-event-144-l: 84%;
+--cd-color-event-145: hsl(180, 100%, 84%);
+--cd-color-event-145-h: 180;
+--cd-color-event-145-s: 100%;
+--cd-color-event-145-l: 84%;
+--cd-color-event-146: hsl(0, 100%, 42%);
+--cd-color-event-146-h: 0;
+--cd-color-event-146-s: 100%;
+--cd-color-event-146-l: 42%;
+--cd-color-event-147: hsl(33, 100%, 42%);
+--cd-color-event-147-h: 33;
+--cd-color-event-147-s: 100%;
+--cd-color-event-147-l: 42%;
+--cd-color-event-148: hsl(22, 100%, 42%);
+--cd-color-event-148-h: 22;
+--cd-color-event-148-s: 100%;
+--cd-color-event-148-l: 42%;
+--cd-color-event-149: hsl(11, 100%, 42%);
+--cd-color-event-149-h: 11;
+--cd-color-event-149-s: 100%;
+--cd-color-event-149-l: 42%;
+--cd-color-event-150: hsl(300, 100%, 42%);
+--cd-color-event-150-h: 300;
+--cd-color-event-150-s: 100%;
+--cd-color-event-150-l: 42%;
+--cd-color-event-151: hsl(90, 100%, 50%);
+--cd-color-event-151-h: 90;
+--cd-color-event-151-s: 100%;
+--cd-color-event-151-l: 50%;
+--cd-color-event-152: hsl(6, 100%, 42%);
+--cd-color-event-152-h: 6;
+--cd-color-event-152-s: 100%;
+--cd-color-event-152-l: 42%;
+--cd-color-event-153: hsl(0, 60%, 60%);
+--cd-color-event-153-h: 0;
+--cd-color-event-153-s: 60%;
+--cd-color-event-153-l: 60%;
+--cd-color-event-154: hsl(340, 60%, 60%);
+--cd-color-event-154-h: 340;
+--cd-color-event-154-s: 60%;
+--cd-color-event-154-l: 60%;
+--cd-color-event-155: hsl(320, 60%, 60%);
+--cd-color-event-155-h: 320;
+--cd-color-event-155-s: 60%;
+--cd-color-event-155-l: 60%;
+--cd-color-event-156: hsl(300, 60%, 60%);
+--cd-color-event-156-h: 300;
+--cd-color-event-156-s: 60%;
+--cd-color-event-156-l: 60%;
+--cd-color-event-157: hsl(285, 100%, 68%);
+--cd-color-event-157-h: 285;
+--cd-color-event-157-s: 100%;
+--cd-color-event-157-l: 68%;
+--cd-color-event-158: hsl(7, 100%, 42%);
+--cd-color-event-158-h: 7;
+--cd-color-event-158-s: 100%;
+--cd-color-event-158-l: 42%;
+--cd-color-event-159: hsl(20, 60%, 60%);
+--cd-color-event-159-h: 20;
+--cd-color-event-159-s: 60%;
+--cd-color-event-159-l: 60%;
+--cd-color-event-160: hsl(0, 50%, 68%);
+--cd-color-event-160-h: 0;
+--cd-color-event-160-s: 50%;
+--cd-color-event-160-l: 68%;
+--cd-color-event-161: hsl(330, 50%, 68%);
+--cd-color-event-161-h: 330;
+--cd-color-event-161-s: 50%;
+--cd-color-event-161-l: 68%;
+--cd-color-event-162: hsl(300, 50%, 68%);
+--cd-color-event-162-h: 300;
+--cd-color-event-162-s: 50%;
+--cd-color-event-162-l: 68%;
+--cd-color-event-163: hsl(280, 100%, 76%);
+--cd-color-event-163-h: 280;
+--cd-color-event-163-s: 100%;
+--cd-color-event-163-l: 76%;
+--cd-color-event-164: hsl(8, 100%, 42%);
+--cd-color-event-164-h: 8;
+--cd-color-event-164-s: 100%;
+--cd-color-event-164-l: 42%;
+--cd-color-event-165: hsl(40, 60%, 60%);
+--cd-color-event-165-h: 40;
+--cd-color-event-165-s: 60%;
+--cd-color-event-165-l: 60%;
+--cd-color-event-166: hsl(30, 50%, 68%);
+--cd-color-event-166-h: 30;
+--cd-color-event-166-s: 50%;
+--cd-color-event-166-l: 68%;
+--cd-color-event-167: hsl(0, 33%, 76%);
+--cd-color-event-167-h: 0;
+--cd-color-event-167-s: 33%;
+--cd-color-event-167-l: 76%;
+--cd-color-event-168: hsl(300, 33%, 76%);
+--cd-color-event-168-h: 300;
+--cd-color-event-168-s: 33%;
+--cd-color-event-168-l: 76%;
+--cd-color-event-169: hsl(270, 100%, 84%);
+--cd-color-event-169-h: 270;
+--cd-color-event-169-s: 100%;
+--cd-color-event-169-l: 84%;
+--cd-color-event-170: hsl(60, 100%, 42%);
+--cd-color-event-170-h: 60;
+--cd-color-event-170-s: 100%;
+--cd-color-event-170-l: 42%;
+--cd-color-event-171: hsl(60, 60%, 60%);
+--cd-color-event-171-h: 60;
+--cd-color-event-171-s: 60%;
+--cd-color-event-171-l: 60%;
+--cd-color-event-172: hsl(60, 50%, 68%);
+--cd-color-event-172-h: 60;
+--cd-color-event-172-s: 50%;
+--cd-color-event-172-l: 68%;
+--cd-color-event-173: hsl(60, 33%, 76%);
+--cd-color-event-173-h: 60;
+--cd-color-event-173-s: 33%;
+--cd-color-event-173-l: 76%;
+--cd-color-event-174: hsl(0, 0%, 84%);
+--cd-color-event-174-h: 0;
+--cd-color-event-174-s: 0%;
+--cd-color-event-174-l: 84%;
+--cd-color-event-175: hsl(240, 100%, 92%);
+--cd-color-event-175-h: 240;
+--cd-color-event-175-s: 100%;
+--cd-color-event-175-l: 92%;
+--cd-color-event-176: hsl(9, 100%, 50%);
+--cd-color-event-176-h: 9;
+--cd-color-event-176-s: 100%;
+--cd-color-event-176-l: 50%;
+--cd-color-event-177: hsl(75, 100%, 68%);
+--cd-color-event-177-h: 75;
+--cd-color-event-177-s: 100%;
+--cd-color-event-177-l: 68%;
+--cd-color-event-178: hsl(80, 100%, 76%);
+--cd-color-event-178-h: 80;
+--cd-color-event-178-s: 100%;
+--cd-color-event-178-l: 76%;
+--cd-color-event-179: hsl(90, 100%, 84%);
+--cd-color-event-179-h: 90;
+--cd-color-event-179-s: 100%;
+--cd-color-event-179-l: 84%;
+--cd-color-event-180: hsl(120, 100%, 92%);
+--cd-color-event-180-h: 120;
+--cd-color-event-180-s: 100%;
+--cd-color-event-180-l: 92%;
+--cd-color-event-181: hsl(180, 100%, 92%);
+--cd-color-event-181-h: 180;
+--cd-color-event-181-s: 100%;
+--cd-color-event-181-l: 92%;
+--cd-color-event-182: hsl(0, 100%, 50%);
+--cd-color-event-182-h: 0;
+--cd-color-event-182-s: 100%;
+--cd-color-event-182-l: 50%;
+--cd-color-event-183: hsl(37, 100%, 50%);
+--cd-color-event-183-h: 37;
+--cd-color-event-183-s: 100%;
+--cd-color-event-183-l: 50%;
+--cd-color-event-184: hsl(28, 100%, 50%);
+--cd-color-event-184-h: 28;
+--cd-color-event-184-s: 100%;
+--cd-color-event-184-l: 50%;
+--cd-color-event-185: hsl(18, 100%, 50%);
+--cd-color-event-185-h: 18;
+--cd-color-event-185-s: 100%;
+--cd-color-event-185-l: 50%;
+--cd-color-event-186: hsl(09, 100%, 50%);
+--cd-color-event-186-h: 09;
+--cd-color-event-186-s: 100%;
+--cd-color-event-186-l: 50%;
+--cd-color-event-187: hsl(300, 100%, 50%);
+--cd-color-event-187-h: 300;
+--cd-color-event-187-s: 100%;
+--cd-color-event-187-l: 50%;
+--cd-color-event-188: hsl(2, 100%, 50%);
+--cd-color-event-188-h: 2;
+--cd-color-event-188-s: 100%;
+--cd-color-event-188-l: 50%;
+--cd-color-event-189: hsl(0, 100%, 68%);
+--cd-color-event-189-h: 0;
+--cd-color-event-189-s: 100%;
+--cd-color-event-189-l: 68%;
+--cd-color-event-190: hsl(345, 100%, 68%);
+--cd-color-event-190-h: 345;
+--cd-color-event-190-s: 100%;
+--cd-color-event-190-l: 68%;
+--cd-color-event-191: hsl(330, 100%, 68%);
+--cd-color-event-191-h: 330;
+--cd-color-event-191-s: 100%;
+--cd-color-event-191-l: 68%;
+--cd-color-event-192: hsl(315, 100%, 68%);
+--cd-color-event-192-h: 315;
+--cd-color-event-192-s: 100%;
+--cd-color-event-192-l: 68%;
+--cd-color-event-193: hsl(300, 100%, 68%);
+--cd-color-event-193-h: 300;
+--cd-color-event-193-s: 100%;
+--cd-color-event-193-l: 68%;
+--cd-color-event-194: hsl(1, 100%, 50%);
+--cd-color-event-194-h: 1;
+--cd-color-event-194-s: 100%;
+--cd-color-event-194-l: 50%;
+--cd-color-event-195: hsl(15, 100%, 68%);
+--cd-color-event-195-h: 15;
+--cd-color-event-195-s: 100%;
+--cd-color-event-195-l: 68%;
+--cd-color-event-196: hsl(0, 100%, 76%);
+--cd-color-event-196-h: 0;
+--cd-color-event-196-s: 100%;
+--cd-color-event-196-l: 76%;
+--cd-color-event-197: hsl(340, 100%, 76%);
+--cd-color-event-197-h: 340;
+--cd-color-event-197-s: 100%;
+--cd-color-event-197-l: 76%;
+--cd-color-event-198: hsl(320, 100%, 76%);
+--cd-color-event-198-h: 320;
+--cd-color-event-198-s: 100%;
+--cd-color-event-198-l: 76%;
+--cd-color-event-199: hsl(300, 100%, 76%);
+--cd-color-event-199-h: 300;
+--cd-color-event-199-s: 100%;
+--cd-color-event-199-l: 76%;
+--cd-color-event-200: hsl(1, 100%, 50%);
+--cd-color-event-200-h: 1;
+--cd-color-event-200-s: 100%;
+--cd-color-event-200-l: 50%;
+--cd-color-event-201: hsl(30, 100%, 68%);
+--cd-color-event-201-h: 30;
+--cd-color-event-201-s: 100%;
+--cd-color-event-201-l: 68%;
+--cd-color-event-202: hsl(20, 100%, 76%);
+--cd-color-event-202-h: 20;
+--cd-color-event-202-s: 100%;
+--cd-color-event-202-l: 76%;
+--cd-color-event-203: hsl(0, 100%, 84%);
+--cd-color-event-203-h: 0;
+--cd-color-event-203-s: 100%;
+--cd-color-event-203-l: 84%;
+--cd-color-event-204: hsl(330, 100%, 84%);
+--cd-color-event-204-h: 330;
+--cd-color-event-204-s: 100%;
+--cd-color-event-204-l: 84%;
+--cd-color-event-205: hsl(300, 100%, 84%);
+--cd-color-event-205-h: 300;
+--cd-color-event-205-s: 100%;
+--cd-color-event-205-l: 84%;
+--cd-color-event-206: hsl(0, 100%, 50%);
+--cd-color-event-206-h: 0;
+--cd-color-event-206-s: 100%;
+--cd-color-event-206-l: 50%;
+--cd-color-event-207: hsl(45, 100%, 68%);
+--cd-color-event-207-h: 45;
+--cd-color-event-207-s: 100%;
+--cd-color-event-207-l: 68%;
+--cd-color-event-208: hsl(40, 100%, 76%);
+--cd-color-event-208-h: 40;
+--cd-color-event-208-s: 100%;
+--cd-color-event-208-l: 76%;
+--cd-color-event-209: hsl(30, 100%, 84%);
+--cd-color-event-209-h: 30;
+--cd-color-event-209-s: 100%;
+--cd-color-event-209-l: 84%;
+--cd-color-event-210: hsl(0, 100%, 92%);
+--cd-color-event-210-h: 0;
+--cd-color-event-210-s: 100%;
+--cd-color-event-210-l: 92%;
+--cd-color-event-211: hsl(300, 100%, 92%);
+--cd-color-event-211-h: 300;
+--cd-color-event-211-s: 100%;
+--cd-color-event-211-l: 92%;
+--cd-color-event-212: hsl(60, 100%, 50%);
+--cd-color-event-212-h: 60;
+--cd-color-event-212-s: 100%;
+--cd-color-event-212-l: 50%;
+--cd-color-event-213: hsl(60, 100%, 68%);
+--cd-color-event-213-h: 60;
+--cd-color-event-213-s: 100%;
+--cd-color-event-213-l: 68%;
+--cd-color-event-214: hsl(60, 100%, 76%);
+--cd-color-event-214-h: 60;
+--cd-color-event-214-s: 100%;
+--cd-color-event-214-l: 76%;
+--cd-color-event-215: hsl(60, 100%, 84%);
+--cd-color-event-215-h: 60;
+--cd-color-event-215-s: 100%;
+--cd-color-event-215-l: 84%;
+--cd-color-event-216: hsl(0, 0%, 22%);
+--cd-color-event-216-h: 0;
+--cd-color-event-216-s: 0%;
+--cd-color-event-216-l: 22%;
+--cd-color-event-217: hsl(0, 0%, 26%);
+--cd-color-event-217-h: 0;
+--cd-color-event-217-s: 0%;
+--cd-color-event-217-l: 26%;
+--cd-color-event-218: hsl(0, 0%, 30%);
+--cd-color-event-218-h: 0;
+--cd-color-event-218-s: 0%;
+--cd-color-event-218-l: 30%;
+--cd-color-event-219: hsl(0, 0%, 34%);
+--cd-color-event-219-h: 0;
+--cd-color-event-219-s: 0%;
+--cd-color-event-219-l: 34%;
+--cd-color-event-220: hsl(0, 0%, 37%);
+--cd-color-event-220-h: 0;
+--cd-color-event-220-s: 0%;
+--cd-color-event-220-l: 37%;
+--cd-color-event-221: hsl(0, 0%, 40%);
+--cd-color-event-221-h: 0;
+--cd-color-event-221-s: 0%;
+--cd-color-event-221-l: 40%;
+--cd-color-event-222: hsl(0, 0%, 46%);
+--cd-color-event-222-h: 0;
+--cd-color-event-222-s: 0%;
+--cd-color-event-222-l: 46%;
+--cd-color-event-223: hsl(0, 0%, 50%);
+--cd-color-event-223-h: 0;
+--cd-color-event-223-s: 0%;
+--cd-color-event-223-l: 50%;
+--cd-color-event-224: hsl(0, 0%, 54%);
+--cd-color-event-224-h: 0;
+--cd-color-event-224-s: 0%;
+--cd-color-event-224-l: 54%;
+--cd-color-event-225: hsl(0, 0%, 58%);
+--cd-color-event-225-h: 0;
+--cd-color-event-225-s: 0%;
+--cd-color-event-225-l: 58%;
+--cd-color-event-226: hsl(0, 0%, 61%);
+--cd-color-event-226-h: 0;
+--cd-color-event-226-s: 0%;
+--cd-color-event-226-l: 61%;
+--cd-color-event-227: hsl(0, 0%, 65%);
+--cd-color-event-227-h: 0;
+--cd-color-event-227-s: 0%;
+--cd-color-event-227-l: 65%;
+--cd-color-event-228: hsl(0, 0%, 69%);
+--cd-color-event-228-h: 0;
+--cd-color-event-228-s: 0%;
+--cd-color-event-228-l: 69%;
+--cd-color-event-229: hsl(0, 0%, 73%);
+--cd-color-event-229-h: 0;
+--cd-color-event-229-s: 0%;
+--cd-color-event-229-l: 73%;
+--cd-color-event-230: hsl(0, 0%, 77%);
+--cd-color-event-230-h: 0;
+--cd-color-event-230-s: 0%;
+--cd-color-event-230-l: 77%;
+--cd-color-event-231: hsl(0, 0%, 81%);
+--cd-color-event-231-h: 0;
+--cd-color-event-231-s: 0%;
+--cd-color-event-231-l: 81%;
 	--cd-color-text: hsl(0, 0%, 13%);
 	--cd-color-text-h: 0;
 	--cd-color-text-s: 0%;
@@ -2388,7 +3296,7 @@ a {
 	.cd-schedule__name,
 	.cd-schedule-modal__name {
 		font-size: 1em;
-		font-size: calc(var(--text-sm)*1.2)
+		font-size: calc(var(--text-sm)*0.8) /* init value: calc(var(--text-sm)*1.2) */
 	}
 }
 
@@ -2431,6 +3339,1368 @@ a {
 .cd-schedule-modal[data-event="event-4"] .cd-schedule-modal__header-bg {
 	background: hsl(31, 89%, 68%);
 	background: var(--cd-color-event-4)
+}
+
+.cd-schedule__event [data-event="event-5"],
+.cd-schedule-modal[data-event="event-5"] .cd-schedule-modal__header-bg {
+	background: hsl(240, 100%, 34%);
+	background: var(--cd-color-event-5)
+}
+
+.cd-schedule__event [data-event="event-6"],
+.cd-schedule-modal[data-event="event-6"] .cd-schedule-modal__header-bg {
+	background: hsl(240, 100%, 42%);
+	background: var(--cd-color-event-6)
+}
+
+.cd-schedule__event [data-event="event-7"],
+.cd-schedule-modal[data-event="event-7"] .cd-schedule-modal__header-bg {
+	background: hsl(240, 100%, 50%);
+	background: var(--cd-color-event-7)
+}
+
+.cd-schedule__event [data-event="event-8"],
+.cd-schedule-modal[data-event="event-8"] .cd-schedule-modal__header-bg {
+	background: hsl(120, 100%, 18%);
+	background: var(--cd-color-event-8)
+}
+
+.cd-schedule__event [data-event="event-9"],
+.cd-schedule-modal[data-event="event-9"] .cd-schedule-modal__header-bg {
+	background: hsl(180, 100%, 18%);
+	background: var(--cd-color-event-9)
+}
+
+.cd-schedule__event [data-event="event-10"],
+.cd-schedule-modal[data-event="event-10"] .cd-schedule-modal__header-bg {
+	background: hsl(97, 100%, 26%);
+	background: var(--cd-color-event-10)
+}
+
+.cd-schedule__event [data-event="event-11"],
+.cd-schedule-modal[data-event="event-11"] .cd-schedule-modal__header-bg {
+	background: hsl(07, 100%, 34%);
+	background: var(--cd-color-event-11)
+}
+
+.cd-schedule__event [data-event="event-12"],
+.cd-schedule-modal[data-event="event-12"] .cd-schedule-modal__header-bg {
+	background: hsl(13, 100%, 42%);
+	background: var(--cd-color-event-12)
+}
+
+.cd-schedule__event [data-event="event-13"],
+.cd-schedule-modal[data-event="event-13"] .cd-schedule-modal__header-bg {
+	background: hsl(17, 100%, 50%);
+	background: var(--cd-color-event-13)
+}
+
+.cd-schedule__event [data-event="event-14"],
+.cd-schedule-modal[data-event="event-14"] .cd-schedule-modal__header-bg {
+	background: hsl(120, 100%, 26%);
+	background: var(--cd-color-event-14)
+}
+
+.cd-schedule__event [data-event="event-15"],
+.cd-schedule-modal[data-event="event-15"] .cd-schedule-modal__header-bg {
+	background: hsl(62, 100%, 26%);
+	background: var(--cd-color-event-15)
+}
+
+.cd-schedule__event [data-event="event-16"],
+.cd-schedule-modal[data-event="event-16"] .cd-schedule-modal__header-bg {
+	background: hsl(180, 100%, 26%);
+	background: var(--cd-color-event-16)
+}
+
+.cd-schedule__event [data-event="event-17"],
+.cd-schedule-modal[data-event="event-17"] .cd-schedule-modal__header-bg {
+	background: hsl(93, 100%, 34%);
+	background: var(--cd-color-event-17)
+}
+
+.cd-schedule__event [data-event="event-18"],
+.cd-schedule-modal[data-event="event-18"] .cd-schedule-modal__header-bg {
+	background: hsl(02, 100%, 42%);
+	background: var(--cd-color-event-18)
+}
+
+.cd-schedule__event [data-event="event-19"],
+.cd-schedule-modal[data-event="event-19"] .cd-schedule-modal__header-bg {
+	background: hsl(08, 100%, 50%);
+	background: var(--cd-color-event-19)
+}
+
+.cd-schedule__event [data-event="event-20"],
+.cd-schedule-modal[data-event="event-20"] .cd-schedule-modal__header-bg {
+	background: hsl(120, 100%, 34%);
+	background: var(--cd-color-event-20)
+}
+
+.cd-schedule__event [data-event="event-21"],
+.cd-schedule-modal[data-event="event-21"] .cd-schedule-modal__header-bg {
+	background: hsl(52, 100%, 34%);
+	background: var(--cd-color-event-21)
+}
+
+.cd-schedule__event [data-event="event-22"],
+.cd-schedule-modal[data-event="event-22"] .cd-schedule-modal__header-bg {
+	background: hsl(66, 100%, 34%);
+	background: var(--cd-color-event-22)
+}
+
+.cd-schedule__event [data-event="event-23"],
+.cd-schedule-modal[data-event="event-23"] .cd-schedule-modal__header-bg {
+	background: hsl(180, 100%, 34%);
+	background: var(--cd-color-event-23)
+}
+
+.cd-schedule__event [data-event="event-24"],
+.cd-schedule-modal[data-event="event-24"] .cd-schedule-modal__header-bg {
+	background: hsl(91, 100%, 42%);
+	background: var(--cd-color-event-24)
+}
+
+.cd-schedule__event [data-event="event-25"],
+.cd-schedule-modal[data-event="event-25"] .cd-schedule-modal__header-bg {
+	background: hsl(98, 100%, 50%);
+	background: var(--cd-color-event-25)
+}
+
+.cd-schedule__event [data-event="event-26"],
+.cd-schedule-modal[data-event="event-26"] .cd-schedule-modal__header-bg {
+	background: hsl(120, 100%, 42%);
+	background: var(--cd-color-event-26)
+}
+
+.cd-schedule__event [data-event="event-27"],
+.cd-schedule-modal[data-event="event-27"] .cd-schedule-modal__header-bg {
+	background: hsl(46, 100%, 42%);
+	background: var(--cd-color-event-27)
+}
+
+.cd-schedule__event [data-event="event-28"],
+.cd-schedule-modal[data-event="event-28"] .cd-schedule-modal__header-bg {
+	background: hsl(57, 100%, 42%);
+	background: var(--cd-color-event-28)
+}
+
+.cd-schedule__event [data-event="event-29"],
+.cd-schedule-modal[data-event="event-29"] .cd-schedule-modal__header-bg {
+	background: hsl(68, 100%, 42%);
+	background: var(--cd-color-event-29)
+}
+
+.cd-schedule__event [data-event="event-30"],
+.cd-schedule-modal[data-event="event-30"] .cd-schedule-modal__header-bg {
+	background: hsl(180, 100%, 42%);
+	background: var(--cd-color-event-30)
+}
+
+.cd-schedule__event [data-event="event-31"],
+.cd-schedule-modal[data-event="event-31"] .cd-schedule-modal__header-bg {
+	background: hsl(89, 100%, 50%);
+	background: var(--cd-color-event-31)
+}
+
+.cd-schedule__event [data-event="event-32"],
+.cd-schedule-modal[data-event="event-32"] .cd-schedule-modal__header-bg {
+	background: hsl(120, 100%, 50%);
+	background: var(--cd-color-event-32)
+}
+
+.cd-schedule__event [data-event="event-33"],
+.cd-schedule-modal[data-event="event-33"] .cd-schedule-modal__header-bg {
+	background: hsl(42, 100%, 50%);
+	background: var(--cd-color-event-33)
+}
+
+.cd-schedule__event [data-event="event-34"],
+.cd-schedule-modal[data-event="event-34"] .cd-schedule-modal__header-bg {
+	background: hsl(51, 100%, 50%);
+	background: var(--cd-color-event-34)
+}
+
+.cd-schedule__event [data-event="event-35"],
+.cd-schedule-modal[data-event="event-35"] .cd-schedule-modal__header-bg {
+	background: hsl(61, 100%, 50%);
+	background: var(--cd-color-event-35)
+}
+
+.cd-schedule__event [data-event="event-36"],
+.cd-schedule-modal[data-event="event-36"] .cd-schedule-modal__header-bg {
+	background: hsl(70, 100%, 50%);
+	background: var(--cd-color-event-36)
+}
+
+.cd-schedule__event [data-event="event-37"],
+.cd-schedule-modal[data-event="event-37"] .cd-schedule-modal__header-bg {
+	background: hsl(180, 100%, 50%);
+	background: var(--cd-color-event-37)
+}
+
+.cd-schedule__event [data-event="event-38"],
+.cd-schedule-modal[data-event="event-38"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 100%, 18%);
+	background: var(--cd-color-event-38)
+}
+
+.cd-schedule__event [data-event="event-39"],
+.cd-schedule-modal[data-event="event-39"] .cd-schedule-modal__header-bg {
+	background: hsl(300, 100%, 18%);
+	background: var(--cd-color-event-39)
+}
+
+.cd-schedule__event [data-event="event-40"],
+.cd-schedule-modal[data-event="event-40"] .cd-schedule-modal__header-bg {
+	background: hsl(82, 100%, 26%);
+	background: var(--cd-color-event-40)
+}
+
+.cd-schedule__event [data-event="event-41"],
+.cd-schedule-modal[data-event="event-41"] .cd-schedule-modal__header-bg {
+	background: hsl(72, 100%, 34%);
+	background: var(--cd-color-event-41)
+}
+
+.cd-schedule__event [data-event="event-42"],
+.cd-schedule-modal[data-event="event-42"] .cd-schedule-modal__header-bg {
+	background: hsl(66, 100%, 42%);
+	background: var(--cd-color-event-42)
+}
+
+.cd-schedule__event [data-event="event-43"],
+.cd-schedule-modal[data-event="event-43"] .cd-schedule-modal__header-bg {
+	background: hsl(62, 100%, 50%);
+	background: var(--cd-color-event-43)
+}
+
+.cd-schedule__event [data-event="event-44"],
+.cd-schedule-modal[data-event="event-44"] .cd-schedule-modal__header-bg {
+	background: hsl(60, 100%, 18%);
+	background: var(--cd-color-event-44)
+}
+
+.cd-schedule__event [data-event="event-45"],
+.cd-schedule-modal[data-event="event-45"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 0%, 37%);
+	background: var(--cd-color-event-45)
+}
+
+.cd-schedule__event [data-event="event-46"],
+.cd-schedule-modal[data-event="event-46"] .cd-schedule-modal__header-bg {
+	background: hsl(240, 17%, 45%);
+	background: var(--cd-color-event-46)
+}
+
+.cd-schedule__event [data-event="event-47"],
+.cd-schedule-modal[data-event="event-47"] .cd-schedule-modal__header-bg {
+	background: hsl(240, 33%, 52%);
+	background: var(--cd-color-event-47)
+}
+
+.cd-schedule__event [data-event="event-48"],
+.cd-schedule-modal[data-event="event-48"] .cd-schedule-modal__header-bg {
+	background: hsl(240, 60%, 60%);
+	background: var(--cd-color-event-48)
+}
+
+.cd-schedule__event [data-event="event-49"],
+.cd-schedule-modal[data-event="event-49"] .cd-schedule-modal__header-bg {
+	background: hsl(240, 100%, 68%);
+	background: var(--cd-color-event-49)
+}
+
+.cd-schedule__event [data-event="event-50"],
+.cd-schedule-modal[data-event="event-50"] .cd-schedule-modal__header-bg {
+	background: hsl(7, 100%, 26%);
+	background: var(--cd-color-event-50)
+}
+
+.cd-schedule__event [data-event="event-51"],
+.cd-schedule-modal[data-event="event-51"] .cd-schedule-modal__header-bg {
+	background: hsl(120, 17%, 45%);
+	background: var(--cd-color-event-51)
+}
+
+.cd-schedule__event [data-event="event-52"],
+.cd-schedule-modal[data-event="event-52"] .cd-schedule-modal__header-bg {
+	background: hsl(180, 17%, 45%);
+	background: var(--cd-color-event-52)
+}
+
+.cd-schedule__event [data-event="event-53"],
+.cd-schedule-modal[data-event="event-53"] .cd-schedule-modal__header-bg {
+	background: hsl(210, 33%, 52%);
+	background: var(--cd-color-event-53)
+}
+
+.cd-schedule__event [data-event="event-54"],
+.cd-schedule-modal[data-event="event-54"] .cd-schedule-modal__header-bg {
+	background: hsl(220, 60%, 60%);
+	background: var(--cd-color-event-54)
+}
+
+.cd-schedule__event [data-event="event-55"],
+.cd-schedule-modal[data-event="event-55"] .cd-schedule-modal__header-bg {
+	background: hsl(225, 100%, 68%);
+	background: var(--cd-color-event-55)
+}
+
+.cd-schedule__event [data-event="event-56"],
+.cd-schedule-modal[data-event="event-56"] .cd-schedule-modal__header-bg {
+	background: hsl(7, 100%, 34%);
+	background: var(--cd-color-event-56)
+}
+
+.cd-schedule__event [data-event="event-57"],
+.cd-schedule-modal[data-event="event-57"] .cd-schedule-modal__header-bg {
+	background: hsl(120, 33%, 52%);
+	background: var(--cd-color-event-57)
+}
+
+.cd-schedule__event [data-event="event-58"],
+.cd-schedule-modal[data-event="event-58"] .cd-schedule-modal__header-bg {
+	background: hsl(150, 33%, 52%);
+	background: var(--cd-color-event-58)
+}
+
+.cd-schedule__event [data-event="event-59"],
+.cd-schedule-modal[data-event="event-59"] .cd-schedule-modal__header-bg {
+	background: hsl(180, 33%, 52%);
+	background: var(--cd-color-event-59)
+}
+
+.cd-schedule__event [data-event="event-60"],
+.cd-schedule-modal[data-event="event-60"] .cd-schedule-modal__header-bg {
+	background: hsl(200, 60%, 60%);
+	background: var(--cd-color-event-60)
+}
+
+.cd-schedule__event [data-event="event-61"],
+.cd-schedule-modal[data-event="event-61"] .cd-schedule-modal__header-bg {
+	background: hsl(210, 100%, 68%);
+	background: var(--cd-color-event-61)
+}
+
+.cd-schedule__event [data-event="event-62"],
+.cd-schedule-modal[data-event="event-62"] .cd-schedule-modal__header-bg {
+	background: hsl(3, 100%, 42%);
+	background: var(--cd-color-event-62)
+}
+
+.cd-schedule__event [data-event="event-63"],
+.cd-schedule-modal[data-event="event-63"] .cd-schedule-modal__header-bg {
+	background: hsl(120, 60%, 60%);
+	background: var(--cd-color-event-63)
+}
+
+.cd-schedule__event [data-event="event-64"],
+.cd-schedule-modal[data-event="event-64"] .cd-schedule-modal__header-bg {
+	background: hsl(140, 60%, 60%);
+	background: var(--cd-color-event-64)
+}
+
+.cd-schedule__event [data-event="event-65"],
+.cd-schedule-modal[data-event="event-65"] .cd-schedule-modal__header-bg {
+	background: hsl(160, 60%, 60%);
+	background: var(--cd-color-event-65)
+}
+
+.cd-schedule__event [data-event="event-66"],
+.cd-schedule-modal[data-event="event-66"] .cd-schedule-modal__header-bg {
+	background: hsl(180, 60%, 60%);
+	background: var(--cd-color-event-66)
+}
+
+.cd-schedule__event [data-event="event-67"],
+.cd-schedule-modal[data-event="event-67"] .cd-schedule-modal__header-bg {
+	background: hsl(195, 100%, 68%);
+	background: var(--cd-color-event-67)
+}
+
+.cd-schedule__event [data-event="event-68"],
+.cd-schedule-modal[data-event="event-68"] .cd-schedule-modal__header-bg {
+	background: hsl(7, 100%, 50%);
+	background: var(--cd-color-event-68)
+}
+
+.cd-schedule__event [data-event="event-69"],
+.cd-schedule-modal[data-event="event-69"] .cd-schedule-modal__header-bg {
+	background: hsl(120, 100%, 68%);
+	background: var(--cd-color-event-69)
+}
+
+.cd-schedule__event [data-event="event-70"],
+.cd-schedule-modal[data-event="event-70"] .cd-schedule-modal__header-bg {
+	background: hsl(135, 100%, 68%);
+	background: var(--cd-color-event-70)
+}
+
+.cd-schedule__event [data-event="event-71"],
+.cd-schedule-modal[data-event="event-71"] .cd-schedule-modal__header-bg {
+	background: hsl(150, 100%, 68%);
+	background: var(--cd-color-event-71)
+}
+
+.cd-schedule__event [data-event="event-72"],
+.cd-schedule-modal[data-event="event-72"] .cd-schedule-modal__header-bg {
+	background: hsl(165, 100%, 68%);
+	background: var(--cd-color-event-72)
+}
+
+.cd-schedule__event [data-event="event-73"],
+.cd-schedule-modal[data-event="event-73"] .cd-schedule-modal__header-bg {
+	background: hsl(180, 100%, 68%);
+	background: var(--cd-color-event-73)
+}
+
+.cd-schedule__event [data-event="event-74"],
+.cd-schedule-modal[data-event="event-74"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 100%, 26%);
+	background: var(--cd-color-event-74)
+}
+
+.cd-schedule__event [data-event="event-75"],
+.cd-schedule-modal[data-event="event-75"] .cd-schedule-modal__header-bg {
+	background: hsl(17, 100%, 26%);
+	background: var(--cd-color-event-75)
+}
+
+.cd-schedule__event [data-event="event-76"],
+.cd-schedule-modal[data-event="event-76"] .cd-schedule-modal__header-bg {
+	background: hsl(300, 100%, 26%);
+	background: var(--cd-color-event-76)
+}
+
+.cd-schedule__event [data-event="event-77"],
+.cd-schedule-modal[data-event="event-77"] .cd-schedule-modal__header-bg {
+	background: hsl(86, 100%, 34%);
+	background: var(--cd-color-event-77)
+}
+
+.cd-schedule__event [data-event="event-78"],
+.cd-schedule-modal[data-event="event-78"] .cd-schedule-modal__header-bg {
+	background: hsl(77, 100%, 42%);
+	background: var(--cd-color-event-78)
+}
+
+.cd-schedule__event [data-event="event-79"],
+.cd-schedule-modal[data-event="event-79"] .cd-schedule-modal__header-bg {
+	background: hsl(71, 100%, 50%);
+	background: var(--cd-color-event-79)
+}
+
+.cd-schedule__event [data-event="event-80"],
+.cd-schedule-modal[data-event="event-80"] .cd-schedule-modal__header-bg {
+	background: hsl(2, 100%, 26%);
+	background: var(--cd-color-event-80)
+}
+
+.cd-schedule__event [data-event="event-81"],
+.cd-schedule-modal[data-event="event-81"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 17%, 45%);
+	background: var(--cd-color-event-81)
+}
+
+.cd-schedule__event [data-event="event-82"],
+.cd-schedule-modal[data-event="event-82"] .cd-schedule-modal__header-bg {
+	background: hsl(300, 17%, 45%);
+	background: var(--cd-color-event-82)
+}
+
+.cd-schedule__event [data-event="event-83"],
+.cd-schedule-modal[data-event="event-83"] .cd-schedule-modal__header-bg {
+	background: hsl(270, 33%, 52%);
+	background: var(--cd-color-event-83)
+}
+
+.cd-schedule__event [data-event="event-84"],
+.cd-schedule-modal[data-event="event-84"] .cd-schedule-modal__header-bg {
+	background: hsl(260, 60%, 60%);
+	background: var(--cd-color-event-84)
+}
+
+.cd-schedule__event [data-event="event-85"],
+.cd-schedule-modal[data-event="event-85"] .cd-schedule-modal__header-bg {
+	background: hsl(255, 100%, 68%);
+	background: var(--cd-color-event-85)
+}
+
+.cd-schedule__event [data-event="event-86"],
+.cd-schedule-modal[data-event="event-86"] .cd-schedule-modal__header-bg {
+	background: hsl(60, 100%, 26%);
+	background: var(--cd-color-event-86)
+}
+
+.cd-schedule__event [data-event="event-87"],
+.cd-schedule-modal[data-event="event-87"] .cd-schedule-modal__header-bg {
+	background: hsl(60, 17%, 45%);
+	background: var(--cd-color-event-87)
+}
+
+.cd-schedule__event [data-event="event-88"],
+.cd-schedule-modal[data-event="event-88"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 0%, 52%);
+	background: var(--cd-color-event-88)
+}
+
+.cd-schedule__event [data-event="event-89"],
+.cd-schedule-modal[data-event="event-89"] .cd-schedule-modal__header-bg {
+	background: hsl(240, 20%, 60%);
+	background: var(--cd-color-event-89)
+}
+
+.cd-schedule__event [data-event="event-90"],
+.cd-schedule-modal[data-event="event-90"] .cd-schedule-modal__header-bg {
+	background: hsl(240, 50%, 68%);
+	background: var(--cd-color-event-90)
+}
+
+.cd-schedule__event [data-event="event-91"],
+.cd-schedule-modal[data-event="event-91"] .cd-schedule-modal__header-bg {
+	background: hsl(240, 100%, 76%);
+	background: var(--cd-color-event-91)
+}
+
+.cd-schedule__event [data-event="event-92"],
+.cd-schedule-modal[data-event="event-92"] .cd-schedule-modal__header-bg {
+	background: hsl(3, 100%, 34%);
+	background: var(--cd-color-event-92)
+}
+
+.cd-schedule__event [data-event="event-93"],
+.cd-schedule-modal[data-event="event-93"] .cd-schedule-modal__header-bg {
+	background: hsl(90, 33%, 52%);
+	background: var(--cd-color-event-93)
+}
+
+.cd-schedule__event [data-event="event-94"],
+.cd-schedule-modal[data-event="event-94"] .cd-schedule-modal__header-bg {
+	background: hsl(120, 20%, 60%);
+	background: var(--cd-color-event-94)
+}
+
+.cd-schedule__event [data-event="event-95"],
+.cd-schedule-modal[data-event="event-95"] .cd-schedule-modal__header-bg {
+	background: hsl(180, 20%, 60%);
+	background: var(--cd-color-event-95)
+}
+
+.cd-schedule__event [data-event="event-96"],
+.cd-schedule-modal[data-event="event-96"] .cd-schedule-modal__header-bg {
+	background: hsl(210, 50%, 68%);
+	background: var(--cd-color-event-96)
+}
+
+.cd-schedule__event [data-event="event-97"],
+.cd-schedule-modal[data-event="event-97"] .cd-schedule-modal__header-bg {
+	background: hsl(220, 100%, 76%);
+	background: var(--cd-color-event-97)
+}
+
+.cd-schedule__event [data-event="event-98"],
+.cd-schedule-modal[data-event="event-98"] .cd-schedule-modal__header-bg {
+	background: hsl(2, 100%, 42%);
+	background: var(--cd-color-event-98)
+}
+
+.cd-schedule__event [data-event="event-99"],
+.cd-schedule-modal[data-event="event-99"] .cd-schedule-modal__header-bg {
+	background: hsl(100, 60%, 60%);
+	background: var(--cd-color-event-99)
+}
+
+.cd-schedule__event [data-event="event-100"],
+.cd-schedule-modal[data-event="event-100"] .cd-schedule-modal__header-bg {
+	background: hsl(120, 50%, 68%);
+	background: var(--cd-color-event-100)
+}
+
+.cd-schedule__event [data-event="event-101"],
+.cd-schedule-modal[data-event="event-101"] .cd-schedule-modal__header-bg {
+	background: hsl(150, 50%, 68%);
+	background: var(--cd-color-event-101)
+}
+
+.cd-schedule__event [data-event="event-102"],
+.cd-schedule-modal[data-event="event-102"] .cd-schedule-modal__header-bg {
+	background: hsl(180, 50%, 68%);
+	background: var(--cd-color-event-102)
+}
+
+.cd-schedule__event [data-event="event-103"],
+.cd-schedule-modal[data-event="event-103"] .cd-schedule-modal__header-bg {
+	background: hsl(200, 100%, 76%);
+	background: var(--cd-color-event-103)
+}
+
+.cd-schedule__event [data-event="event-104"],
+.cd-schedule-modal[data-event="event-104"] .cd-schedule-modal__header-bg {
+	background: hsl(8, 100%, 50%);
+	background: var(--cd-color-event-104)
+}
+
+.cd-schedule__event [data-event="event-105"],
+.cd-schedule-modal[data-event="event-105"] .cd-schedule-modal__header-bg {
+	background: hsl(105, 100%, 68%);
+	background: var(--cd-color-event-105)
+}
+
+.cd-schedule__event [data-event="event-106"],
+.cd-schedule-modal[data-event="event-106"] .cd-schedule-modal__header-bg {
+	background: hsl(120, 100%, 76%);
+	background: var(--cd-color-event-106)
+}
+
+.cd-schedule__event [data-event="event-107"],
+.cd-schedule-modal[data-event="event-107"] .cd-schedule-modal__header-bg {
+	background: hsl(140, 100%, 76%);
+	background: var(--cd-color-event-107)
+}
+
+.cd-schedule__event [data-event="event-108"],
+.cd-schedule-modal[data-event="event-108"] .cd-schedule-modal__header-bg {
+	background: hsl(160, 100%, 76%);
+	background: var(--cd-color-event-108)
+}
+
+.cd-schedule__event [data-event="event-109"],
+.cd-schedule-modal[data-event="event-109"] .cd-schedule-modal__header-bg {
+	background: hsl(180, 100%, 76%);
+	background: var(--cd-color-event-109)
+}
+
+.cd-schedule__event [data-event="event-110"],
+.cd-schedule-modal[data-event="event-110"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 100%, 34%);
+	background: var(--cd-color-event-110)
+}
+
+.cd-schedule__event [data-event="event-111"],
+.cd-schedule-modal[data-event="event-111"] .cd-schedule-modal__header-bg {
+	background: hsl(27, 100%, 34%);
+	background: var(--cd-color-event-111)
+}
+
+.cd-schedule__event [data-event="event-112"],
+.cd-schedule-modal[data-event="event-112"] .cd-schedule-modal__header-bg {
+	background: hsl(13, 100%, 34%);
+	background: var(--cd-color-event-112)
+}
+
+.cd-schedule__event [data-event="event-113"],
+.cd-schedule-modal[data-event="event-113"] .cd-schedule-modal__header-bg {
+	background: hsl(300, 100%, 34%);
+	background: var(--cd-color-event-113)
+}
+
+.cd-schedule__event [data-event="event-114"],
+.cd-schedule-modal[data-event="event-114"] .cd-schedule-modal__header-bg {
+	background: hsl(88, 100%, 42%);
+	background: var(--cd-color-event-114)
+}
+
+.cd-schedule__event [data-event="event-115"],
+.cd-schedule-modal[data-event="event-115"] .cd-schedule-modal__header-bg {
+	background: hsl(81, 100%, 50%);
+	background: var(--cd-color-event-115)
+}
+
+.cd-schedule__event [data-event="event-116"],
+.cd-schedule-modal[data-event="event-116"] .cd-schedule-modal__header-bg {
+	background: hsl(2, 100%, 34%);
+	background: var(--cd-color-event-116)
+}
+
+.cd-schedule__event [data-event="event-117"],
+.cd-schedule-modal[data-event="event-117"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 33%, 52%);
+	background: var(--cd-color-event-117)
+}
+
+.cd-schedule__event [data-event="event-118"],
+.cd-schedule-modal[data-event="event-118"] .cd-schedule-modal__header-bg {
+	background: hsl(330, 33%, 52%);
+	background: var(--cd-color-event-118)
+}
+
+.cd-schedule__event [data-event="event-119"],
+.cd-schedule-modal[data-event="event-119"] .cd-schedule-modal__header-bg {
+	background: hsl(300, 33%, 52%);
+	background: var(--cd-color-event-119)
+}
+
+.cd-schedule__event [data-event="event-120"],
+.cd-schedule-modal[data-event="event-120"] .cd-schedule-modal__header-bg {
+	background: hsl(280, 60%, 60%);
+	background: var(--cd-color-event-120)
+}
+
+.cd-schedule__event [data-event="event-121"],
+.cd-schedule-modal[data-event="event-121"] .cd-schedule-modal__header-bg {
+	background: hsl(270, 100%, 68%);
+	background: var(--cd-color-event-121)
+}
+
+.cd-schedule__event [data-event="event-122"],
+.cd-schedule-modal[data-event="event-122"] .cd-schedule-modal__header-bg {
+	background: hsl(6, 100%, 34%);
+	background: var(--cd-color-event-122)
+}
+
+.cd-schedule__event [data-event="event-123"],
+.cd-schedule-modal[data-event="event-123"] .cd-schedule-modal__header-bg {
+	background: hsl(30, 33%, 52%);
+	background: var(--cd-color-event-123)
+}
+
+.cd-schedule__event [data-event="event-124"],
+.cd-schedule-modal[data-event="event-124"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 20%, 60%);
+	background: var(--cd-color-event-124)
+}
+
+.cd-schedule__event [data-event="event-125"],
+.cd-schedule-modal[data-event="event-125"] .cd-schedule-modal__header-bg {
+	background: hsl(300, 20%, 60%);
+	background: var(--cd-color-event-125)
+}
+
+.cd-schedule__event [data-event="event-126"],
+.cd-schedule-modal[data-event="event-126"] .cd-schedule-modal__header-bg {
+	background: hsl(270, 50%, 68%);
+	background: var(--cd-color-event-126)
+}
+
+.cd-schedule__event [data-event="event-127"],
+.cd-schedule-modal[data-event="event-127"] .cd-schedule-modal__header-bg {
+	background: hsl(260, 100%, 76%);
+	background: var(--cd-color-event-127)
+}
+
+.cd-schedule__event [data-event="event-128"],
+.cd-schedule-modal[data-event="event-128"] .cd-schedule-modal__header-bg {
+	background: hsl(60, 100%, 34%);
+	background: var(--cd-color-event-128)
+}
+
+.cd-schedule__event [data-event="event-129"],
+.cd-schedule-modal[data-event="event-129"] .cd-schedule-modal__header-bg {
+	background: hsl(60, 33%, 52%);
+	background: var(--cd-color-event-129)
+}
+
+.cd-schedule__event [data-event="event-130"],
+.cd-schedule-modal[data-event="event-130"] .cd-schedule-modal__header-bg {
+	background: hsl(60, 20%, 60%);
+	background: var(--cd-color-event-130)
+}
+
+.cd-schedule__event [data-event="event-131"],
+.cd-schedule-modal[data-event="event-131"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 0%, 68%);
+	background: var(--cd-color-event-131)
+}
+
+.cd-schedule__event [data-event="event-132"],
+.cd-schedule-modal[data-event="event-132"] .cd-schedule-modal__header-bg {
+	background: hsl(240, 33%, 76%);
+	background: var(--cd-color-event-132)
+}
+
+.cd-schedule__event [data-event="event-133"],
+.cd-schedule-modal[data-event="event-133"] .cd-schedule-modal__header-bg {
+	background: hsl(240, 100%, 84%);
+	background: var(--cd-color-event-133)
+}
+
+.cd-schedule__event [data-event="event-134"],
+.cd-schedule-modal[data-event="event-134"] .cd-schedule-modal__header-bg {
+	background: hsl(1, 100%, 42%);
+	background: var(--cd-color-event-134)
+}
+
+.cd-schedule__event [data-event="event-135"],
+.cd-schedule-modal[data-event="event-135"] .cd-schedule-modal__header-bg {
+	background: hsl(80, 60%, 60%);
+	background: var(--cd-color-event-135)
+}
+
+.cd-schedule__event [data-event="event-136"],
+.cd-schedule-modal[data-event="event-136"] .cd-schedule-modal__header-bg {
+	background: hsl(90, 50%, 68%);
+	background: var(--cd-color-event-136)
+}
+
+.cd-schedule__event [data-event="event-137"],
+.cd-schedule-modal[data-event="event-137"] .cd-schedule-modal__header-bg {
+	background: hsl(120, 33%, 76%);
+	background: var(--cd-color-event-137)
+}
+
+.cd-schedule__event [data-event="event-138"],
+.cd-schedule-modal[data-event="event-138"] .cd-schedule-modal__header-bg {
+	background: hsl(180, 33%, 76%);
+	background: var(--cd-color-event-138)
+}
+
+.cd-schedule__event [data-event="event-139"],
+.cd-schedule-modal[data-event="event-139"] .cd-schedule-modal__header-bg {
+	background: hsl(210, 100%, 84%);
+	background: var(--cd-color-event-139)
+}
+
+.cd-schedule__event [data-event="event-140"],
+.cd-schedule-modal[data-event="event-140"] .cd-schedule-modal__header-bg {
+	background: hsl(8, 100%, 50%);
+	background: var(--cd-color-event-140)
+}
+
+.cd-schedule__event [data-event="event-141"],
+.cd-schedule-modal[data-event="event-141"] .cd-schedule-modal__header-bg {
+	background: hsl(90, 100%, 68%);
+	background: var(--cd-color-event-141)
+}
+
+.cd-schedule__event [data-event="event-142"],
+.cd-schedule-modal[data-event="event-142"] .cd-schedule-modal__header-bg {
+	background: hsl(100, 100%, 76%);
+	background: var(--cd-color-event-142)
+}
+
+.cd-schedule__event [data-event="event-143"],
+.cd-schedule-modal[data-event="event-143"] .cd-schedule-modal__header-bg {
+	background: hsl(120, 100%, 84%);
+	background: var(--cd-color-event-143)
+}
+
+.cd-schedule__event [data-event="event-144"],
+.cd-schedule-modal[data-event="event-144"] .cd-schedule-modal__header-bg {
+	background: hsl(150, 100%, 84%);
+	background: var(--cd-color-event-144)
+}
+
+.cd-schedule__event [data-event="event-145"],
+.cd-schedule-modal[data-event="event-145"] .cd-schedule-modal__header-bg {
+	background: hsl(180, 100%, 84%);
+	background: var(--cd-color-event-145)
+}
+
+.cd-schedule__event [data-event="event-146"],
+.cd-schedule-modal[data-event="event-146"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 100%, 42%);
+	background: var(--cd-color-event-146)
+}
+
+.cd-schedule__event [data-event="event-147"],
+.cd-schedule-modal[data-event="event-147"] .cd-schedule-modal__header-bg {
+	background: hsl(33, 100%, 42%);
+	background: var(--cd-color-event-147)
+}
+
+.cd-schedule__event [data-event="event-148"],
+.cd-schedule-modal[data-event="event-148"] .cd-schedule-modal__header-bg {
+	background: hsl(22, 100%, 42%);
+	background: var(--cd-color-event-148)
+}
+
+.cd-schedule__event [data-event="event-149"],
+.cd-schedule-modal[data-event="event-149"] .cd-schedule-modal__header-bg {
+	background: hsl(11, 100%, 42%);
+	background: var(--cd-color-event-149)
+}
+
+.cd-schedule__event [data-event="event-150"],
+.cd-schedule-modal[data-event="event-150"] .cd-schedule-modal__header-bg {
+	background: hsl(300, 100%, 42%);
+	background: var(--cd-color-event-150)
+}
+
+.cd-schedule__event [data-event="event-151"],
+.cd-schedule-modal[data-event="event-151"] .cd-schedule-modal__header-bg {
+	background: hsl(90, 100%, 50%);
+	background: var(--cd-color-event-151)
+}
+
+.cd-schedule__event [data-event="event-152"],
+.cd-schedule-modal[data-event="event-152"] .cd-schedule-modal__header-bg {
+	background: hsl(6, 100%, 42%);
+	background: var(--cd-color-event-152)
+}
+
+.cd-schedule__event [data-event="event-153"],
+.cd-schedule-modal[data-event="event-153"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 60%, 60%);
+	background: var(--cd-color-event-153)
+}
+
+.cd-schedule__event [data-event="event-154"],
+.cd-schedule-modal[data-event="event-154"] .cd-schedule-modal__header-bg {
+	background: hsl(340, 60%, 60%);
+	background: var(--cd-color-event-154)
+}
+
+.cd-schedule__event [data-event="event-155"],
+.cd-schedule-modal[data-event="event-155"] .cd-schedule-modal__header-bg {
+	background: hsl(320, 60%, 60%);
+	background: var(--cd-color-event-155)
+}
+
+.cd-schedule__event [data-event="event-156"],
+.cd-schedule-modal[data-event="event-156"] .cd-schedule-modal__header-bg {
+	background: hsl(300, 60%, 60%);
+	background: var(--cd-color-event-156)
+}
+
+.cd-schedule__event [data-event="event-157"],
+.cd-schedule-modal[data-event="event-157"] .cd-schedule-modal__header-bg {
+	background: hsl(285, 100%, 68%);
+	background: var(--cd-color-event-157)
+}
+
+.cd-schedule__event [data-event="event-158"],
+.cd-schedule-modal[data-event="event-158"] .cd-schedule-modal__header-bg {
+	background: hsl(7, 100%, 42%);
+	background: var(--cd-color-event-158)
+}
+
+.cd-schedule__event [data-event="event-159"],
+.cd-schedule-modal[data-event="event-159"] .cd-schedule-modal__header-bg {
+	background: hsl(20, 60%, 60%);
+	background: var(--cd-color-event-159)
+}
+
+.cd-schedule__event [data-event="event-160"],
+.cd-schedule-modal[data-event="event-160"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 50%, 68%);
+	background: var(--cd-color-event-160)
+}
+
+.cd-schedule__event [data-event="event-161"],
+.cd-schedule-modal[data-event="event-161"] .cd-schedule-modal__header-bg {
+	background: hsl(330, 50%, 68%);
+	background: var(--cd-color-event-161)
+}
+
+.cd-schedule__event [data-event="event-162"],
+.cd-schedule-modal[data-event="event-162"] .cd-schedule-modal__header-bg {
+	background: hsl(300, 50%, 68%);
+	background: var(--cd-color-event-162)
+}
+
+.cd-schedule__event [data-event="event-163"],
+.cd-schedule-modal[data-event="event-163"] .cd-schedule-modal__header-bg {
+	background: hsl(280, 100%, 76%);
+	background: var(--cd-color-event-163)
+}
+
+.cd-schedule__event [data-event="event-164"],
+.cd-schedule-modal[data-event="event-164"] .cd-schedule-modal__header-bg {
+	background: hsl(8, 100%, 42%);
+	background: var(--cd-color-event-164)
+}
+
+.cd-schedule__event [data-event="event-165"],
+.cd-schedule-modal[data-event="event-165"] .cd-schedule-modal__header-bg {
+	background: hsl(40, 60%, 60%);
+	background: var(--cd-color-event-165)
+}
+
+.cd-schedule__event [data-event="event-166"],
+.cd-schedule-modal[data-event="event-166"] .cd-schedule-modal__header-bg {
+	background: hsl(30, 50%, 68%);
+	background: var(--cd-color-event-166)
+}
+
+.cd-schedule__event [data-event="event-167"],
+.cd-schedule-modal[data-event="event-167"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 33%, 76%);
+	background: var(--cd-color-event-167)
+}
+
+.cd-schedule__event [data-event="event-168"],
+.cd-schedule-modal[data-event="event-168"] .cd-schedule-modal__header-bg {
+	background: hsl(300, 33%, 76%);
+	background: var(--cd-color-event-168)
+}
+
+.cd-schedule__event [data-event="event-169"],
+.cd-schedule-modal[data-event="event-169"] .cd-schedule-modal__header-bg {
+	background: hsl(270, 100%, 84%);
+	background: var(--cd-color-event-169)
+}
+
+.cd-schedule__event [data-event="event-170"],
+.cd-schedule-modal[data-event="event-170"] .cd-schedule-modal__header-bg {
+	background: hsl(60, 100%, 42%);
+	background: var(--cd-color-event-170)
+}
+
+.cd-schedule__event [data-event="event-171"],
+.cd-schedule-modal[data-event="event-171"] .cd-schedule-modal__header-bg {
+	background: hsl(60, 60%, 60%);
+	background: var(--cd-color-event-171)
+}
+
+.cd-schedule__event [data-event="event-172"],
+.cd-schedule-modal[data-event="event-172"] .cd-schedule-modal__header-bg {
+	background: hsl(60, 50%, 68%);
+	background: var(--cd-color-event-172)
+}
+
+.cd-schedule__event [data-event="event-173"],
+.cd-schedule-modal[data-event="event-173"] .cd-schedule-modal__header-bg {
+	background: hsl(60, 33%, 76%);
+	background: var(--cd-color-event-173)
+}
+
+.cd-schedule__event [data-event="event-174"],
+.cd-schedule-modal[data-event="event-174"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 0%, 84%);
+	background: var(--cd-color-event-174)
+}
+
+.cd-schedule__event [data-event="event-175"],
+.cd-schedule-modal[data-event="event-175"] .cd-schedule-modal__header-bg {
+	background: hsl(240, 100%, 92%);
+	background: var(--cd-color-event-175)
+}
+
+.cd-schedule__event [data-event="event-176"],
+.cd-schedule-modal[data-event="event-176"] .cd-schedule-modal__header-bg {
+	background: hsl(9, 100%, 50%);
+	background: var(--cd-color-event-176)
+}
+
+.cd-schedule__event [data-event="event-177"],
+.cd-schedule-modal[data-event="event-177"] .cd-schedule-modal__header-bg {
+	background: hsl(75, 100%, 68%);
+	background: var(--cd-color-event-177)
+}
+
+.cd-schedule__event [data-event="event-178"],
+.cd-schedule-modal[data-event="event-178"] .cd-schedule-modal__header-bg {
+	background: hsl(80, 100%, 76%);
+	background: var(--cd-color-event-178)
+}
+
+.cd-schedule__event [data-event="event-179"],
+.cd-schedule-modal[data-event="event-179"] .cd-schedule-modal__header-bg {
+	background: hsl(90, 100%, 84%);
+	background: var(--cd-color-event-179)
+}
+
+.cd-schedule__event [data-event="event-180"],
+.cd-schedule-modal[data-event="event-180"] .cd-schedule-modal__header-bg {
+	background: hsl(120, 100%, 92%);
+	background: var(--cd-color-event-180)
+}
+
+.cd-schedule__event [data-event="event-181"],
+.cd-schedule-modal[data-event="event-181"] .cd-schedule-modal__header-bg {
+	background: hsl(180, 100%, 92%);
+	background: var(--cd-color-event-181)
+}
+
+.cd-schedule__event [data-event="event-182"],
+.cd-schedule-modal[data-event="event-182"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 100%, 50%);
+	background: var(--cd-color-event-182)
+}
+
+.cd-schedule__event [data-event="event-183"],
+.cd-schedule-modal[data-event="event-183"] .cd-schedule-modal__header-bg {
+	background: hsl(37, 100%, 50%);
+	background: var(--cd-color-event-183)
+}
+
+.cd-schedule__event [data-event="event-184"],
+.cd-schedule-modal[data-event="event-184"] .cd-schedule-modal__header-bg {
+	background: hsl(28, 100%, 50%);
+	background: var(--cd-color-event-184)
+}
+
+.cd-schedule__event [data-event="event-185"],
+.cd-schedule-modal[data-event="event-185"] .cd-schedule-modal__header-bg {
+	background: hsl(18, 100%, 50%);
+	background: var(--cd-color-event-185)
+}
+
+.cd-schedule__event [data-event="event-186"],
+.cd-schedule-modal[data-event="event-186"] .cd-schedule-modal__header-bg {
+	background: hsl(09, 100%, 50%);
+	background: var(--cd-color-event-186)
+}
+
+.cd-schedule__event [data-event="event-187"],
+.cd-schedule-modal[data-event="event-187"] .cd-schedule-modal__header-bg {
+	background: hsl(300, 100%, 50%);
+	background: var(--cd-color-event-187)
+}
+
+.cd-schedule__event [data-event="event-188"],
+.cd-schedule-modal[data-event="event-188"] .cd-schedule-modal__header-bg {
+	background: hsl(2, 100%, 50%);
+	background: var(--cd-color-event-188)
+}
+
+.cd-schedule__event [data-event="event-189"],
+.cd-schedule-modal[data-event="event-189"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 100%, 68%);
+	background: var(--cd-color-event-189)
+}
+
+.cd-schedule__event [data-event="event-190"],
+.cd-schedule-modal[data-event="event-190"] .cd-schedule-modal__header-bg {
+	background: hsl(345, 100%, 68%);
+	background: var(--cd-color-event-190)
+}
+
+.cd-schedule__event [data-event="event-191"],
+.cd-schedule-modal[data-event="event-191"] .cd-schedule-modal__header-bg {
+	background: hsl(330, 100%, 68%);
+	background: var(--cd-color-event-191)
+}
+
+.cd-schedule__event [data-event="event-192"],
+.cd-schedule-modal[data-event="event-192"] .cd-schedule-modal__header-bg {
+	background: hsl(315, 100%, 68%);
+	background: var(--cd-color-event-192)
+}
+
+.cd-schedule__event [data-event="event-193"],
+.cd-schedule-modal[data-event="event-193"] .cd-schedule-modal__header-bg {
+	background: hsl(300, 100%, 68%);
+	background: var(--cd-color-event-193)
+}
+
+.cd-schedule__event [data-event="event-194"],
+.cd-schedule-modal[data-event="event-194"] .cd-schedule-modal__header-bg {
+	background: hsl(1, 100%, 50%);
+	background: var(--cd-color-event-194)
+}
+
+.cd-schedule__event [data-event="event-195"],
+.cd-schedule-modal[data-event="event-195"] .cd-schedule-modal__header-bg {
+	background: hsl(15, 100%, 68%);
+	background: var(--cd-color-event-195)
+}
+
+.cd-schedule__event [data-event="event-196"],
+.cd-schedule-modal[data-event="event-196"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 100%, 76%);
+	background: var(--cd-color-event-196)
+}
+
+.cd-schedule__event [data-event="event-197"],
+.cd-schedule-modal[data-event="event-197"] .cd-schedule-modal__header-bg {
+	background: hsl(340, 100%, 76%);
+	background: var(--cd-color-event-197)
+}
+
+.cd-schedule__event [data-event="event-198"],
+.cd-schedule-modal[data-event="event-198"] .cd-schedule-modal__header-bg {
+	background: hsl(320, 100%, 76%);
+	background: var(--cd-color-event-198)
+}
+
+.cd-schedule__event [data-event="event-199"],
+.cd-schedule-modal[data-event="event-199"] .cd-schedule-modal__header-bg {
+	background: hsl(300, 100%, 76%);
+	background: var(--cd-color-event-199)
+}
+
+.cd-schedule__event [data-event="event-200"],
+.cd-schedule-modal[data-event="event-200"] .cd-schedule-modal__header-bg {
+	background: hsl(1, 100%, 50%);
+	background: var(--cd-color-event-200)
+}
+
+.cd-schedule__event [data-event="event-201"],
+.cd-schedule-modal[data-event="event-201"] .cd-schedule-modal__header-bg {
+	background: hsl(30, 100%, 68%);
+	background: var(--cd-color-event-201)
+}
+
+.cd-schedule__event [data-event="event-202"],
+.cd-schedule-modal[data-event="event-202"] .cd-schedule-modal__header-bg {
+	background: hsl(20, 100%, 76%);
+	background: var(--cd-color-event-202)
+}
+
+.cd-schedule__event [data-event="event-203"],
+.cd-schedule-modal[data-event="event-203"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 100%, 84%);
+	background: var(--cd-color-event-203)
+}
+
+.cd-schedule__event [data-event="event-204"],
+.cd-schedule-modal[data-event="event-204"] .cd-schedule-modal__header-bg {
+	background: hsl(330, 100%, 84%);
+	background: var(--cd-color-event-204)
+}
+
+.cd-schedule__event [data-event="event-205"],
+.cd-schedule-modal[data-event="event-205"] .cd-schedule-modal__header-bg {
+	background: hsl(300, 100%, 84%);
+	background: var(--cd-color-event-205)
+}
+
+.cd-schedule__event [data-event="event-206"],
+.cd-schedule-modal[data-event="event-206"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 100%, 50%);
+	background: var(--cd-color-event-206)
+}
+
+.cd-schedule__event [data-event="event-207"],
+.cd-schedule-modal[data-event="event-207"] .cd-schedule-modal__header-bg {
+	background: hsl(45, 100%, 68%);
+	background: var(--cd-color-event-207)
+}
+
+.cd-schedule__event [data-event="event-208"],
+.cd-schedule-modal[data-event="event-208"] .cd-schedule-modal__header-bg {
+	background: hsl(40, 100%, 76%);
+	background: var(--cd-color-event-208)
+}
+
+.cd-schedule__event [data-event="event-209"],
+.cd-schedule-modal[data-event="event-209"] .cd-schedule-modal__header-bg {
+	background: hsl(30, 100%, 84%);
+	background: var(--cd-color-event-209)
+}
+
+.cd-schedule__event [data-event="event-210"],
+.cd-schedule-modal[data-event="event-210"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 100%, 92%);
+	background: var(--cd-color-event-210)
+}
+
+.cd-schedule__event [data-event="event-211"],
+.cd-schedule-modal[data-event="event-211"] .cd-schedule-modal__header-bg {
+	background: hsl(300, 100%, 92%);
+	background: var(--cd-color-event-211)
+}
+
+.cd-schedule__event [data-event="event-212"],
+.cd-schedule-modal[data-event="event-212"] .cd-schedule-modal__header-bg {
+	background: hsl(60, 100%, 50%);
+	background: var(--cd-color-event-212)
+}
+
+.cd-schedule__event [data-event="event-213"],
+.cd-schedule-modal[data-event="event-213"] .cd-schedule-modal__header-bg {
+	background: hsl(60, 100%, 68%);
+	background: var(--cd-color-event-213)
+}
+
+.cd-schedule__event [data-event="event-214"],
+.cd-schedule-modal[data-event="event-214"] .cd-schedule-modal__header-bg {
+	background: hsl(60, 100%, 76%);
+	background: var(--cd-color-event-214)
+}
+
+.cd-schedule__event [data-event="event-215"],
+.cd-schedule-modal[data-event="event-215"] .cd-schedule-modal__header-bg {
+	background: hsl(60, 100%, 84%);
+	background: var(--cd-color-event-215)
+}
+
+.cd-schedule__event [data-event="event-216"],
+.cd-schedule-modal[data-event="event-216"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 0%, 22%);
+	background: var(--cd-color-event-216)
+}
+
+.cd-schedule__event [data-event="event-217"],
+.cd-schedule-modal[data-event="event-217"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 0%, 26%);
+	background: var(--cd-color-event-217)
+}
+
+.cd-schedule__event [data-event="event-218"],
+.cd-schedule-modal[data-event="event-218"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 0%, 30%);
+	background: var(--cd-color-event-218)
+}
+
+.cd-schedule__event [data-event="event-219"],
+.cd-schedule-modal[data-event="event-219"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 0%, 34%);
+	background: var(--cd-color-event-219)
+}
+
+.cd-schedule__event [data-event="event-220"],
+.cd-schedule-modal[data-event="event-220"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 0%, 37%);
+	background: var(--cd-color-event-220)
+}
+
+.cd-schedule__event [data-event="event-221"],
+.cd-schedule-modal[data-event="event-221"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 0%, 40%);
+	background: var(--cd-color-event-221)
+}
+
+.cd-schedule__event [data-event="event-222"],
+.cd-schedule-modal[data-event="event-222"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 0%, 46%);
+	background: var(--cd-color-event-222)
+}
+
+.cd-schedule__event [data-event="event-223"],
+.cd-schedule-modal[data-event="event-223"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 0%, 50%);
+	background: var(--cd-color-event-223)
+}
+
+.cd-schedule__event [data-event="event-224"],
+.cd-schedule-modal[data-event="event-224"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 0%, 54%);
+	background: var(--cd-color-event-224)
+}
+
+.cd-schedule__event [data-event="event-225"],
+.cd-schedule-modal[data-event="event-225"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 0%, 58%);
+	background: var(--cd-color-event-225)
+}
+
+.cd-schedule__event [data-event="event-226"],
+.cd-schedule-modal[data-event="event-226"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 0%, 61%);
+	background: var(--cd-color-event-226)
+}
+
+.cd-schedule__event [data-event="event-227"],
+.cd-schedule-modal[data-event="event-227"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 0%, 65%);
+	background: var(--cd-color-event-227)
+}
+
+.cd-schedule__event [data-event="event-228"],
+.cd-schedule-modal[data-event="event-228"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 0%, 69%);
+	background: var(--cd-color-event-228)
+}
+
+.cd-schedule__event [data-event="event-229"],
+.cd-schedule-modal[data-event="event-229"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 0%, 73%);
+	background: var(--cd-color-event-229)
+}
+
+.cd-schedule__event [data-event="event-230"],
+.cd-schedule-modal[data-event="event-230"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 0%, 77%);
+	background: var(--cd-color-event-230)
+}
+
+.cd-schedule__event [data-event="event-231"],
+.cd-schedule-modal[data-event="event-231"] .cd-schedule-modal__header-bg {
+	background: hsl(0, 0%, 81%);
+	background: var(--cd-color-event-231)
 }
 
 .cd-schedule-modal {
@@ -2614,6 +4884,11 @@ a {
 }
 
 .cd-schedule-modal__date {
+	display: none
+}
+
+/* Custom */
+.cd-schedule-content {
 	display: none
 }
 

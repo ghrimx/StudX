@@ -107,7 +107,7 @@
 		this.animating = true;
 
 		//update event name and time
-		this.modalEventName.textContent = target.getElementsByTagName('em')[0].textContent;
+		this.modalEventName.innerHTML = target.getElementsByTagName('em')[0].innerHTML;
 		this.modalDate.textContent = target.getAttribute('data-start')+' - '+target.getAttribute('data-end');
 		this.modal.setAttribute('data-event', target.getAttribute('data-event'));
 
@@ -291,25 +291,17 @@
 	ScheduleTemplate.prototype.loadEventContent = function(content) {
 		// load the content of an event when user selects it
 		var self = this;
-
-		httpRequest = new XMLHttpRequest();
-		httpRequest.onreadystatechange = function() {
-			if (httpRequest.readyState === XMLHttpRequest.DONE) {
-	      if (httpRequest.status === 200) {
-	      	self.modal.getElementsByClassName('cd-schedule-modal__event-info')[0].innerHTML = self.getEventContent(httpRequest.responseText); 
-	      	Util.addClass(self.modal, 'cd-schedule-modal--content-loaded');
-	      }
-	    }
-		};
-		httpRequest.open('GET', content+'.html');
-    httpRequest.send();
+		x = document.getElementsByClassName('cd-schedule-content '+content)[0].innerHTML; 
+		
+		self.modal.getElementsByClassName('cd-schedule-modal__event-info')[0].innerHTML = x;
+		Util.addClass(self.modal, 'cd-schedule-modal--content-loaded');
 	};
 
 	ScheduleTemplate.prototype.getEventContent = function(string) {
 		// reset the loaded event content so that it can be inserted in the modal
 		var div = document.createElement('div');
 		div.innerHTML = string.trim();
-		return div.getElementsByClassName('cd-schedule-modal__event-info')[0].innerHTML;
+		return div;
 	};
 
 	ScheduleTemplate.prototype.animationFallback = function() {

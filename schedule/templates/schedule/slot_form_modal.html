@@ -1,0 +1,107 @@
+{# /StudX_dir/StudX/schedule/templates/schedule/slot_form_modal.html #}
+
+<div class="modal fade" id="AddScheduleSlot" tabindex="-1" role="dialog" aria-labelledby="AddScheduleSlotTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="AddScheduleSlotTitle">{% trans 'Add schedule slot' %}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post">
+			{% csrf_token %}
+				{{ form.non_field_errors }}
+			{% for hidden_field in form.hidden_fields %}
+				{{ hidden_field.errors }}
+				{{ hidden_field }}
+			{% endfor %}
+
+			<div class="form-group row">
+				<div class="col">
+					{% for classe in classes %}
+					<ul class="list-group" >
+						<li class="list-group-item list-group-item-secondary">
+							<input type="checkbox" name="{{ classe.classe_name }}" id="{{ classe.classe_name }}" aria-label="CheckAll{{ classe.classe_name }}" onClick="toggle(this,'{{ classe.classe_name }}')">
+							<a class="#" data-toggle="collapse" href="#collapse{{ classe.classe_name }}" role="button" aria-expanded="false" aria-controls="collapse{{ classe.classe_name }}">
+								{{ classe.classe_name }}
+							</a>
+
+						</li>
+						<div class="collapse" id="collapse{{ classe.classe_name }}">
+							{% for student in classe.student_classe.all %}
+							<li class="list-group-item d-flex justify-content-between align-items-center">
+								<input type="checkbox" name="{{ classe.classe_name }}" id="{{ student.matricule }}" aria-label="Checkbox{{ student.matricule }}">
+								<div class="avatar">
+									{% if student.picture %}
+									<img class="img-avatar" src="/student{{ student.picture.url }}" alt="{{ student.fname }} {{ student.lname }}">
+									{% else %}
+									<img class="rounded-circle mx-auto d-block" height="100" width="100" src="/student/images/profile/default_user.jpeg" alt="default_img"/>
+									{% endif %}
+								</div>
+
+								<span>{{ student.fname }} {{ student.lname }}</span>
+								<span><a href="{% url 'student:view_student' student.uuid %}">{{ student.matricule }}</a></span>
+							</li>
+
+							{% endfor %}
+						</div>
+					</ul>
+					{% endfor %}
+				</div>
+			</div> <!-- form-group row -->	
+			
+			<div class="form-group row align-items-center">
+				<div class="col-sm-2"><i class="fas fa-chalkboard-teacher"></i></div>
+				<div class="col-sm-10">
+					{% render_field form.teacher|attr:"multiple" class="selectpicker" %}
+				</div>
+			</div> <!-- form-group row -->
+			
+			<div class="form-group row align-items-center">
+				<div class="col-sm-2"><i class="far fa-clipboard"></i></div>
+				<div class="col-sm-10">
+					{% render_field form.subject|attr:"multiple" class="selectpicker" data-live-search="true" data-max-options="1" %}
+				</div>
+			</div> <!-- form-group row -->
+			
+			<div class="form-group row align-items-center">
+				<div class="col-sm-2">
+					<i class="far fa-compass"></i>
+				</div>
+				<div class="col-sm">
+					{% render_field form.location class="selectpicker" %}
+				</div>
+			</div>
+			
+			<div class="form-group row align-items-center">
+				<div class="col-sm-auto"><i class="far fa-clock"></i></div>
+				
+				<div class="col-sm">
+					{% render_field form.weekDay class="selectpicker" %}
+				</div>
+			
+				<div class="col-sm">
+					{% render_field form.startAt class="form-control" type="time" %}
+				</div>
+				
+				<div class="col-sm-auto">
+					<span>-</span>
+				</div>
+				
+				<div class="col-sm">
+					{% render_field form.finishtAt class="form-control" type="time" %}
+				</div>
+				
+			</div>  <!-- form-group row -->
+			
+		</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -20,7 +20,7 @@ class User(AbstractUser):
 	subject = models.ManyToManyField(to='configuration.Subjects', related_name='subjects_taught', blank=True)
 	
 	def __str__(self):
-		return '{} - {}'.format(self.username, self.get_role_display())
+		return '{}'.format(self.username)
 
 class ClasseOwnership(models.Model):
 	__tablename__ = 'Classe Ownership'

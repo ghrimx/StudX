@@ -6,62 +6,106 @@
 {% block content %}
 
 <div class="container">
-	<form method="post">
-		{% csrf_token %}
-		{{ form.non_field_errors }}
-		{% for hidden_field in form.hidden_fields %}
-		{{ hidden_field.errors }}
-		{{ hidden_field }}
-		{% endfor %}
+	<div class="card mb-3"> 
+		<div class="card-body"> 
+			<form method="post">
+				{% csrf_token %}
+				
+				<div class="form-group row align-items-center">
+					<div class="col-sm-2"><i class="fas fa-info-circle"></i></div>
+					<div class="col-sm-10">
+							{%  render_field form.status class="selectpicker" data-max-options="1" %}
+					</div>
+				</div> <!-- form-group row -->
+				
+				<div class="form-group row align-items-center">
+					<div class="col-sm-2"><i class="fas fa-chalkboard-teacher"></i></div>
+					<div class="col-sm-10">
+						{% render_field form.teacher|attr:"multiple" class="selectpicker" %}
+					</div>
+				</div> <!-- form-group row -->
+				
+				<div class="form-group row align-items-center">
+					<div class="col-sm-2"><i class="far fa-clipboard"></i></div>
+					<div class="col-sm-10">
+						{% render_field form.subject|attr:"multiple" class="selectpicker" data-live-search="true" data-max-options="1" %}
+					</div>
+				</div> <!-- form-group row -->
+				
+				<div class="form-group row align-items-center">
+					<div class="col-sm-2">
+						<i class="far fa-compass"></i>
+					</div>
+					<div class="col-sm">
+						{% render_field form.location class="selectpicker" %}
+					</div>
+				</div>
+				
+				<div class="form-group row align-items-center">
+					<div class="col-sm-2"><i class="far fa-clock"></i></div>
+					
+					<div class="col-sm">
+						{% render_field form.weekDay class="selectpicker" %}
+					</div>
+				
+					<div class="col-sm">
+						{% render_field form.startAt class="form-control" type="time" %}
+					</div>
+					<div class="col-sm-auto">-</div>
+					<div class="col-sm">
+						{% render_field form.finishtAt class="form-control" type="time" %}
+					</div>
+					
+				</div>  <!-- form-group row -->
+				
+				<div class="form-group row">
+					<div class="col-sm-2"><i class="fas fa-users"></i></div>
+					<div class="col-sm">
+						{% for classe in classes %}
+						<ul class="list-group" style="width:400px;">
+							<li class="list-group-item list-group-item-secondary">
+								<input type="checkbox" name="{{ classe.classe_name }}" id="{{ classe.classe_name }}_main" aria-label="CheckAll{{ classe.classe_name }}" onClick="toggle(this,'{{ classe.classe_name }}')">
+								<a class="#" data-toggle="collapse" href="#collapse{{ classe.classe_name }}" role="button" aria-expanded="false" aria-controls="collapse{{ classe.classe_name }}">
+									{{ classe.classe_name }}
+								</a>
 
-		<div class="form-group row">
-			<div class="col-4">
-				{% for classe in classes %}
-				<ul class="list-group" style="width:400px;">
-					<li class="list-group-item list-group-item-secondary">
-						<input type="checkbox" name="{{ classe.classe_name }}" id="{{ classe.classe_name }}" aria-label="CheckAll{{ classe.classe_name }}" onClick="toggle(this,'{{ classe.classe_name }}')">
-						<a class="#" data-toggle="collapse" href="#collapse{{ classe.classe_name }}" role="button" aria-expanded="false" aria-controls="collapse{{ classe.classe_name }}">
-							{{ classe.classe_name }}
-						</a>
+							</li>
+							<div class="collapse" id="collapse{{ classe.classe_name }}">
+								{% for student in classe.student_classe.all %}
+								<li class="list-group-item d-flex justify-content-between align-items-center">
+									<input type="checkbox" name="student" id="{{ student.matricule }}" value="{{ student.uuid }}" aria-label="Checkbox{{ student.matricule }}" class="{{ classe.classe_name }}">
+									<div class="avatar">
+										{% if student.picture %}
+										<img class="img-avatar" src="/student{{ student.picture.url }}" alt="{{ student.fname }} {{ student.lname }}">
+										{% else %}
+										<img class="rounded-circle mx-auto d-block" height="100" width="100" src="/student/images/profile/default_user.jpeg" alt="default_img"/>
+										{% endif %}
+									</div>
 
-					</li>
-					<div class="collapse" id="collapse{{ classe.classe_name }}">
-						{% for student in classe.student_classe.all %}
-						<li class="list-group-item d-flex justify-content-between align-items-center">
-							<input type="checkbox" name="{{ classe.classe_name }}" id="{{ student.matricule }}" aria-label="Checkbox{{ student.matricule }}">
-							<div class="avatar">
-								{% if student.picture %}
-								<img class="img-avatar" src="/student{{ student.picture.url }}" alt="{{ student.fname }} {{ student.lname }}">
-								{% else %}
-								<img class="rounded-circle mx-auto d-block" height="100" width="100" src="/student/images/profile/default_user.jpeg" alt="default_img"/>
-								{% endif %}
+									<span>{{ student.fname }} {{ student.lname }}</span>
+									<span><a href="{% url 'student:view_student' student.uuid %}">{{ student.matricule }}</a></span>
+								</li>
+
+								{% endfor %}
 							</div>
-
-							<span>{{ student.fname }} {{ student.lname }}</span>
-							<span><a href="{% url 'student:view_student' student.uuid %}">{{ student.matricule }}</a></span>
-						</li>
-
+						</ul>
 						{% endfor %}
 					</div>
-				</ul>
-				{% endfor %}
-			</div> <!-- col-4 -->
-			<div class="col-8">
-				<div class="form-group row">
-					<label for="{{ form.teacher.id_for_label }}" class="col-sm-2 col-form-label">{% trans 'Teacher' %}</label>
-					<div class="col-sm">
-						{% render_field form.teacher|attr:"multiple" class=selectpicker" %}
-					</div> <!-- col-sm -->
-				</div> <!-- form-group row -->
-			</div> <!-- col-8 -->
-		</div> <!-- form-group row -->
-
-	</form>
+				</div> <!-- form-group row -->	 
+				<div class="row">
+					<div class="col">
+						<button type="submit" class="btn btn-primary">{% trans 'Submit' %}</button>
+						<a class="btn btn-secondary" href="{% url 'schedule:schedule_main' %}" role="button">{% trans 'Cancel' %}</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
 </div> <!-- container -->
 
 <script>
 	function toggle(source, checkboxes_name) {
-		checkboxes = document.getElementsByName(checkboxes_name);
+		checkboxes = document.getElementsByClassName(checkboxes_name);
 		for(var i=0, n=checkboxes.length;i<n;i++) {
 			checkboxes[i].checked = source.checked;
 		}
