@@ -39,7 +39,7 @@ You will find hereafter what I use to develop and to run the project
 * Virtualenv (not mandatory but recommended)
 
 ### Installing
-I use Virtualenv for developping this project so in order to get a local copy of the project directory clone "StudX_dir/Studx".
+I use Virtualenv for developping this project so in order to get a local copy of the project directory clone "StudX".
 Then follow these steps:
 1. create the database by typing in mysql command line `create database Studx_database`
 2. Provide the required information to the `DATABASES` dictionnary by editing `/StudX/settings.py`
