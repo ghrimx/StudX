@@ -14,7 +14,7 @@ The application records personal data of student, teacher and Staff people. It a
 ![image](https://user-images.githubusercontent.com/6607633/59228742-e4d6f400-8bd8-11e9-85bc-1257341b49c5.png)
 ![image](https://user-images.githubusercontent.com/6607633/59228919-56af3d80-8bd9-11e9-8154-afbda218d6e6.png)
 ![image](https://user-images.githubusercontent.com/6607633/59228606-890c6b00-8bd8-11e9-8949-16ebb0014900.png)
-
+![image](https://user-images.githubusercontent.com/6607633/59386621-6b214080-8d67-11e9-9021-cf6968923c7a.png)
 
 ### In development features
 
@@ -36,10 +36,11 @@ You will find hereafter what I use to develop and to run the project
 * Python 3
 * Django 2
 * MySQL database
-* Virtualenv (not mandatory but recommended)
+* Virtualenv (not mandatory but highly recommended)
 
 ### Installing
-I use Virtualenv for developping this project so in order to get a local copy of the project directory clone "StudX_dir/Studx".
+I use Virtualenv for developping this project so I recommend you to create an virtual environment `virtualenv venv` and to install the requirements `pip install -r requirements.txt`. Then, get a local copy of the project directory by cloning "StudX" from github.
+
 Then follow these steps:
 1. create the database by typing in mysql command line `create database Studx_database`
 2. Provide the required information to the `DATABASES` dictionnary by editing `/StudX/settings.py`
