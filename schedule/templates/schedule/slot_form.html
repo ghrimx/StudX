@@ -64,7 +64,7 @@
 						{% for classe in classes %}
 						<ul class="list-group" style="width:400px;">
 							<li class="list-group-item list-group-item-secondary">
-								<input type="checkbox" name="{{ classe.classe_name }}" id="{{ classe.classe_name }}_main" aria-label="CheckAll{{ classe.classe_name }}" onClick="toggle(this,'{{ classe.classe_name }}')">
+								<input type="checkbox" name="MainCheckBox" id="{{ classe.classe_name }}_main" aria-label="CheckAll{{ classe.classe_name }}" onClick="toggle(this,'{{ classe.classe_name }}')">
 								<a class="#" data-toggle="collapse" href="#collapse{{ classe.classe_name }}" role="button" aria-expanded="false" aria-controls="collapse{{ classe.classe_name }}">
 									{{ classe.classe_name }}
 								</a>
@@ -73,7 +73,7 @@
 							<div class="collapse" id="collapse{{ classe.classe_name }}">
 								{% for student in classe.student_classe.all %}
 								<li class="list-group-item d-flex justify-content-between align-items-center">
-									<input type="checkbox" name="student" id="{{ student.matricule }}" value="{{ student.uuid }}" aria-label="Checkbox{{ student.matricule }}" class="{{ classe.classe_name }}">
+									<input type="checkbox" name="student" id="id_student_{{ forloop.counter0 }}" value="{{ student.uuid }}" aria-label="Checkbox{{ student.matricule }}" class="{{ classe.classe_name }}" {% if student.matricule in studentChecked %}checked{% endif %}>
 									<div class="avatar">
 										{% if student.picture %}
 										<img class="img-avatar" src="/student{{ student.picture.url }}" alt="{{ student.fname }} {{ student.lname }}">
@@ -92,6 +92,7 @@
 						{% endfor %}
 					</div>
 				</div> <!-- form-group row -->	 
+				
 				<div class="row">
 					<div class="col">
 						<button type="submit" class="btn btn-primary">{% trans 'Submit' %}</button>
@@ -104,6 +105,18 @@
 </div> <!-- container -->
 
 <script>
+	$(document).ready(function(){
+		var MainCheckBoxCount = [];
+		for 
+		var $checkboxes = $('#devel-generate-content-form td input[type="checkbox"]');
+        
+    $checkboxes.change(function(){
+        var countCheckedCheckboxes = $checkboxes.filter(':checked').length;
+        $('#count-checked-checkboxes').text(countCheckedCheckboxes);
+    });
+
+});
+
 	function toggle(source, checkboxes_name) {
 		checkboxes = document.getElementsByClassName(checkboxes_name);
 		for(var i=0, n=checkboxes.length;i<n;i++) {

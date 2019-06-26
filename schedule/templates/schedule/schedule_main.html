@@ -44,9 +44,10 @@
 				{% for slot in schedule|get_item:day.1 %}
 
 					<li class="cd-schedule__event">
-						<a data-start="{{slot.startAt|time:'H:i'}}" data-end="{{slot.finishtAt|time:'H:i'}}" data-content="subject-{{slot.subject.id}}" data-event="event-{{slot.subject.id}}" href="#0">
+						<a class="cd-schedule__event__link" data-start="{{slot.startAt|time:'H:i'}}" data-end="{{slot.finishtAt|time:'H:i'}}" data-content="subject-{{slot.subject.id}}" data-event="event-{{slot.subject.id}}" href="#0">
 						<em class="cd-schedule__name">{{slot.subject}} <br> {{ slot.location }}</em>
 						</a>
+						
 						<div class="cd-schedule-content subject-{{slot.subject.id}}">
 							<div>
 								<h4>{% trans 'Teacher' %}</h4>
@@ -55,6 +56,11 @@
 									<li>{{teacher.first_name}} {{teacher.last_name}}</li>
 								{% endfor %}
 								</ul>
+								<div class="btn-group btn-group-sm vertical-center " role="group" aria-label="Event button">
+									<a class="btn btn-primary btn-sm" href="{% url 'schedule:edit_slot' slot.id %}"><i class="fas fa-pencil-alt"></i></a>
+									<a class="btn btn-primary btn-sm" href=""><i class="fas fa-trash-alt"></i></a>
+								</div>
+								
 							</div>
 						</div>
 					</li>

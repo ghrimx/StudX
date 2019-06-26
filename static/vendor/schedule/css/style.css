@@ -4888,6 +4888,53 @@ a {
 }
 
 /* Custom */
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 90%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* Make edit/delete button overlay the schedule block */
+
+/* .cd-schedule__event__overlay  a::before { */
+	/* content: none; */
+/* } */
+
+/* .cd-schedule__event__overlay  a{ */
+	/* box-shadow: none !important; */
+	/* padding: .25rem .5rem !important; */
+/* } */
+
+/* .cd-schedule__event__overlay { */
+  /* position: absolute; */
+  /* top: 0; */
+  /* bottom: 0; */
+  /* left: 0; */
+  /* right: 0; */
+  /* height: 100%; */
+  /* width: 100%; */
+  /* opacity: 0; */
+  /* transition: .5s ease; */
+  /* background-color: #008CBA; */
+/* } */
+
+/* .cd-schedule__event:hover .cd-schedule__event__overlay { */
+  /* opacity: 1; */
+/* } */
+
+/* .cd-schedule__event__content { */
+  /* color: white; */
+  /* position: absolute; */
+  /* top: 50%; */
+  /* left: 50%; */
+  /* -webkit-transform: translate(-50%, -50%); */
+  /* -ms-transform: translate(-50%, -50%); */
+  /* transform: translate(-50%, -50%); */
+  /* text-align: center; */
+/* } */
+
 .cd-schedule-content {
 	display: none
 }
