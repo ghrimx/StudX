@@ -195,13 +195,17 @@
     <!-- Template script -->
     <script src="{% static 'js/sb-admin.min.js' %}"></script>
 	
+	{% block extra_js %}{% endblock extra_js %}
+	
 	<script type="text/javascript">
+		{% block extra_preready_js %}{% endblock extra_preready_js %}
 		$(document).ready(function () {
 			$('[data-toggle="tooltip"]').tooltip(); 
+			{% block extra_ready_js %}{% endblock extra_ready_js %}
 		});
 	</script>
 
-    {% block extra_js %}{% endblock extra_js %}
+    
 
   </body>
 

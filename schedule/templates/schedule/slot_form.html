@@ -63,11 +63,13 @@
 					<div class="col-sm">
 						{% for classe in classes %}
 						<ul class="list-group" style="width:400px;">
-							<li class="list-group-item list-group-item-secondary">
-								<input type="checkbox" name="MainCheckBox" id="{{ classe.classe_name }}_main" aria-label="CheckAll{{ classe.classe_name }}" onClick="toggle(this,'{{ classe.classe_name }}')">
+							<li class="list-group-item d-flex justify-content-between align-items-center list-group-item-secondary">
+								<input type="checkbox" name="MainCheckBox" id="{{ classe.classe_name }}" aria-label="CheckAll{{ classe.classe_name }}" onClick="toggle(this,'{{ classe.classe_name }}')">
 								<a class="#" data-toggle="collapse" href="#collapse{{ classe.classe_name }}" role="button" aria-expanded="false" aria-controls="collapse{{ classe.classe_name }}">
 									{{ classe.classe_name }}
 								</a>
+								<span id="P{{classe.classe_name}}" class="badge badge-secondary" ></span>
+								
 
 							</li>
 							<div class="collapse" id="collapse{{ classe.classe_name }}">
@@ -104,25 +106,78 @@
 	</div>
 </div> <!-- container -->
 
-<script>
-	$(document).ready(function(){
-		var MainCheckBoxCount = [];
-		for 
-		var $checkboxes = $('#devel-generate-content-form td input[type="checkbox"]');
-        
-    $checkboxes.change(function(){
-        var countCheckedCheckboxes = $checkboxes.filter(':checked').length;
-        $('#count-checked-checkboxes').text(countCheckedCheckboxes);
-    });
-
-});
-
-	function toggle(source, checkboxes_name) {
-		checkboxes = document.getElementsByClassName(checkboxes_name);
-		for(var i=0, n=checkboxes.length;i<n;i++) {
-			checkboxes[i].checked = source.checked;
-		}
-	}
-</script>
-
 {% endblock content %}
+
+{% block extra_preready_js %}
+	function GetCheckedCount (id) {
+		// Get the number of checkbox by classname
+	}
+
+	function ChangeMainCheckBoxStatus() {
+	
+			  var x = document.getElementsByName("MainCheckBox");
+			  var i;
+			  var CheckBoxArray;
+			  var CheckBoxCount;
+			  var CheckedBoxCount;
+
+			  for (i = 0; i < x.length; i++) {
+
+				CheckBoxArray = document.getElementsByClassName(String(x[i].id));
+				CheckedBoxCount = 0;
+				for (var ii = 0; ii < CheckBoxArray.length; ii++) {
+				  if (CheckBoxArray[ii].type == "checkbox" && CheckBoxArray[ii].checked == true) {
+					CheckedBoxCount++;
+				  }
+				}
+				
+				if (CheckedBoxCount > 0) {
+					if (CheckBoxArray.length == CheckedBoxCount ) {
+						// Full selection
+						x[i].checked = true;
+						document.getElementById("P".concat(String(x[i].id))).innerHTML = String(CheckedBoxCount).concat("/",String(CheckBoxArray.length));
+						document.getElementById("P".concat(String(x[i].id))).className = "badge badge-info";
+					}
+					else {
+						// Partial selection
+						x[i].checked = false;
+						document.getElementById("P".concat(String(x[i].id))).innerHTML = String(CheckedBoxCount).concat("/",String(CheckBoxArray.length));
+						document.getElementById("P".concat(String(x[i].id))).className = "badge badge-info";
+					}
+				} else {
+					// No selection
+					  x[i].checked = false;
+					  document.getElementById("P".concat(String(x[i].id))).innerHTML = String(CheckedBoxCount).concat("/",String(CheckBoxArray.length));
+					  document.getElementById("P".concat(String(x[i].id))).className = "badge badge-secondary";
+				}
+			  }
+			}
+
+		$('input[name=student]').change(function() {
+			ChangeMainCheckBoxStatus();
+		}); 
+{% endblock extra_preready_js %}
+
+{% block extra_ready_js %}
+			ChangeMainCheckBoxStatus();
+{% endblock extra_ready_js %}
+
+{% block extra_js %}
+	<script>
+		function toggle(source, checkboxes_name) {
+				checkboxes = document.getElementsByClassName(checkboxes_name);
+				for(var i=0, n=checkboxes.length;i<n;i++) {
+					checkboxes[i].checked = source.checked;
+				}
+				if (source.checked == true) {
+					document.getElementById("P".concat(String(checkboxes_name))).innerHTML = String(checkboxes.length).concat("/",String(checkboxes.length));
+					document.getElementById("P".concat(String(checkboxes_name))).className = "badge badge-info";
+				}
+				else { 
+					document.getElementById("P".concat(String(checkboxes_name))).innerHTML = "0".concat("/",String(checkboxes.length));
+					document.getElementById("P".concat(String(checkboxes_name))).className = "badge badge-secondary";
+				}
+			}
+	</script>
+{% endblock extra_js %}
+

@@ -63,16 +63,18 @@ def create_edit_slot(request, id=None):
 		return HttpResponseForbidden()
 
 	user = request.user
-
+	studentChecked = None
+	
 	if id:
 		slot = get_object_or_404(Schedule, id=id)
 		if slot.creator != request.user:
 			return HttpResponseForbidden()
+		studentChecked = slot.student.all().values_list('matricule', flat=True)
 	else:
 		slot = Schedule(creator=user)
 	
 	classes = Classes.objects.all()
-	studentChecked = slot.student.all().values_list('matricule', flat=True)
+	
 	
 	if request.method == 'POST':
 		form = SlotForm(request.POST, instance=slot)
