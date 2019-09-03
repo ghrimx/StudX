@@ -55,7 +55,7 @@ Then follow these steps:
 
 ## Contributing
 Contributions will be warmly welcomed. 
-A [wiki](https://github.com/ghrimx/StudX/wiki/Software-requirements-specification) is in progress to describe the design. 
+A [wiki](https://github.com/ghrimx/StudX/wiki) is in progress to describe the design. 
 
 ## Versioning
 I use exclusively Github
