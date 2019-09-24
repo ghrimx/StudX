@@ -150,7 +150,7 @@ class Student_hasContacts(models.Model):
 		verbose_name_plural = _("Student's contacts")	
 
 def user_directory_path(instance, filename):
-    # file will be uploaded to MEDIA_ROOT/user_<id>/<filename>
+    # files are uploaded to MEDIA_ROOT/user_<id>/<filename>
     return '%Y/user_{0}/{1}'.format(instance.student.matricule, filename)
 	
 class Student_hasDocs(models.Model):
@@ -191,6 +191,11 @@ class Address(models.Model):
 
 		
 class Disciplines(models.Model):
+	"""Misbehaviours are recorded in this table.
+	   If one or several sanction(s) is/are associated to a misbehaviour the description is in the 'Disciplines_Details' class to handle occurence.
+	   E.g. a student talked during a lesson. The sanction is to stay after class on Wednesday 18 and Wesneday 28. 
+	        The description of what is asked to the student to do during these two days is recorder in the 'Disciplines_Details' class. 
+	"""
 	__tablename__ = 'Disciplines'
 	
 	type = models.ForeignKey(to='Discipline_type', on_delete=models.SET_NULL, related_name='discipline_type', null=True, blank=True, default=1)
@@ -261,7 +266,7 @@ class Attendances(models.Model):
 	
 	student = models.ForeignKey(to='Student', on_delete=models.CASCADE, related_name='student_attendance')
 	type = models.IntegerField(choices=ATTENDANCES_TYPE, default=0)
-	motif = models.TextField(null=True, blank=True)
+	motif = models.TextField(null=True, blank=True) # REM.: should have been "reason"; redundant with "justification" field
 	is_excused = models.BooleanField(default=False)
 	justification = models.TextField(null=True, blank=True)
 	document = models.ForeignKey(to='Student_hasDocs', on_delete=models.SET_NULL, related_name='document_attendance', null=True, blank=True)
@@ -289,7 +294,7 @@ class Arrivals_Departures(models.Model):
 
 	student = models.ForeignKey(to='Student', on_delete=models.CASCADE, related_name='student_arrivals_departures')
 	type = models.IntegerField(choices=IN_OUT_TYPE, null=True, blank=True)
-	justification = models.TextField(null=True, blank=True)
+	justification = models.TextField(null=True, blank=True) # REM.: should have been "reason"
 	document = models.ForeignKey(to='Student_hasDocs', on_delete=models.SET_NULL, related_name='document_arrivals_departures', blank=True, null=True)
 	apply_on_date = models.DateField(_('Apply on date'), null=True, default=date.today)
 	apply_on_time = models.TimeField(_('Apply on time'), null=True)
@@ -312,6 +317,10 @@ class Arrivals_Departures(models.Model):
 		verbose_name_plural = _("Arrivals Departures")
 		
 class Student_Notes(models.Model):
+	"""Allow Staff to record various information/remarks/comments about a student.
+	   Notes are non public nor private as the head of the school should be able to access them if need be
+	"""
+	
 	__tablename__ = 'Student Notes'
 
 	uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
