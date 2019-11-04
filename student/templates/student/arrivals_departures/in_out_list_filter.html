@@ -9,13 +9,13 @@
 
 	<form id="in_out_list_filter" method="POST" action="">{% csrf_token %}
 			<div class="form-row" >
-				<div class="form-group col">
+				<div class="col">
 					<input type="text" class="form-control form-control-sm" placeholder={% trans "Firstname" %}  name="fname" {% if request.POST %} value="{{request.POST.fname}}" {% endif %}>
 				</div>
-				<div class="form-group col">
+				<div class="col">
 					<input type="text" class="form-control form-control-sm" placeholder={% trans "Lastname" %}  name="lname" {% if request.POST %} value="{{request.POST.lname}}" {% endif %}>
 				</div>
-				<div class="form-group col-md-auto">
+				<div class="col-md-auto">
 					<select class="form-control form-control-sm"}  name="classe">
 						<option value=""> Classe </option>
 						{% for classe in classe_obj_list %}
@@ -24,10 +24,10 @@
 						{% endfor %}
 					</select>
 				</div>
-				<div class="form-group col-md-auto">
+				<div class="col-md-auto">
 					<input type="date" class="form-control form-control-sm" placeholder={% trans "date" %}  name="apply_on_date" {% if request.POST %} value="{{request.POST.apply_on_date}}" {% endif %}>
 				</div>
-				<div class="form-group col-md-auto">
+				<div class="col-md-auto">
 					<button class="btn btn-info save btn-sm" type="submit">Search</button>
 					<a href="{% url 'student:in_out_list' 'Arrival' %}" class="btn btn-outline-info btn-sm">Clear</a>
 				</div>
