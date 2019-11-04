@@ -191,10 +191,11 @@ class Address(models.Model):
 
 		
 class Disciplines(models.Model):
-	"""Misbehaviours are recorded in this table.
-	   If one or several sanction(s) is/are associated to a misbehaviour the description is in the 'Disciplines_Details' class to handle occurence.
-	   E.g. a student talked during a lesson. The sanction is to stay after class on Wednesday 18 and Wesneday 28. 
-	        The description of what is asked to the student to do during these two days is recorder in the 'Disciplines_Details' class. 
+	"""
+		Misbehaviours are recorded in this table.
+		If one or several sanction(s) is/are associated to a misbehaviour the description is in the 'Disciplines_Details' class to handle occurence.
+		E.g. a student talked during a lesson. The sanction is to stay after class on Wednesday 18 and Wesneday 28. 
+		The description of what is asked to the student to do during these two days is recorder in the 'Disciplines_Details' class. 
 	"""
 	__tablename__ = 'Disciplines'
 	
@@ -241,6 +242,15 @@ class Disciplines_Details(models.Model):
 		verbose_name_plural = _('Disciplines details')
 		
 class Discipline_type(models.Model):
+	"""
+		- Detention: It requires the pupil to report to a designated area of the school during a specified time on a school day (typically either lunch, or after school) and remain there for a specified period of time
+		- In-school suspension: the pupil is not allowed to attend classes for a given period of time
+		- Suspension: mandatory leave assigned to a student as a form of punishment that can last anywhere from one day to a few weeks
+		- Restorative justice: 
+		- Withdrawal of privileges: cell phone,...
+		- general interest work
+	"""
+
 	__tablename__ = 'Discipline_type'
 	
 	sanction = models.CharField(_('Sanction'), max_length=100, null=True)

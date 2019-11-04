@@ -3,6 +3,7 @@
 from django.utils.translation import ugettext_lazy as _
 from datetime import time, datetime, timedelta
 
+# this function is used in the schedule module to generate a list of time
 def GenTimeList():
 	StartTime_str = '0100-01-01 08:00:00'
 	StartTime = datetime.strptime(StartTime_str,'%Y-%m-%d %H:%M:%S')
@@ -24,7 +25,7 @@ def GenTimeList():
 
 TimeList = GenTimeList()
 
-
+# Schedule status
 INACTIVE = 0
 ACTIVE = 1
 CANCELLED = 2
@@ -34,6 +35,7 @@ SCHEDULE_STATUS = (
 	(CANCELLED, _('Cancelled')),
 	)
 
+# Days of the week
 MONDAY = 1
 TUESDAY = 2
 WEDNESDAY = 3
@@ -51,6 +53,7 @@ DAYS_OF_THE_WEEK = (
 	(SUNDAY, _('Sunday')),
 	)
 
+# Gender
 EMPTY = 0
 MALE = 1
 FEMALE = 2
@@ -60,6 +63,7 @@ GENDER = (
 	(FEMALE, _('Female')),
 	)
 
+# General statuses
 INACTIVE = 0
 ACTIVE = 1
 DONE = 2
@@ -71,6 +75,7 @@ STATUS = (
 	(CANCELLED, _('Cancelled')),
 	)
 
+# Student statuses
 INACTIVE = 0
 ACTIVE = 1
 GRADUATED = 2
@@ -84,6 +89,7 @@ STUDENT_STATUS = (
 	(QUIT, _('Quit')),
 	)
 
+# Relationship types
 EMPTY = 0
 MOTHER = 1
 FATHER = 2
@@ -103,6 +109,7 @@ RELATIONSHIP = (
 	(AUNT, _('Aunt')),
 	)
 
+# Contact types
 MOBILE = 1
 LANDLINE = 2
 EMAIL = 3
@@ -114,11 +121,14 @@ CONTACT_TYPE = (
 	(URL, 'URL'),
 	)
 
+# attendence type
 ABSENT = 0
 PRESENT = 1
+PARTIAL = 2
 ATTENDANCES_TYPE = (
 	(ABSENT, _('Absent')),
 	(PRESENT, _('Present')),
+	(PARTIAL, _('Partial')),
 	)
 
 # change the corresponding list in __init__.py
