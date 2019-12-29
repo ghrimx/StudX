@@ -20,6 +20,7 @@ from common.utils import *
 
 # import models
 from user.models import User
+from configuration.models import Classes
 
 # *** Code start here ***
 
@@ -46,6 +47,17 @@ def generate_teacher_template(request):
 			# response['Content-Disposition'] = 'inline; filename=' + \
 			# os.path.basename(file_path)
 			# return response
+
+def classes_list(request):
+	classes_obj_list = Classes.objects.all()
+	
+	variables = {
+		'classes_obj_list': classes_obj_list, 
+	}
+	
+	template = 'configuration/classes_list.html'
+	
+	return render(request, template, variables)
 
 
 def init_with_file(request):

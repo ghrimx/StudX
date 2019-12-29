@@ -24,8 +24,14 @@
 			<span>Disciplines</span>
 		</a>
 		<div class="dropdown-menu" aria-labelledby="disciplinesDropdown">
-			<a class="dropdown-item" href="{% url 'student:disciplines_list' %}">{% trans 'List' %}</a>
-			<a class="dropdown-item" href="{% url 'student:create_discipline' %}">Nouveau fait</a>
+			<a class="dropdown-item" href="{% url 'student:disciplines_list' %}">
+				<i class="fas fa-bars"></i>
+				<span>{% trans 'All disciplines' %}</span>
+			</a>
+			<a class="dropdown-item" href="{% url 'student:create_discipline' %}">
+				<i class="fas fa-plus"></i>
+				<span>{% trans 'New fact' %}</span>
+			</a>
 		</div>
 	</li>
 	<!-- Attendance -->
@@ -35,9 +41,18 @@
 			<span>{% trans "Attendance" %}</span>
 		</a>
 		<div class="dropdown-menu" aria-labelledby="attendanceDropdown">
-			<a class="dropdown-item" href="{% url 'student:in_out_list' 'Arrival' %}">{% trans 'Arrivals list' %}</a>
-			<a class="dropdown-item" href="{% url 'student:attendance_list' %}">{% trans 'Attendances list' %}</a>
-			<a class="dropdown-item" href="#">Nouveau retard</a>
+			<a class="dropdown-item" href="{% url 'student:in_out_list' 'Arrival' %}">
+				<i class="nav-icon fas fa-bars"></i>
+				<span>{% trans 'All Arrivals' %}</span>
+			</a>
+			<a class="dropdown-item" href="{% url 'student:attendance_list' %}">
+				<i class="fas fa-bars"></i>
+				<span>{% trans 'All Attendances' %}</span>
+			</a>
+			<a class="dropdown-item" href="{% url 'student:create_inout' 'Arrival' %}">
+				<i class="nav-icon fas fa-plus"></i>
+				<span>{% trans 'Add Arrival' %}</span>
+			</a>
 		</div>
 	</li>
 	<!-- Communication -->
@@ -47,7 +62,10 @@
 			<span>{% trans "Memos" %}</span>
 		</a>
 		<div class="dropdown-menu" aria-labelledby="communicationDropdown">
-			<a class="dropdown-item" href="{% url 'communication:memos_list' %}">{% trans 'Memos' %}</a>
+			<a class="dropdown-item" href="{% url 'communication:memos_list' %}">
+				<i class="fas fa-bars"></i>
+				<span>{% trans 'Memos' %}</span>
+			</a>
 			<a class="dropdown-item" href="">{% trans 'Inbox' %}</a>
 		</div>
 	</li>
@@ -67,7 +85,18 @@
 				<span>{% trans "Administration" %}</span>
 			</a>
 			<div class="dropdown-menu" aria-labelledby="adminDropdown">
-				{% if perms.user.can_add_user and perms.user.can_edit_user  %}<a class="dropdown-item" href="{% url 'user:user_list' %}">{% trans 'User' %}</a>{% endif %}
+				{% if perms.user.can_add_user and perms.user.can_edit_user  %}
+					<a class="dropdown-item" href="{% url 'user:user_list' %}">
+						<i class="fas fa-users"></i>
+						<span>{% trans 'All Users' %}</span>
+					</a>
+				{% endif %}
+				{% if perms.user.can_change_classes  %}
+					<a class="dropdown-item" href="{% url 'configuration:classes_list' %}">
+						<i class="fas fa-bars"></i>
+						<span>{% trans 'All Classes' %}</span>
+					</a>
+				{% endif %}
 				{% if request.user.is_staff %}
 				<a class="dropdown-item" href="{% url 'configuration:init_with_file' %}">{% trans 'Init' %}</a>
 				{% endif %}

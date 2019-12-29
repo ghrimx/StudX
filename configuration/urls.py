@@ -13,4 +13,5 @@ app_name = 'configuration'
 urlpatterns = [
 	path('config', views.init_with_file, name='init_with_file'),
 	path('download', views.generate_teacher_template, name='generate_teacher_template'),
+	path('classes_list',views.classes_list, name='classes_list'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

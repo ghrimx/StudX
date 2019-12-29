@@ -18,7 +18,8 @@
 					<th>{% trans "Username" %}</th>
 					<th>{% trans "Firstname" %}</th>
 					<th>{% trans "Lastname" %}</th>
-					<th>{% trans "Role" %}</th>
+					<th>{% trans "Role(s)" %}</th>
+					<th>{% trans "Classe(s)" %}</th>
 					<th>{% trans "Email" %}</th>
 					<th class="nosort">Action</th>
 				</tr>
@@ -39,3 +40,7 @@
 </div>
 
 {% endblock %}
+
+{% block extra_js %}
+	<script src="{% static 'js/datatables/datatables.js' %}"></script>
+{% endblock extra_js %}

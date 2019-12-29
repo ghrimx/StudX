@@ -22,8 +22,8 @@
 		{% endif %}
 	</td>
 	<td class="actions align-middle">
-		<a href="{% url 'student:view_student' student.uuid %}"><i class="fas fa-eye"></i></a>
-		<!-- <a href="#" class="btn btn-success edit"><i class="fas fa-pencil-alt"></i></a> -->
-		<!-- <a href="#" class="btn btn-danger delete remove_account"><i class="fas fa-trash-alt"></i></a> -->
+		<div class="btn-group btn-group-sm" role="group">
+			<a class="btn btn-outline-info btn-sm" href="{% url 'student:view_student' student.uuid %}"><i class="fas fa-eye"></i> </a>
+		</div>
 	</td>
 </tr>

@@ -14,6 +14,14 @@
 	<td>{{ user.first_name }}</td>
 	<td>{{ user.last_name }}</td>
 	<td>{% for group in user.groups.all %}{{ group }}{% endfor %}</td>
+	<td>
+		{% if user.classe_ownership.all %}
+			{% for classe in user.classe_ownership.all %}
+				<span class="badge badge-info">{{ classe}}</span>
+			{% endfor %}
+		{% else %} -
+		{% endif %}
+	</td>
 	<td>{{ user.email }}</td>
 	<td class="actions align-middle">
 		<div class="btn-group btn-group-sm" role="group">

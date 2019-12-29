@@ -68,8 +68,14 @@
             <i class="fas fa-th-large"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="shortcutsDropdown">
-            <a class="dropdown-item" href="{% url 'student:create_discipline' %}">{% trans "New infraction" %}</a>
-            <a class="dropdown-item" href="{% url 'student:create_inout' 'Arrival' %}">{% trans "New arrival" %}</a>
+            <a class="dropdown-item" href="{% url 'student:create_discipline' %}">
+				<i class="fas fa-plus"></i>
+				<span>{% trans 'New fact' %}</span>
+			</a>
+            <a class="dropdown-item" href="{% url 'student:create_inout' 'Arrival' %}">
+				<i class="fas fa-plus"></i>
+				<span>{% trans "Add Arrival" %}</span>
+			</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
