@@ -41,10 +41,18 @@
 						{% endfor %}
 					</div>
 					<div class="col">
-						<button type="button" data-toggle="collapse" class="btn btn-outline-info btn-sm" data-target="#collapseClasseRow{{ classe }}">
+						<div class="btn-group btn-group-sm" role="group" aria-label="actions">
+							<button type="button" data-toggle="collapse" class="btn btn-outline-info btn-sm" data-target="#collapseClasseRow{{ classe }}">
 							<i class="fas fa-eye"></i>
-						</button>
-						<a class="btn btn-outline-info btn-sm" href="{% url 'schedule:schedule_main' %}"><i class="far fa-clock"></i></a>
+							</button>
+							<a class="btn btn-outline-info btn-sm" href="{% url 'configuration:getSchedule' classe  %}"><i class="far fa-clock"></i></a>
+							{% if perms.configuration.change_classes %}
+								<a class="btn btn-outline-info btn-sm" href="#"><i class="fas fa-pencil-alt"></i> </a>
+							{% endif %}
+							{% if perms.configuration.delete_classes %}
+								<a class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#AllClassesDeleteModal" href=""><i class="fas fa-trash-alt"></i> </a>
+							{% endif %}
+						</div>
 					</div>
 				</div>
 

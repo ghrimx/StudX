@@ -8,7 +8,9 @@
 	</div>
 
 	<div class="btn-group float-right" role="group">
+	{% if perms.user.add_user %}
 		<a class="btn btn-secondary btn-sm" href="{% url 'user:create_user' %}"><i class="fa fa-plus" aria-hidden="true"></i></a>
+	{% endif %}
 		<a class="btn btn-sm btn-secondary" href="#"><i class="fas fa-flag"></i></a>
 	</div>
 

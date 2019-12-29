@@ -78,20 +78,20 @@
 	</li>
 	
 	{# Admin links #}
-	{% if perms.user %}
+	{% if perms.user or perms.configuration %}
 		<li class="nav-item dropdown">
 			<a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<i class="nav-icon fas fa-life-ring"></i>
 				<span>{% trans "Administration" %}</span>
 			</a>
 			<div class="dropdown-menu" aria-labelledby="adminDropdown">
-				{% if perms.user.can_add_user and perms.user.can_edit_user  %}
+				{% if perms.user.view_user %}
 					<a class="dropdown-item" href="{% url 'user:user_list' %}">
 						<i class="fas fa-users"></i>
 						<span>{% trans 'All Users' %}</span>
 					</a>
 				{% endif %}
-				{% if perms.user.can_change_classes  %}
+				{% if perms.configuration.view_classes  %}
 					<a class="dropdown-item" href="{% url 'configuration:classes_list' %}">
 						<i class="fas fa-bars"></i>
 						<span>{% trans 'All Classes' %}</span>

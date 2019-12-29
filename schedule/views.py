@@ -28,14 +28,19 @@ from schedule.forms import SlotForm
 # *** Code start here ***
 
 @login_required
-def schedule_main(request):
+def schedule_main(request, param=None):
 	
 	# Init objects
 	classes = Classes.objects.all()
 	schedule = Schedule.objects.none()
+	classes_filter = None
 	
 	# Filters
 	classes_filter = request.POST.get('classe')
+	
+	if param:
+		classes_filter = classes.values_list('id', flat=True).get(classe_name=param)
+		
 	
 	schedule_dict = dict()
 	if classes_filter:
@@ -46,6 +51,7 @@ def schedule_main(request):
 				schedule_dict[day[1]] = schedule.filter(weekDay=day[0])
 
 	variables = {
+		'scheduleOf': param,
 		'TimeList':TimeList, # init from /StudX_dir/StudX/common/utils.py
 		'days':DAYS_OF_THE_WEEK[0:5],
 		'schedule':schedule_dict,

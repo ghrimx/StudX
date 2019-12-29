@@ -25,8 +25,12 @@
 	<td>{{ user.email }}</td>
 	<td class="actions align-middle">
 		<div class="btn-group btn-group-sm" role="group">
+		{% if perms.user.change_user %}
 			<a class="btn btn-outline-info btn-sm" href="{% url 'user:edit_user' user.id %}"><i class="fas fa-pencil-alt"></i></a>
+		{% endif %}
+		{% if perms.user.delete_user %}
 			<a class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#UserDeleteModal" href="#"><i class="fas fa-trash-alt"></i></a>
+		{% endif %}
 		</div>
 		{% include 'user/user_delete_modal.html' %}
 	</td>
