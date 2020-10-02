@@ -33,3 +33,7 @@ urlpatterns = [
 
 # Change admin site title
 admin.site.site_header = "StudX Administration"
+
+#Change Index Title and Site Title of Django Admin Panel
+admin.site.site_title = "StudX Administration"
+admin.site.index_title = "Welcome to StudX Administration Admin Panel"
