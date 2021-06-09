@@ -1,4 +1,4 @@
-Django==2.2.1
+Django==2.2.22
 django-makemessages-xgettext==0.1.1
 django-tinymce==2.8.0
 django-widget-tweaks==1.4.3
