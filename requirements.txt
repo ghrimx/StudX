@@ -5,4 +5,4 @@ django-widget-tweaks==1.4.3
 Pillow==6.0.0
 pkg-resources==0.0.0
 pytz==2019.1
-sqlparse==0.3.0
+sqlparse==0.4.4
